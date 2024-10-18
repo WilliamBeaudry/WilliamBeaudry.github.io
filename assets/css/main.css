@@ -2049,7 +2049,7 @@ input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
   background: #989898;
   border-color: #989898;
-  color: #ffffff;
+  color: #002b36;
   content: "\f00c";
 }
 
@@ -2504,7 +2504,7 @@ ul.feature-icons li:before {
 ul.feature-icons li:before {
   background: #4e5c68;
   border-radius: 100%;
-  color: #ffffff;
+  color: #002b36;
   display: block;
   height: 2.5em;
   left: 0;
@@ -2629,7 +2629,7 @@ input[type="button"],
   background-color: #989898;
   border-radius: 5px;
   border: 0;
-  color: #ffffff !important;
+  color: #002b36 !important;
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
@@ -2646,7 +2646,7 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 .button:hover {
   background-color: #a5a5a5;
-  color: #ffffff !important;
+  color: #002b36 !important;
 }
 
 input[type="submit"]:active,
@@ -2727,7 +2727,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 .button.primary {
   background-color: #4e5c68;
-  color: #ffffff !important;
+  color: #002b36 !important;
 }
 
 input[type="submit"].primary:hover,
@@ -2826,7 +2826,7 @@ input[type="button"]:disabled,
 #header h4,
 #header h5,
 #header h6 {
-  color: #ffffff;
+  color: #002b36;
 }
 
 #header h1 a,
@@ -2835,7 +2835,7 @@ input[type="button"]:disabled,
 #header h4 a,
 #header h5 a,
 #header h6 a {
-  color: #ffffff;
+  color: #002b36;
 }
 
 #header header p {
@@ -2847,7 +2847,7 @@ input[type="button"]:disabled,
 }
 
 #header a:hover {
-  color: #ffffff !important;
+  color: #002b36 !important;
 }
 
 #header > header {
@@ -2919,7 +2919,7 @@ input[type="button"]:disabled,
   -ms-transition: none;
   transition: none;
   border: 0;
-  color: #ffffff !important;
+  color: #002b36 !important;
   display: block;
   padding: 0.85em 0;
   text-decoration: none;
@@ -3203,7 +3203,7 @@ input[type="button"]:disabled,
 
   #titleBar .toggle:before {
     background: #4e5c68;
-    color: #ffffff;
+    color: #002b36;
     content: "\f0c9";
     display: block;
     font-size: 18px;
