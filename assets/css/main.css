@@ -2919,7 +2919,7 @@ input[type="button"]:disabled,
   -ms-transition: none;
   transition: none;
   border: 0;
-  color: #002b36 !important;
+  color: #859900 !important;
   display: block;
   padding: 0.85em 0;
   text-decoration: none;
@@ -2927,7 +2927,7 @@ input[type="button"]:disabled,
 
 #header > nav ul li a.active {
   background: #002b36;
-  color: #4e5c68 !important;
+  color: #d33682 !important;
 }
 
 #header > nav ul li:first-child {
