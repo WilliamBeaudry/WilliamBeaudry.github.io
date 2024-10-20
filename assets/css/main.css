@@ -1887,7 +1887,7 @@ header h6 + p {
 }
 
 header.major h2 {
-  color: #4e5c68;
+  color: #0462c8;
   font-size: 3.5em;
 }
 
@@ -1928,7 +1928,7 @@ textarea {
   appearance: none;
   border-radius: 5px;
   border: none;
-  border: solid 2px #e4e4e4;
+  border: solid 2px #002b36;
   color: inherit;
   display: block;
   outline: 0;
