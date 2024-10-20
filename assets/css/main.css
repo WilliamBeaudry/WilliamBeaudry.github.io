@@ -2843,11 +2843,11 @@ input[type="button"]:disabled,
 }
 
 #header a {
-  color: #eadfd8;
+  color: #b58900;
 }
 
 #header a:hover {
-  color: #0462c8 !important;
+  color: #d33682 !important;
 }
 
 #header > header {
