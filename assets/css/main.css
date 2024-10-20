@@ -1892,7 +1892,7 @@ header.major h2 {
 }
 
 header.major h2 + p {
-  color: #777;
+  color: #b58900;
   font-size: 1.75em;
   font-weight: 700;
   margin-top: -0.75em;
@@ -1964,7 +1964,7 @@ select {
 }
 
 select option {
-  color: #777;
+  color: #b58900;
   background: #002b36;
 }
 
