@@ -225,7 +225,7 @@ a:hover {
 
 strong,
 b {
-  color: #777;
+  color: #b58900;
   font-weight: 700;
 }
 
@@ -244,7 +244,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #777;
+  color: #b58900;
   font-weight: 700;
   line-height: 1em;
   margin: 0 0 0.5625em 0;
@@ -1905,7 +1905,7 @@ form {
 }
 
 label {
-  color: #777;
+  color: #b58900;
   display: block;
   font-size: 0.9em;
   font-weight: 700;
@@ -2563,7 +2563,7 @@ table td {
 }
 
 table th {
-  color: #777;
+  color: #b58900;
   font-size: 0.9em;
   font-weight: 700;
   padding: 0 0.75em 0.75em 0.75em;
@@ -2697,7 +2697,7 @@ input[type="button"].alt,
 .button.alt {
   background-color: transparent;
   box-shadow: inset 0 0 0 2px #002b36;
-  color: #777 !important;
+  color: #b58900 !important;
 }
 
 input[type="submit"].alt:hover,
@@ -2705,7 +2705,7 @@ input[type="reset"].alt:hover,
 input[type="button"].alt:hover,
 .button.alt:hover {
   background-color: #002b36;
-  color: #777 !important;
+  color: #b58900 !important;
 }
 
 input[type="submit"].alt:active,
