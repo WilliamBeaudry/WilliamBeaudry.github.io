@@ -3203,7 +3203,7 @@ input[type="button"]:disabled,
 
   #titleBar .toggle:before {
     background: #4e5c68;
-    color: #002b36;
+    color: #0462c8;
     content: "\f0c9";
     display: block;
     font-size: 18px;
