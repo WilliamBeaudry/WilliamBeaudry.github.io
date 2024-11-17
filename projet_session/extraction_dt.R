@@ -1,61 +1,38 @@
-# Installation des packages pour extraire les métadonnées d'un document PDF
-install.packages("pdftools")
-install.packages("xml2")
-library("pdftools")
-library("rvest")
-library("tidyverse")
-library("xml2")
-
 # Charger les bibliothèques nécessaires
-library(pdftools)
-library(stringr)
-library(dplyr)
+library(rvest)
 
-# Chemin vers le fichier PDF
-pdf_file <- "C:/Users/willi/OneDrive/documents/WilliamBeaudry.github.io/projet_session/doc_tx_part_pn_2004-11.pdf"
+# URL de la page
+url <- "https://www.elections.ca/content.aspx?dir=rec/part/fvt&document=p4&lang=f&section=res"
 
-# Lire le texte brut du PDF
-pdf_text_content <- pdf_text(pdf_file)
+# Lire le contenu HTML de la page
+page <- read_html(url)
 
-# Identifier la page contenant le tableau
-page_index <- 3  # Remplacez par la page exacte où se trouve le tableau
+# Extraire les lignes du tableau avec les balises "tr"
+table_rows <- page %>%
+  html_elements("tr")
 
-# Extraire le contenu brut de la page du tableau
-page_content <- pdf_text_content[page_index]
+# Récupérer le contenu des balises "th" (en-têtes de colonnes)
+headers <- table_rows %>%
+  .[1] %>%
+  html_elements("th") %>%
+  html_text()
 
-# Diviser la page en lignes
-lines <- str_split(page_content, "\n")[[1]]
+# Extraire les données des balises "td" pour les rangées restantes
+data <- table_rows %>%
+  .[-1] %>%
+  lapply(function(row) {
+    row %>% html_elements("td") %>% html_text()
+  })
 
-# Filtrer les lignes du tableau
-table_start <- which(str_detect(lines, "Province/territoire"))  # Ligne du titre
-table_lines <- lines[(table_start + 1):length(lines)]  # Toutes les lignes après les titres
-table_lines <- table_lines[str_detect(table_lines, "\\S")]  # Supprimer les lignes vides
+# Convertir les données en data frame
+df <- do.call(rbind, data) %>%
+  as.data.frame(stringsAsFactors = FALSE)
 
-# Reconstruire les données en un tableau brut
-table_data <- read.table(text = paste(table_lines, collapse = "\n"), 
-                         header = FALSE, 
-                         sep = "", 
-                         fill = TRUE, 
-                         stringsAsFactors = FALSE)
+# Attribuer les noms de colonnes extraits
+names(df) <- headers
 
-# Ajouter des noms de colonnes (ajuster selon vos besoins)
-colnames(table_data) <- c("Province/territoire", "2004 (%)", "2006 (%)", "2008 (%)", 
-                          "2011 (%)", "Moyenne (%)")
-
-# Nettoyer les colonnes pour ne conserver que les données numériques
-numeric_table <- table_data %>%
-  mutate(across(where(is.character), ~ str_replace_all(., "[^0-9.,-]", ""))) %>%  # Supprimer les caractères non numériques
-  mutate(across(where(is.character), ~ as.numeric(.)))  # Convertir en numérique
-
-# Supprimer les lignes où toutes les colonnes numériques sont NA
-numeric_table <- numeric_table %>%
-  filter(rowSums(!is.na(select(., -Province/territoire))) > 0)
-
-# Visualiser le tableau final nettoyé
-print(numeric_table)
-
-# Enregistrer les données nettoyées dans un fichier CSV si nécessaire
-write.csv(numeric_table, "tableau_participation_numerique.csv", row.names = FALSE)
+# Afficher le data frame
+print(df)
 
 
 
