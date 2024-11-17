@@ -1,5 +1,6 @@
 # Charger les bibliothèques nécessaires
 library(rvest)
+library(dplyr)
 
 # URL de la page
 url <- "https://www.elections.ca/content.aspx?dir=rec/part/fvt&document=p4&lang=f&section=res"
@@ -31,31 +32,25 @@ df <- do.call(rbind, data) %>%
 # Attribuer les noms de colonnes extraits
 names(df) <- headers
 
-# Afficher le data frame
-print(df)
-
-# Inspecter la classe des données
-summary(df)
-
-# Exclure la première colonne des transformations
-df <- df %>%
+# Nettoyer et convertir les données numériques
+df_cln <- df %>%
   mutate(across(
-    .cols = -1, # Appliquer les transformations à toutes les colonnes sauf la première
+    .cols = -1, 
     .fns = ~ {
-      # Nettoyer les données pour garder uniquement les chiffres et la virgule
-      cleaned <- gsub("[^0-9,]", "", .)
-      # Remplacer la virgule par un point pour conversion en numérique
-      numeric_value <- as.numeric(gsub(",", ".", cleaned))
-      # Retourner la valeur sous forme de texte avec une virgule comme séparateur
-      format(numeric_value, decimal.mark = ",")
+      # Supprimer les espaces et remplacer la virgule par un point
+      cleaned <- gsub(" ", "", .)
+      cleaned <- gsub(",", ".", cleaned)
+      # Convertir en numérique
+      as.numeric(cleaned)
     }
   ))
 
-# Vérifier le résultat
-print(df)
+# Afficher le data frame nettoyé
+print(df_cln)
 
+# Inspecter la structure des données
+str(df_cln)
 
-# Inspecter à nouveau la classe des données de df
-
-
+# Afficher le résumé des données
+summary(df_cln)
 
