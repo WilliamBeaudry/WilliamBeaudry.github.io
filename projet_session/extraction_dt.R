@@ -34,10 +34,28 @@ names(df) <- headers
 # Afficher le data frame
 print(df)
 
+# Inspecter la classe des données
+summary(df)
+
+# Exclure la première colonne des transformations
+df <- df %>%
+  mutate(across(
+    .cols = -1, # Appliquer les transformations à toutes les colonnes sauf la première
+    .fns = ~ {
+      # Nettoyer les données pour garder uniquement les chiffres et la virgule
+      cleaned <- gsub("[^0-9,]", "", .)
+      # Remplacer la virgule par un point pour conversion en numérique
+      numeric_value <- as.numeric(gsub(",", ".", cleaned))
+      # Retourner la valeur sous forme de texte avec une virgule comme séparateur
+      format(numeric_value, decimal.mark = ",")
+    }
+  ))
+
+# Vérifier le résultat
+print(df)
 
 
-
-
+# Inspecter à nouveau la classe des données de df
 
 
 
