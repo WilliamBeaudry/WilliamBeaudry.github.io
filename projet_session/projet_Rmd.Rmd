@@ -1,6 +1,22 @@
 ---
 title: "projet.Rmd"
+author: "William Beaudry"
 output: html_document
 date: "2024-11-16"
 ---
 
+# État du savoir
+
+## Sélection des sources bibliographiques
+Pour produire cet état du savoir, nous avons eu recours à trois outils numériques de recherche. D'abord, nous avons entré notre question de recherche dans *Perplexity.ai* afin qu'il retravaille la question dans des termes optimaux pour produire une question pour le logiciel *Elicit*. Notre question de recherche « Comment expliquer la faible participation aux élections fédérales dans les Premières Nations du Québec comparativement à celles des autres provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors explain the lower voter turnout in First Nations communities in Quebec compared to other Canadian provinces in federal elections between 2004 and 2011 ? » pour faire une requête dans *Elicit*.
+
+Une fois la requête envoyé dans *Elicit*, nous avons sélectionnés les 16 premiers articles proposés. Ceux-ci étaient filtré en fonction de leur pertinence à répondre à la question de recherche et en fonction de la date. La période pour laquelle était choisi des textes étaient de 2004 à aujourd'hui.
+
+# Méthodes et données
+## Méthodologie
+## Extraction des données
+
+# Résultats
+## Visualisation
+
+# Discussion
