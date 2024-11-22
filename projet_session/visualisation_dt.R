@@ -34,14 +34,6 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
         legend.position = "right") +
   scale_color_manual(values = "red")
 
-# Code pour un line plot
-# Palette de couleurs personnalisée
-couleurs <- c("Québec" = "blue",
-              setNames(scales::hue_pal()(length(unique(df_long$`Province/territoire`)) - 1),
-                       setdiff(unique(df_long$`Province/territoire`), "Québec")))
-
-
-
 
 
 
