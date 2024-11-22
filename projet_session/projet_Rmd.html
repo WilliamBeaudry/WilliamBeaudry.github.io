@@ -423,6 +423,32 @@ ventilé selon la province.</p>
 <h1>Résultats</h1>
 <div id="visualisation" class="section level2">
 <h2>Visualisation</h2>
+<p>Nous avons fait le choix de faire deux visualisation avec les données
+que nous avons extraites. La première visualisation est un graphique à
+ligne brisée pour montrer les tendances propres aux communautés de
+chaque provinces. Le second graphique est un diagramme en points. Il
+permet d’observer la différence importante de participation entre les
+communautés autochtones du Québec et celle des autres provinces
+canadiennes. Le code que nous avons roulé pour produire ces graphiques
+sont les suivants:</p>
+<p><strong>Préparer les données</strong> df_long &lt;- df_cln %&gt;%
+pivot_longer(cols = -“Province/territoire”, names_to = “Année”,
+values_to = “Taux_participation”)</p>
+<p><strong>Graphique linéaire</strong> ggplot(df_long, aes(x = Année, y
+= Taux_participation, group = <code>Province/territoire</code>, color =
+<code>Province/territoire</code>)) + geom_line() + geom_point() +
+theme_minimal() + labs( title = “Taux de participation aux élections
+fédérales par province (2004-2011)”, x = “Année”, y = “Taux de
+participation (%)”, color = “Province” ) + theme( axis.text.x =
+element_text(angle = 45, hjust = 1), legend.position = “right” ) +
+scale_color_manual(values = couleurs)</p>
+<p><strong>Créer un graphique boxplot</strong> ggplot(df_long, aes(x =
+Année, y = Taux_participation, group = “Province/territoire”, color =
+“Province/territoire”)) + geom_line() + geom_point() + theme_minimal() +
+labs(title = “Taux de participation aux élections fédérales par province
+(2004-2011)”, x = “Année”, y = “Taux de participation (%)”, color =
+“Province”) + theme(axis.text.x = element_text(angle = 45, hjust = 1),
+legend.position = “right”) + scale_color_manual(values = “red”)</p>
 </div>
 </div>
 <div id="discussion" class="section level1">
