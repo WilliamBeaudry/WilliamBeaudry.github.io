@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="William Beaudry" />
 
 <meta name="date" content="2024-11-16" />
 
@@ -350,12 +351,83 @@ display: none;
 
 
 <h1 class="title toc-ignore">projet.Rmd</h1>
+<h4 class="author">William Beaudry</h4>
 <h4 class="date">2024-11-16</h4>
 
 </div>
 
 
-
+<div id="état-du-savoir" class="section level1">
+<h1>État du savoir</h1>
+<div id="sélection-des-sources-bibliographiques" class="section level2">
+<h2>Sélection des sources bibliographiques</h2>
+<p>Pour produire cet état du savoir, nous avons eu recours à trois
+outils numériques de recherche. D’abord, nous avons entré notre question
+de recherche dans <em>Perplexity.ai</em> afin qu’il retravaille la
+question dans des termes optimaux pour produire une question pour le
+logiciel <em>Elicit</em>. Notre question de recherche « Comment
+expliquer la faible participation aux élections fédérales dans les
+Premières Nations du Québec comparativement à celles des autres
+provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors
+explain the lower voter turnout in First Nations communities in Quebec
+compared to other Canadian provinces in federal elections between 2004
+and 2011 ? » pour faire une requête dans <em>Elicit</em>.</p>
+<p>Une fois la requête envoyé dans <em>Elicit</em>, nous avons
+sélectionnés les 16 premiers articles proposés. Ceux-ci étaient filtré
+en fonction de leur pertinence à répondre à la question de recherche et
+en fonction de la date. La période pour laquelle était choisi des textes
+étaient de 2004 à aujourd’hui.</p>
+</div>
+</div>
+<div id="méthodes-et-données" class="section level1">
+<h1>Méthodes et données</h1>
+<div id="méthodologie" class="section level2">
+<h2>Méthodologie</h2>
+</div>
+<div id="extraction-des-données" class="section level2">
+<h2>Extraction des données</h2>
+<p>Pour extraire nos données, nous avons utilisé le <em>package . En
+grande partie, le processus de création du code R a été un long échange
+entre la fonctionnalité </em>R Wizard* de ChatGPT et l’IA
+<em>Perplexity.ai</em>. Le code que nous avons roulé pour extraire les
+données est le suivant:</p>
+<p><strong>Charger les bibliothèques nécessaires</strong> library(rvest)
+library(dplyr)</p>
+<p><strong>URL de la page</strong> url &lt;- “<a href="https://www.elections.ca/content.aspx?dir=rec/part/fvt&amp;document=p4&amp;lang=f&amp;section=res" class="uri">https://www.elections.ca/content.aspx?dir=rec/part/fvt&amp;document=p4&amp;lang=f&amp;section=res</a>”</p>
+<p><strong>Lire le contenu HTML de la page</strong> page &lt;-
+read_html(url)</p>
+<p><strong>Extraire les lignes du tableau avec les balises “tr”</strong>
+table_rows &lt;- page %&gt;% html_elements(“tr”)</p>
+<p><strong>Récupérer le contenu des balises “th” (en-têtes de
+colonnes)</strong> headers &lt;- table_rows %&gt;% .[1] %&gt;%
+html_elements(“th”) %&gt;% html_text()</p>
+<p><strong>Extraire les données des balises “td” pour les rangées
+restantes</strong> data &lt;- table_rows %&gt;% .[-1] %&gt;%
+lapply(function(row) { row %&gt;% html_elements(“td”) %&gt;% html_text()
+})</p>
+<p><strong>Convertir les données en data frame</strong> df &lt;-
+do.call(rbind, data) %&gt;% as.data.frame(stringsAsFactors = FALSE)</p>
+<p><strong>Attribuer les noms de colonnes extraits</strong> names(df)
+&lt;- headers</p>
+<p><strong>Nettoyer et convertir les données numériques</strong> df_cln
+&lt;- df %&gt;% mutate(across( .cols = -1, .fns = ~ { # Supprimer les
+espaces et remplacer la virgule par un point cleaned &lt;- gsub(” “,”“,
+.) cleaned &lt;- gsub(”,“,”.”, cleaned) # Convertir en numérique
+as.numeric(cleaned) } ))</p>
+<p>Ce code nous a permit de créer une tableau des taux de participation
+des communautés autochtones aux élections fédérales de 2004 à 2011
+ventilé selon la province.</p>
+</div>
+</div>
+<div id="résultats" class="section level1">
+<h1>Résultats</h1>
+<div id="visualisation" class="section level2">
+<h2>Visualisation</h2>
+</div>
+</div>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
+</div>
 
 
 
