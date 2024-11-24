@@ -1,11 +1,19 @@
 ---
-title: "projet.Rmd"
+title: "Ce qui distingue les communautés autochtones du Québec à celles des autres provinces: la participation aux élections fédérales de 2004 à 2011"
 author: "William Beaudry"
 output: html_document
 date: "2024-11-16"
+bibliography: references.bib
 ---
 
 # État du savoir
+Être autochtone est une expérience qui regroupe les membres des différentes nations et communautés des Premières Nations du Canada et d'ailleurs. L'édification de l'État colonial canadien s'est fait au dépends des premiers peuples. Marginalisés, confinés à des réserves dépourvus de la plupart des droits politiques des autres citoyens du Canada, ce n'est qu'en 1960 que le gouvernement fédéral de John Diefenbaker leur octroi le vote. Certaines législatures provinciales l'avaient déjà fait ou l'on fait par la suite, le Québec étant la dernière province à leur donner le droit de vote en 1969, sans débats ni revendications.
+
+La province du Québec peut représenter sur les plans sociaux et historiques une expériences fortement différentes pour les membres des Premiers peuples par rapport à leurs semblables dans les autres provinces. La langue et le nationalisme étant deux traits distinctifs de la société québécoises pouvant avoir des conséquences qui se distingue des conséquences des contextes dans les autres provinces. Il en reste qu'un aspect politico-administratif s'impose l'expérience des communautés autochtones dans leur pratique du droit de vote d'une mer à l'autre: la taille des circonscriptions.
+
+Quels facteurs ont été mobilisés par les chercheurs pour expliquer la participation électorale des membres des Premières nations aux élections fédérales ? Plusieurs rapports postélectoraux ont mobilisé une approche centrée sur les ressources socio-économiques. Celles-ci sont univoques: les différences de statut socio-économique entre les membres des Premières nations et les Allochtones expliqueraient la moitié de l'écart de participation entre ces deux groupes [@harell2010]. L'autre moitié de l'explication résiderait donc dans une expérience qui est proprement autochtone.
+
+Parmis les facteurs institutionnels, plusieurs auteurs se sont penché sur la question de la taille des circonscriptions électorales ainsi que du rôle de l'information politique fournies par les institutions électorales. La taille de l'électorat est un facteur multidimensionnel. Il peut d'abord être abordé sous l'angle du choix rationel, où les électeurs autochtones, évaluant la taille de leur communauté, choisissent ou non de voter s'ils croivent que les membres de leur communauté peuvent influencer le choix du représentant en leur faveur [@hill2010].
 
 ## Sélection des sources bibliographiques
 Pour produire cet état du savoir, nous avons eu recours à trois outils numériques de recherche. D'abord, nous avons entré notre question de recherche dans *Perplexity.ai* afin qu'il retravaille la question dans des termes optimaux pour produire une question pour le logiciel *Elicit*. Notre question de recherche « Comment expliquer la faible participation aux élections fédérales dans les Premières Nations du Québec comparativement à celles des autres provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors explain the lower voter turnout in First Nations communities in Quebec compared to other Canadian provinces in federal elections between 2004 and 2011 ? » pour faire une requête dans *Elicit*.
@@ -103,3 +111,22 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
   scale_color_manual(values = "red")
 
 # Discussion
+
+# Bibliographie
+article{harell2010explaining,
+  title={Explaining Aboriginal turnout in federal elections: Evidence from Alberta, Saskatchewan, and Manitoba},
+  author={Harell, Allison and Panagos, Dimitrios and Matthews, J Scott},
+  year={2010}
+}
+
+@article{hill2010voting,
+  title={Voting attitudes and behaviour among Aboriginal peoples: Reports from Anangu women},
+  author={Hill, Lisa and Alport, Kate},
+  journal={Australian Journal of Politics \& History},
+  volume={56},
+  number={2},
+  pages={242--258},
+  year={2010},
+  publisher={Wiley Online Library}
+}
+
