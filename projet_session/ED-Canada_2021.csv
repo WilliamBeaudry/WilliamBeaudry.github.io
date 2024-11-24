@@ -1,0 +1,114 @@
+ED_CODE,ED_NAMEE,ED_NAMEF,POPULATION
+10003,Coast of Bays--Central--Notre Dame,Coast of Bays--Central--Notre Dame,74201
+10004,Labrador,Labrador,26655
+11001,Cardigan,Cardigan,39866
+11003,Egmont,Egmont,35925
+11004,Malpeque,Malpeque,39731
+12001,Cape Breton--Canso,Cape Breton--Canso,71380
+12002,Central Nova,Nova-Centre,73188
+12003,Cumberland--Colchester,Cumberland--Colchester,82014
+12004,Dartmouth--Cole Harbour,Dartmouth--Cole Harbour,96165
+12006,Halifax West,Halifax-Ouest,111944
+12007,Kings--Hants,Kings--Hants,87744
+12008,Sackville--Preston--Chezzetcook,Sackville--Preston--Chezzetcook,89524
+12009,South Shore--St. Margarets,South Shore--St. Margarets,94482
+12010,Sydney--Victoria,Sydney--Victoria,72361
+12011,West Nova,Nova-Ouest,83571
+13001,Acadie--Bathurst,Acadie--Bathurst,77594
+13002,Beauséjour,Beauséjour,88797
+13003,Fredericton,Fredericton,87436
+13005,Madawaska--Restigouche,Madawaska--Restigouche,60184
+13006,Miramichi--Grand Lake,Miramichi--Grand Lake,57520
+13008,New Brunswick Southwest,Nouveau-Brunswick-Sud-Ouest,67781
+13010,Tobique--Mactaquac,Tobique--Mactaquac,69344
+24001,Abitibi--Baie-James--Nunavik--Eeyou,Abitibi--Baie-James--Nunavik--Eeyou,89087
+24002,Abitibi--Témiscamingue,Abitibi--Témiscamingue,103735
+24006,Avignon--La Mitis--Matane--Matapédia,Avignon--La Mitis--Matane--Matapédia,70253
+24009,Bécancour--Nicolet--Saurel,Bécancour--Nicolet--Saurel,96439
+24031,Joliette,Joliette,112418
+24034,La Prairie,La Prairie,114968
+24035,Lac-Saint-Jean,Lac-Saint-Jean,103886
+24038,Laurentides--Labelle,Laurentides--Labelle,123796
+24045,Louis-Saint-Laurent,Louis-Saint-Laurent,123123
+24046,Manicouagan,Manicouagan,88525
+24048,Mirabel,Mirabel,132930
+24057,Pontiac,Pontiac,129781
+24070,Saint-Maurice--Champlain,Saint-Maurice--Champlain,111997
+24071,Salaberry--Suroît,Salaberry--Suroît,119351
+35002,Algoma--Manitoulin--Kapuskasing,Algoma--Manitoulin--Kapuskasing,80310
+35013,Brantford--Brant,Brantford--Brant,140139
+35014,Bruce--Grey--Owen Sound,Bruce--Grey--Owen Sound,113348
+35017,Chatham-Kent--Leamington,Chatham-Kent--Leamington,113654
+35023,Durham,Durham,150235
+35039,Hastings--Lennox and Addington,Hastings--Lennox and Addington,100636
+35042,Kenora,Kenora,64261
+35048,Lambton--Kent--Middlesex,Lambton--Kent--Middlesex,111242
+35069,Nickel Belt,Nickel Belt,94947
+35070,Nipissing--Timiskaming,Nipissing--Timiskaming,89781
+35071,Northumberland--Peterborough South,Northumberland--Peterborough-Sud,118756
+35082,Parry Sound--Muskoka,Parry Sound--Muskoka,104494
+35084,Peterborough--Kawartha,Peterborough--Kawartha,125478
+35086,Renfrew--Nipissing--Pembroke,Renfrew--Nipissing--Pembroke,107420
+35091,Sarnia--Lambton,Sarnia--Lambton,107077
+35092,Sault Ste. Marie,Sault Ste. Marie,79331
+35100,Simcoe North,Simcoe-Nord,120656
+35105,Thunder Bay--Rainy River,Thunder Bay--Rainy River,82357
+35106,Thunder Bay--Superior North,Thunder Bay--Supérieur-Nord,83325
+35107,Timmins--James Bay,Timmins--Baie James,80785
+35119,York--Simcoe,York--Simcoe,124458
+46001,Brandon--Souris,Brandon--Souris,89812
+46003,Churchill--Keewatinook Aski,Churchill--Keewatinook Aski,81258
+46004,Dauphin--Swan River--Neepawa,Dauphin--Swan River--Neepawa,89503
+46007,Portage--Lisgar,Portage--Lisgar,100417
+46008,Provencher,Provencher,109445
+46010,Selkirk--Interlake--Eastman,Selkirk--Interlake--Eastman,101373
+47001,Battlefords--Lloydminster,Battlefords--Lloydminster,70918
+47002,Cypress Hills--Grasslands,Cypress Hills--Grasslands,68314
+47003,Desnethé--Missinippi--Churchill River,Desnethé--Missinippi--Rivière Churchill,71488
+47004,Carlton Trail--Eagle Creek,Sentier Carlton--Eagle Creek,83395
+47005,Moose Jaw--Lake Centre--Lanigan,Moose Jaw--Lake Centre--Lanigan,80547
+47006,Prince Albert,Prince Albert,80845
+47008,Regina--Qu'Appelle,Regina--Qu'Appelle,78140
+47013,Souris--Moose Mountain,Souris--Moose Mountain,70579
+47014,Yorkton--Melville,Yorkton--Melville,71220
+48001,Banff--Airdrie,Banff--Airdrie,155580
+48003,Bow River,Bow River,119458
+48021,Edmonton--Wetaskiwin,Edmonton--Wetaskiwin,209431
+48022,Foothills,Foothills,115118
+48023,Fort McMurray--Cold Lake,Fort McMurray--Cold Lake,110163
+48024,Grande Prairie--Mackenzie,Grande Prairie--Mackenzie,119586
+48025,Lakeland,Lakeland,105993
+48027,Medicine Hat--Cardston--Warner,Medicine Hat--Cardston--Warner,108391
+48028,Peace River--Westlock,Peace River--Westlock,107223
+48030,Red Deer--Lacombe,Red Deer--Lacombe,131575
+48033,Sturgeon River--Parkland,Sturgeon River--Parkland,124849
+48034,Yellowhead,Yellowhead,99218
+59001,Abbotsford,Abbotsford,110331
+59002,Burnaby North--Seymour,Burnaby-Nord--Seymour,108794
+59004,Cariboo--Prince George,Cariboo--Prince George,111226
+59005,Central Okanagan--Similkameen--Nicola,Central Okanagan--Similkameen--Nicola,122340
+59006,Chilliwack--Hope,Chilliwack--Hope,112037
+59008,Coquitlam--Port Coquitlam,Coquitlam--Port Coquitlam,132004
+59009,Courtenay--Alberni,Courtenay--Alberni,125116
+59010,Cowichan--Malahat--Langford,Cowichan--Malahat--Langford,124247
+59011,Delta,Delta,110721
+59012,Fleetwood--Port Kells,Fleetwood--Port Kells,124987
+59013,Kamloops--Thompson--Cariboo,Kamloops--Thompson--Cariboo,135492
+59014,Kelowna--Lake Country,Kelowna--Lake Country,136290
+59015,Kootenay--Columbia,Kootenay--Columbia,120759
+59016,Langley--Aldergrove,Langley--Aldergrove,133168
+59017,Mission--Matsqui--Fraser Canyon,Mission--Matsqui--Fraser Canyon,101216
+59018,Nanaimo--Ladysmith,Nanaimo--Ladysmith,134509
+59020,North Okanagan--Shuswap,North Okanagan--Shuswap,136520
+59021,North Vancouver,North Vancouver,123025
+59022,Pitt Meadows--Maple Ridge,Pitt Meadows--Maple Ridge,110416
+59023,Port Moody--Coquitlam,Port Moody--Coquitlam,114853
+59026,Esquimalt--Saanich--Sooke,Esquimalt--Saanich--Sooke,128644
+59027,Saanich--Gulf Islands,Saanich--Gulf Islands,113541
+59028,Skeena--Bulkley Valley,Skeena--Bulkley Valley,89689
+59029,South Okanagan--West Kootenay,Okanagan-Sud--Kootenay-Ouest,123487
+59030,South Surrey--White Rock,Surrey-Sud--White Rock,119672
+59037,North Island--Powell River,North Island--Powell River,111825
+59039,Vancouver Quadra,Vancouver Quadra,109328
+59042,West Vancouver--Sunshine Coast--Sea to Sky Country,West Vancouver--Sunshine Coast--Sea to Sky Country,131206
+61001,Northwest Territories,Territoires du Nord-Ouest,41070
