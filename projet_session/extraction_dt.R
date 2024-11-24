@@ -54,23 +54,6 @@ str(df_cln)
 # Afficher le résumé des données
 summary(df_cln)
 
-# Extraire les données du nombre d'électeurs par circonscriptions où se trouvent des électeurs autochtones
-# Installer les bibliothèques nécessaires si ce n'est pas encore fait
-if (!require("tidyverse")) install.packages("tidyverse")
-if (!require("rvest")) install.packages("rvest")
-
-library(tidyverse)
-library(rvest)
-
-# Installer les bibliothèques nécessaires si ce n'est pas encore fait
-if (!require("tidyverse")) install.packages("tidyverse")
-if (!require("rvest")) install.packages("rvest")
-
-library(tidyverse)
-library(rvest)
-
-
-
 
 
 
