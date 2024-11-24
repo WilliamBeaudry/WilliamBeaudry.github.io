@@ -22,7 +22,8 @@ Une dernière dimension de la taille de la circonscription est sa composition d�
 À partir de ce très bref État du savoir, nous en venons à découler X hypothèses. D'abord, nous nous attendons que la proportion plus faible d'électeurs autochtones dans la province du Québec ait plusieurs effets qui décourage la participation électorale.
 
 *H1: l'absence de masse critique des électeurs autochtones dans les circonscriptions fédérales au Québec influence négativement la participation aux élections*
-*H2: la distance entre les communautés autochtones et les centres urbains découragent la mobilisation partisane et la saillance des élections auprès des électeurs autochtones*
+
+*H2: la distance entre les communautés autochtones et les centres urbains découragent la mobilisation partisane et la saillance des élections auprès des électeurs autochtones, ce qui a pour conséquence d'influencer négativement la participation des communautés aux élections fédérales*
 
 ## Sélection des sources bibliographiques
 Pour produire cet état du savoir, nous avons eu recours à trois outils numériques de recherche. D'abord, nous avons entré notre question de recherche dans *Perplexity.ai* afin qu'il retravaille la question dans des termes optimaux pour produire une question pour le logiciel *Elicit*. Notre question de recherche « Comment expliquer la faible participation aux élections fédérales dans les Premières Nations du Québec comparativement à celles des autres provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors explain the lower voter turnout in First Nations communities in Quebec compared to other Canadian provinces in federal elections between 2004 and 2011 ? » pour faire une requête dans *Elicit*.
