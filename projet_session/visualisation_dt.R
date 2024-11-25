@@ -34,6 +34,26 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
         legend.position = "right") +
   scale_color_manual(values = "red")
 
+# Visualisation du nombre d'électeurs par circonscription, par province
+# Charger les bibliothèques nécessaires
+library(tidyverse)
+
+# Lire les données
+data <- read.csv("projet_session/ED-Canada_2021_prov_tx_part.csv")
+
+# Calculer le nombre moyen d'électeurs par province
+moyennes_par_province <- data %>%
+  group_by("Province") %>%
+  summarise(NombreMoyenElecteurs = mean("POPULATION", na.rm = TRUE))
+
+# Créer le graphique avec ggplot2
+ggplot(moyennes_par_province, aes(x = reorder(Province, -NombreMoyenElecteurs), y = NombreMoyenElecteurs)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  coord_flip() + # Tourne le graphique pour une meilleure lisibilité
+  labs(title = "Nombre moyen d'électeurs par province",
+       x = "Province",
+       y = "Nombre moyen d'électeurs") +
+  theme_minimal()
 
 
 
