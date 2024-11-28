@@ -371,15 +371,6 @@ Diefenbaker leur octroi le vote. Certaines législatures provinciales
 l’avaient déjà fait ou l’on fait par la suite, le Québec étant la
 dernière province à leur donner le droit de vote en 1969, sans débats ni
 revendications.</p>
-<p>La province du Québec peut représenter sur les plans sociaux et
-historiques une expériences fortement différentes pour les membres des
-Premiers peuples par rapport à leurs semblables dans les autres
-provinces. La langue et le nationalisme étant deux traits distinctifs de
-la société québécoises pouvant avoir des conséquences qui se distingue
-des conséquences des contextes dans les autres provinces. Il en reste
-qu’un aspect politico-administratif s’impose l’expérience des
-communautés autochtones dans leur pratique du droit de vote d’une mer à
-l’autre: la taille des circonscriptions.</p>
 <p>Quels facteurs ont été mobilisés par les chercheurs pour expliquer la
 participation électorale des membres des Premières nations aux élections
 fédérales ? Plusieurs rapports postélectoraux ont mobilisé une approche
@@ -387,14 +378,15 @@ centrée sur les ressources socio-économiques. Celles-ci sont univoques:
 les différences de statut socio-économique entre les membres des
 Premières nations et les Allochtones expliqueraient la moitié de l’écart
 de participation entre ces deux groupes <span class="citation">[@harell2010]</span>. L’autre moitié de l’explication
-résiderait donc dans une expérience qui est proprement autochtone.</p>
-<p>Parmis les facteurs institutionnels, plusieurs auteurs se sont penché
+résiderait donc dans une expérience qui est proprement autochtone, donc
+des facteurs structurels.</p>
+<p>Parmi les facteurs institutionnels, plusieurs auteurs se sont penché
 sur la question de la taille des circonscriptions électorales ainsi que
 du rôle de l’information politique fournies par les institutions
 électorales. La taille de l’électorat est un facteur multidimensionnel.
 Il peut d’abord être abordé sous l’angle du choix rationel, où les
 électeurs autochtones, évaluant la taille de leur communauté,
-choisissent ou non de voter s’ils croivent que les membres de leur
+choisissent ou non de voter s’ils croient que les membres de leur
 communauté peuvent influencer le choix du représentant en leur faveur
 <span class="citation">[@hill2010]</span>.</p>
 <p>Une autre dimension de la taille des circonscriptions, cette fois-ci
@@ -430,18 +422,16 @@ déprécie la participation électorale dans la province, ce qui ne serait
 pas le cas dans les autres provinces.</p>
 <div id="hypothèses" class="section level2">
 <h2>Hypothèses</h2>
-<p>À partir de ce très bref État du savoir, nous en venons à découler X
+<p>À partir de ce très bref État du savoir, nous en venons à découler 2
 hypothèses. D’abord, nous nous attendons que la proportion plus faible
 d’électeurs autochtones dans la province du Québec ait plusieurs effets
 qui décourage la participation électorale.</p>
 <p><em>H1: l’absence de masse critique des électeurs autochtones dans
 les circonscriptions fédérales au Québec influence négativement la
 participation aux élections</em></p>
-<p><em>H2: la distance entre les communautés autochtones et les centres
-urbains découragent la mobilisation partisane et la saillance des
-élections auprès des électeurs autochtones, ce qui a pour conséquence
-d’influencer négativement la participation des communautés aux élections
-fédérales</em></p>
+<p><em>H2: les caractéristiques linguistiques propres au Québec ont une
+influence négative et plus forte sur la participation électorale des
+communautés autochtones du Québec que dans le reste du Canada</em></p>
 </div>
 <div id="sélection-des-sources-bibliographiques" class="section level2">
 <h2>Sélection des sources bibliographiques</h2>
@@ -455,7 +445,7 @@ Premières Nations du Québec comparativement à celles des autres
 provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors
 explain the lower voter turnout in First Nations communities in Quebec
 compared to other Canadian provinces in federal elections between 2004
-and 2011 ? » pour faire une requête dans <em>Elicit</em>.</p>
+and 2021 ? » pour faire une requête dans <em>Elicit</em>.</p>
 <p>Une fois la requête envoyé dans <em>Elicit</em>, nous avons
 sélectionnés les 16 premiers articles proposés. Ceux-ci étaient filtré
 en fonction de leur pertinence à répondre à la question de recherche et
@@ -501,6 +491,24 @@ as.numeric(cleaned) } ))</p>
 <p>Ce code nous a permit de créer une tableau des taux de participation
 des communautés autochtones aux élections fédérales de 2004 à 2011
 ventilé selon la province.</p>
+<p>Nous avons utilisé une deuxième source de données, soit la taille de
+la population dans les circonscriptions où se trouvent des communautés
+autochtones au Canada ainsi que le nombre d’électeurs autochtones
+inscrits et le taux de participation de ces électeurs. Les données
+étaient présentées dans un document CSV et dans un rapport
+institutionnel d’Élection Canada. La compilation des données d’électeurs
+autochtones inscrits et de la participation électorale ont été ajoutées
+manuellement au document CSV des données populationnelles de chaque
+circonscription.</p>
+<p>Les données sont issues de 2021, ce qui pourrait potentiellement
+introduire un biais non-négligeable étant donnée que la croissance
+démographique des communautés autochtones est plus rapide que celles des
+communautés environnantes. Leur proportion dans les circonscriptions
+devrait avoir augmenté sensiblement entre 2011 et 2021. Cela dit, dans
+une perspective comparant les cas des communautés autochtones au Québec
+et celles du restes du Canada, il nous appert que la croissance
+relativement similaire entre les communautés des différentes provinces
+devrait être peu importante.</p>
 </div>
 </div>
 <div id="résultats" class="section level1">
@@ -533,6 +541,47 @@ labs(title = “Taux de participation aux élections fédérales par province
 (2004-2011)”, x = “Année”, y = “Taux de participation (%)”, color =
 “Province”) + theme(axis.text.x = element_text(angle = 45, hjust = 1),
 legend.position = “right”) + scale_color_manual(values = “red”)</p>
+<p><strong>Calcul de la proportion d’électeurs autochtones dans la
+population</strong> df &lt;- ED_Canada_2021_prov_tx_part %&gt;%
+mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)</p>
+<p><strong>Calcul du coefficient de corrélation global</strong>
+correlation &lt;- cor(df<span class="math inline">\(prop_indigenous,
+df\)</span>TAUX_PARTICIPATION, use = “complete.obs”)</p>
+<p><strong>Affichage du résultat</strong> print(paste(“Le coefficient de
+corrélation est:”, round(correlation, 3)))</p>
+<p><strong>Création du graphique avec échelles logarithmiques</strong>
+ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
+geom_point(alpha = 0.6, color = “blue”) + # Nuage de points
+geom_smooth(method = “lm”, color = “red”, se = TRUE) + # Ligne de
+régression scale_x_log10() + # Échelle logarithmique pour l’axe X labs(
+title = “Relation (log) entre la proportion d’électeurs autochtones et
+le taux de participation”, x = “Proportion d’électeurs autochtones
+(log10)”, y = “Taux de participation (%)” ) + theme_minimal() + theme(
+plot.title = element_text(hjust = 0.5), # Centrage du titre text =
+element_text(size = 12) )</p>
+<p><strong>Calculer la proportion d’électeurs autochtones</strong> df
+&lt;- df %&gt;% mutate(prop_indigenous = ELECTEURS_AUTOCHTONES /
+POPULATION)</p>
+<p><strong>Calcul des coefficients de corrélation par province</strong>
+correlation_by_province &lt;- df %&gt;% group_by(PROV) %&gt;% summarize(
+correlation = cor(prop_indigenous, TAUX_PARTICIPATION, use =
+“complete.obs”) )</p>
+<p><strong>Affichage des résultats</strong>
+print(correlation_by_province)</p>
+<p><strong>Calcul de la proportion d’électeurs autochtones</strong> df
+&lt;- df %&gt;% mutate(prop_indigenous = ELECTEURS_AUTOCHTONES /
+POPULATION)</p>
+<p><strong>Création d’un graphique avec une facette par
+province</strong> ggplot(df, aes(x = prop_indigenous, y =
+TAUX_PARTICIPATION, color = PROV)) + geom_point(size = 1, alpha = 0.7) +
+geom_smooth(method = “lm”, se = FALSE, linetype = “dashed”, size = 1) +
+# Droites de régression scale_x_log10() + labs( title = “Proportion
+d’électeurs autochtones vs Taux de participation”, x = “Proportion
+d’électeurs autochtones (log10)”, y = “Taux de participation (%)” ) +
+facet_wrap(~PROV) + theme_minimal() + theme( plot.title =
+element_text(hjust = 0.5), # Centrage du titre text = element_text(size
+= 12), legend.position = “none” # Supprime la légende pour chaque
+facette )</p>
 </div>
 </div>
 <div id="discussion" class="section level1">

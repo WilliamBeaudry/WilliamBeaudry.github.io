@@ -34,26 +34,75 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
         legend.position = "right") +
   scale_color_manual(values = "red")
 
-# Visualisation du nombre d'électeurs par circonscription, par province
-# Charger les bibliothèques nécessaires
-library(tidyverse)
+# Calcul de la proportion d'électeurs autochtones dans la population
+df <- ED_Canada_2021_prov_tx_part %>%
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
 
-# Lire les données
-data <- read.csv("projet_session/ED-Canada_2021_prov_tx_part.csv")
+# Calcul du coefficient de corrélation global
+correlation <- cor(df$prop_indigenous, df$TAUX_PARTICIPATION, use = "complete.obs")
 
-# Calculer le nombre moyen d'électeurs par province
-moyennes_par_province <- data %>%
-  group_by("Province") %>%
-  summarise(NombreMoyenElecteurs = mean("POPULATION", na.rm = TRUE))
+# Affichage du résultat
+print(paste("Le coefficient de corrélation est:", round(correlation, 3)))
 
-# Créer le graphique avec ggplot2
-ggplot(moyennes_par_province, aes(x = reorder(Province, -NombreMoyenElecteurs), y = NombreMoyenElecteurs)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  coord_flip() + # Tourne le graphique pour une meilleure lisibilité
-  labs(title = "Nombre moyen d'électeurs par province",
-       x = "Province",
-       y = "Nombre moyen d'électeurs") +
-  theme_minimal()
+library(ggplot2)
+
+# Création du graphique avec échelles logarithmiques
+ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
+  geom_point(alpha = 0.6, color = "blue") + # Nuage de points
+  geom_smooth(method = "lm", color = "red", se = TRUE) + # Ligne de régression
+  scale_x_log10() + # Échelle logarithmique pour l'axe X
+  labs(
+    title = "Relation (log) entre la proportion d'électeurs autochtones et le taux de participation",
+    x = "Proportion d'électeurs autochtones (log10)",
+    y = "Taux de participation (%)"
+  ) +
+  theme_minimal() + # Thème épuré
+  theme(
+    plot.title = element_text(hjust = 0.5), # Centrage du titre
+    text = element_text(size = 12)
+  )
+
+library(dplyr)
+
+# Calculer la proportion d'électeurs autochtones
+df <- df %>%
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
+
+# Calcul des coefficients de corrélation par province
+correlation_by_province <- df %>%
+  group_by(PROV) %>%
+  summarize(
+    correlation = cor(prop_indigenous, TAUX_PARTICIPATION, use = "complete.obs")
+  )
+
+# Affichage des résultats
+print(correlation_by_province)
+
+library(ggplot2)
+library(dplyr)
+
+# Calcul de la proportion d'électeurs autochtones
+df <- df %>%
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
+
+# Création d'un graphique avec une facette par province
+ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
+  geom_point(size = 1, alpha = 0.7) + # Points avec transparence
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", size = 1) + # Droites de régression
+  scale_x_log10() + # Transformation logarithmique sur l'axe X
+  labs(
+    title = "Proportion d'électeurs autochtones vs Taux de participation",
+    x = "Proportion d'électeurs autochtones (log10)",
+    y = "Taux de participation (%)"
+  ) +
+  facet_wrap(~PROV) + # Facettage par province
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5), # Centrage du titre
+    text = element_text(size = 12),
+    legend.position = "none" # Supprime la légende pour chaque facette
+  )
+
 
 
 

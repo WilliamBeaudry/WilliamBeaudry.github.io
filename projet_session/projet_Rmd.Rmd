@@ -8,25 +8,23 @@ date: "2024-11-16"
 # État du savoir
 Être autochtone est une expérience qui regroupe les membres des différentes nations et communautés des Premières Nations du Canada et d'ailleurs. L'édification de l'État colonial canadien s'est fait au dépends des premiers peuples. Marginalisés, confinés à des réserves dépourvus de la plupart des droits politiques des autres citoyens du Canada, ce n'est qu'en 1960 que le gouvernement fédéral de John Diefenbaker leur octroi le vote. Certaines législatures provinciales l'avaient déjà fait ou l'on fait par la suite, le Québec étant la dernière province à leur donner le droit de vote en 1969, sans débats ni revendications.
 
-La province du Québec peut représenter sur les plans sociaux et historiques une expériences fortement différentes pour les membres des Premiers peuples par rapport à leurs semblables dans les autres provinces. La langue et le nationalisme étant deux traits distinctifs de la société québécoises pouvant avoir des conséquences qui se distingue des conséquences des contextes dans les autres provinces. Il en reste qu'un aspect politico-administratif s'impose l'expérience des communautés autochtones dans leur pratique du droit de vote d'une mer à l'autre: la taille des circonscriptions.
+Quels facteurs ont été mobilisés par les chercheurs pour expliquer la participation électorale des membres des Premières nations aux élections fédérales ? Plusieurs rapports postélectoraux ont mobilisé une approche centrée sur les ressources socio-économiques. Celles-ci sont univoques: les différences de statut socio-économique entre les membres des Premières nations et les Allochtones expliqueraient la moitié de l'écart de participation entre ces deux groupes [@harell2010]. L'autre moitié de l'explication résiderait donc dans une expérience qui est proprement autochtone, donc des facteurs structurels.
 
-Quels facteurs ont été mobilisés par les chercheurs pour expliquer la participation électorale des membres des Premières nations aux élections fédérales ? Plusieurs rapports postélectoraux ont mobilisé une approche centrée sur les ressources socio-économiques. Celles-ci sont univoques: les différences de statut socio-économique entre les membres des Premières nations et les Allochtones expliqueraient la moitié de l'écart de participation entre ces deux groupes [@harell2010]. L'autre moitié de l'explication résiderait donc dans une expérience qui est proprement autochtone.
-
-Parmis les facteurs institutionnels, plusieurs auteurs se sont penché sur la question de la taille des circonscriptions électorales ainsi que du rôle de l'information politique fournies par les institutions électorales. La taille de l'électorat est un facteur multidimensionnel. Il peut d'abord être abordé sous l'angle du choix rationel, où les électeurs autochtones, évaluant la taille de leur communauté, choisissent ou non de voter s'ils croivent que les membres de leur communauté peuvent influencer le choix du représentant en leur faveur [@hill2010]. 
+Parmi les facteurs institutionnels, plusieurs auteurs se sont penché sur la question de la taille des circonscriptions électorales ainsi que du rôle de l'information politique fournies par les institutions électorales. La taille de l'électorat est un facteur multidimensionnel. Il peut d'abord être abordé sous l'angle du choix rationel, où les électeurs autochtones, évaluant la taille de leur communauté, choisissent ou non de voter s'ils croient que les membres de leur communauté peuvent influencer le choix du représentant en leur faveur [@hill2010]. 
 
 Une autre dimension de la taille des circonscriptions, cette fois-ci faisant référence à son étendue géographique, est l'éloignement des communautés. Les électeurs éloignées de centres urbains ont une plus grande propension à être marginalisé par les partis politiques et la couverture médiatique lors de campagnes électorales étant donné des coûts de déplacement [@hill2010]. Les communautés autochtones au Québec, étant généralement loin des centres urbains, pourraient faire fasse à ce genre d'enjeux d'éloignement, tandis que dans d'autres provinces, nombre de communautés sont plus près des centres urbains.
 
 Une dernière dimension de la taille de la circonscription est sa composition démographique. Les circonscriptions électorales plus grandes en termes d'électeurs sont également plus diversifiées sur les aspects ethno-culturels. La diversité linguistiques surtout serait un facteur qui déprécient la participation électorale [@armstrong2024]. Ici, vu la plus faible proportion d'électeurs autochtones dans les circonscriptions électorales, il serait probable que l'homogénéité de la circonscription soit un facteur discriminant les Premières nations. Si le facteur linguistique semble important, Harell et al. 2010 observent une corrélation entre la langue et la participation qui va à l'encontre des attentes: des communautés qui parlent le Cri participent davantage aux élections fédérales que celles parlant l'anglais courrament [@harell2010]. Les Premières nations du Québec sont celles dont les langues traditionnelles sont les plus vivantes du pays et il en est de même pour les Nunavimmiut et l'usage de l'Inuktitut au sein de l'Inuit Nunangat. Cependant, cette relation peut être le produit de l'histoire et des contextes coloniaux propres aux différentes communautés [@harell2010]. Comme la langue seconde de nombre de communautés autochtones au Québec est l'anglais, la vie dans un espace francophone pourrait intervenir comme facteur qui déprécie la participation électorale dans la province, ce qui ne serait pas le cas dans les autres provinces.
 
 ## Hypothèses
-À partir de ce très bref État du savoir, nous en venons à découler X hypothèses. D'abord, nous nous attendons que la proportion plus faible d'électeurs autochtones dans la province du Québec ait plusieurs effets qui décourage la participation électorale.
+À partir de ce très bref État du savoir, nous en venons à découler 2 hypothèses. D'abord, nous nous attendons que la proportion plus faible d'électeurs autochtones dans la province du Québec ait plusieurs effets qui décourage la participation électorale.
 
 *H1: l'absence de masse critique des électeurs autochtones dans les circonscriptions fédérales au Québec influence négativement la participation aux élections*
 
-*H2: la distance entre les communautés autochtones et les centres urbains découragent la mobilisation partisane et la saillance des élections auprès des électeurs autochtones, ce qui a pour conséquence d'influencer négativement la participation des communautés aux élections fédérales*
+*H2: les caractéristiques linguistiques propres au Québec ont une influence négative et plus forte sur la participation électorale des communautés autochtones du Québec que dans le reste du Canada*
 
 ## Sélection des sources bibliographiques
-Pour produire cet état du savoir, nous avons eu recours à trois outils numériques de recherche. D'abord, nous avons entré notre question de recherche dans *Perplexity.ai* afin qu'il retravaille la question dans des termes optimaux pour produire une question pour le logiciel *Elicit*. Notre question de recherche « Comment expliquer la faible participation aux élections fédérales dans les Premières Nations du Québec comparativement à celles des autres provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors explain the lower voter turnout in First Nations communities in Quebec compared to other Canadian provinces in federal elections between 2004 and 2011 ? » pour faire une requête dans *Elicit*.
+Pour produire cet état du savoir, nous avons eu recours à trois outils numériques de recherche. D'abord, nous avons entré notre question de recherche dans *Perplexity.ai* afin qu'il retravaille la question dans des termes optimaux pour produire une question pour le logiciel *Elicit*. Notre question de recherche « Comment expliquer la faible participation aux élections fédérales dans les Premières Nations du Québec comparativement à celles des autres provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors explain the lower voter turnout in First Nations communities in Quebec compared to other Canadian provinces in federal elections between 2004 and 2021 ? » pour faire une requête dans *Elicit*.
 
 Une fois la requête envoyé dans *Elicit*, nous avons sélectionnés les 16 premiers articles proposés. Ceux-ci étaient filtré en fonction de leur pertinence à répondre à la question de recherche et en fonction de la date. La période pour laquelle était choisi des textes étaient de 2004 à aujourd'hui.
 
@@ -84,6 +82,10 @@ df_cln <- df %>%
 
 Ce code nous a permit de créer une tableau des taux de participation des communautés autochtones aux élections fédérales de 2004 à 2011 ventilé selon la province.
 
+Nous avons utilisé une deuxième source de données, soit la taille de la population dans les circonscriptions où se trouvent des communautés autochtones au Canada ainsi que le nombre d'électeurs autochtones inscrits et le taux de participation de ces électeurs. Les données étaient présentées dans un document CSV et dans un rapport institutionnel d'Élection Canada. La compilation des données d'électeurs autochtones inscrits et de la participation électorale ont été ajoutées manuellement au document CSV des données populationnelles de chaque circonscription.
+
+Les données sont issues de 2021, ce qui pourrait potentiellement introduire un biais non-négligeable étant donnée que la croissance démographique des communautés autochtones est plus rapide que celles des communautés environnantes. Leur proportion dans les circonscriptions devrait avoir augmenté sensiblement entre 2011 et 2021. Cela dit, dans une perspective comparant les cas des communautés autochtones au Québec et celles du restes du Canada, il nous appert que la croissance relativement similaire entre les communautés des différentes provinces devrait être peu importante.
+
 # Résultats
 ## Visualisation
 Nous avons fait le choix de faire deux visualisation avec les données que nous avons extraites. La première visualisation est un graphique à ligne brisée pour montrer les tendances propres aux communautés de chaque provinces. Le second graphique est un diagramme en points. Il permet d'observer la différence importante de participation entre les communautés autochtones du Québec et celle des autres provinces canadiennes. Le code que nous avons roulé pour produire ces graphiques sont les suivants:
@@ -119,6 +121,68 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "right") +
   scale_color_manual(values = "red")
+
+**Calcul de la proportion d'électeurs autochtones dans la population**
+df <- ED_Canada_2021_prov_tx_part %>%
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
+
+**Calcul du coefficient de corrélation global**
+correlation <- cor(df$prop_indigenous, df$TAUX_PARTICIPATION, use = "complete.obs")
+
+**Affichage du résultat**
+print(paste("Le coefficient de corrélation est:", round(correlation, 3)))
+
+**Création du graphique avec échelles logarithmiques**
+ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
+  geom_point(alpha = 0.6, color = "blue") + # Nuage de points
+  geom_smooth(method = "lm", color = "red", se = TRUE) + # Ligne de régression
+  scale_x_log10() + # Échelle logarithmique pour l'axe X
+  labs(
+    title = "Relation (log) entre la proportion d'électeurs autochtones et le taux de participation",
+    x = "Proportion d'électeurs autochtones (log10)",
+    y = "Taux de participation (%)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5), # Centrage du titre
+    text = element_text(size = 12)
+  )
+
+**Calculer la proportion d'électeurs autochtones**
+df <- df %>%
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
+
+**Calcul des coefficients de corrélation par province**
+correlation_by_province <- df %>%
+  group_by(PROV) %>%
+  summarize(
+    correlation = cor(prop_indigenous, TAUX_PARTICIPATION, use = "complete.obs")
+  )
+
+**Affichage des résultats**
+print(correlation_by_province)
+
+**Calcul de la proportion d'électeurs autochtones**
+df <- df %>%
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
+
+**Création d'un graphique avec une facette par province**
+ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
+  geom_point(size = 1, alpha = 0.7) + 
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", size = 1) + # Droites de régression
+  scale_x_log10() +
+  labs(
+    title = "Proportion d'électeurs autochtones vs Taux de participation",
+    x = "Proportion d'électeurs autochtones (log10)",
+    y = "Taux de participation (%)"
+  ) +
+  facet_wrap(~PROV) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5), # Centrage du titre
+    text = element_text(size = 12),
+    legend.position = "none" # Supprime la légende pour chaque facette
+  )
 
 # Discussion
 
