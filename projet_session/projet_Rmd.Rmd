@@ -122,6 +122,7 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
 
 # Discussion
 
+
 # Bibliographie
 article{harell2010explaining,
   title={Explaining Aboriginal turnout in federal elections: Evidence from Alberta, Saskatchewan, and Manitoba},

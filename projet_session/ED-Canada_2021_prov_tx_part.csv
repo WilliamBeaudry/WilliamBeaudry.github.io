@@ -1,114 +1,116 @@
-PROV,ED_CODE,ED_NAMEE,ED_NAMEF,POPULATION
-Terre-Neuve-et-Labrador,10003,Coast of Bays--Central--Notre Dame,Coast of Bays--Central--Notre Dame,74201
-Terre-Neuve-et-Labrador,10004,Labrador,Labrador,26655
-Ile-du-Prince-Edouard,11001,Cardigan,Cardigan,39866
-Ile-du-Prince-Edouard,11003,Egmont,Egmont,35925
-Ile-du-Prince-Edouard,11004,Malpeque,Malpeque,39731
-Nouvelle-Ecosse,12001,Cape Breton--Canso,Cape Breton--Canso,71380
-Nouvelle-Ecosse,12002,Central Nova,Nova-Centre,73188
-Nouvelle-Ecosse,12003,Cumberland--Colchester,Cumberland--Colchester,82014
-Nouvelle-Ecosse,12004,Dartmouth--Cole Harbour,Dartmouth--Cole Harbour,96165
-Nouvelle-Ecosse,12006,Halifax West,Halifax-Ouest,111944
-Nouvelle-Ecosse,12007,Kings--Hants,Kings--Hants,87744
-Nouvelle-Ecosse,12008,Sackville--Preston--Chezzetcook,Sackville--Preston--Chezzetcook,89524
-Nouvelle-Ecosse,12009,South Shore--St. Margarets,South Shore--St. Margarets,94482
-Nouvelle-Ecosse,12010,Sydney--Victoria,Sydney--Victoria,72361
-Nouvelle-Ecosse,12011,West Nova,Nova-Ouest,83571
-Nouveau-Brunswick,13001,Acadie--Bathurst,Acadie--Bathurst,77594
-Nouveau-Brunswick,13002,Beauséjour,Beauséjour,88797
-Nouveau-Brunswick,13003,Fredericton,Fredericton,87436
-Nouveau-Brunswick,13005,Madawaska--Restigouche,Madawaska--Restigouche,60184
-Nouveau-Brunswick,13006,Miramichi--Grand Lake,Miramichi--Grand Lake,57520
-Nouveau-Brunswick,13008,New Brunswick Southwest,Nouveau-Brunswick-Sud-Ouest,67781
-Nouveau-Brunswick,13010,Tobique--Mactaquac,Tobique--Mactaquac,69344
-Nouveau-Brunswick,24001,Abitibi--Baie-James--Nunavik--Eeyou,Abitibi--Baie-James--Nunavik--Eeyou,89087
-Quebec,24002,Abitibi--Témiscamingue,Abitibi--Témiscamingue,103735
-Quebec,24006,Avignon--La Mitis--Matane--Matapédia,Avignon--La Mitis--Matane--Matapédia,70253
-Quebec,24009,Bécancour--Nicolet--Saurel,Bécancour--Nicolet--Saurel,96439
-Quebec,24031,Joliette,Joliette,112418
-Quebec,24034,La Prairie,La Prairie,114968
-Quebec,24035,Lac-Saint-Jean,Lac-Saint-Jean,103886
-Quebec,24038,Laurentides--Labelle,Laurentides--Labelle,123796
-Quebec,24045,Louis-Saint-Laurent,Louis-Saint-Laurent,123123
-Quebec,24046,Manicouagan,Manicouagan,88525
-Quebec,24048,Mirabel,Mirabel,132930
-Quebec,24057,Pontiac,Pontiac,129781
-Quebec,24070,Saint-Maurice--Champlain,Saint-Maurice--Champlain,111997
-Quebec,24071,Salaberry--Suroît,Salaberry--Suroît,119351
-Ontario,35002,Algoma--Manitoulin--Kapuskasing,Algoma--Manitoulin--Kapuskasing,80310
-Ontario,35013,Brantford--Brant,Brantford--Brant,140139
-Ontario,35014,Bruce--Grey--Owen Sound,Bruce--Grey--Owen Sound,113348
-Ontario,35017,Chatham-Kent--Leamington,Chatham-Kent--Leamington,113654
-Ontario,35023,Durham,Durham,150235
-Ontario,35039,Hastings--Lennox and Addington,Hastings--Lennox and Addington,100636
-Ontario,35042,Kenora,Kenora,64261
-Ontario,35048,Lambton--Kent--Middlesex,Lambton--Kent--Middlesex,111242
-Ontario,35069,Nickel Belt,Nickel Belt,94947
-Ontario,35070,Nipissing--Timiskaming,Nipissing--Timiskaming,89781
-Ontario,35071,Northumberland--Peterborough South,Northumberland--Peterborough-Sud,118756
-Ontario,35082,Parry Sound--Muskoka,Parry Sound--Muskoka,104494
-Ontario,35084,Peterborough--Kawartha,Peterborough--Kawartha,125478
-Ontario,35086,Renfrew--Nipissing--Pembroke,Renfrew--Nipissing--Pembroke,107420
-Ontario,35091,Sarnia--Lambton,Sarnia--Lambton,107077
-Ontario,35092,Sault Ste. Marie,Sault Ste. Marie,79331
-Ontario,35100,Simcoe North,Simcoe-Nord,120656
-Ontario,35105,Thunder Bay--Rainy River,Thunder Bay--Rainy River,82357
-Ontario,35106,Thunder Bay--Superior North,Thunder Bay--Supérieur-Nord,83325
-Ontario,35107,Timmins--James Bay,Timmins--Baie James,80785
-Ontario,35119,York--Simcoe,York--Simcoe,124458
-Manitoba,46001,Brandon--Souris,Brandon--Souris,89812
-Manitoba,46003,Churchill--Keewatinook Aski,Churchill--Keewatinook Aski,81258
-Manitoba,46004,Dauphin--Swan River--Neepawa,Dauphin--Swan River--Neepawa,89503
-Manitoba,46007,Portage--Lisgar,Portage--Lisgar,100417
-Manitoba,46008,Provencher,Provencher,109445
-Manitoba,46010,Selkirk--Interlake--Eastman,Selkirk--Interlake--Eastman,101373
-Saskatchewan,47001,Battlefords--Lloydminster,Battlefords--Lloydminster,70918
-Saskatchewan,47002,Cypress Hills--Grasslands,Cypress Hills--Grasslands,68314
-Saskatchewan,47003,Desnethé--Missinippi--Churchill River,Desnethé--Missinippi--Rivière Churchill,71488
-Saskatchewan,47004,Carlton Trail--Eagle Creek,Sentier Carlton--Eagle Creek,83395
-Saskatchewan,47005,Moose Jaw--Lake Centre--Lanigan,Moose Jaw--Lake Centre--Lanigan,80547
-Saskatchewan,47006,Prince Albert,Prince Albert,80845
-Saskatchewan,47008,Regina--Qu'Appelle,Regina--Qu'Appelle,78140
-Saskatchewan,47013,Souris--Moose Mountain,Souris--Moose Mountain,70579
-Saskatchewan,47014,Yorkton--Melville,Yorkton--Melville,71220
-Alberta,48001,Banff--Airdrie,Banff--Airdrie,155580
-Alberta,48003,Bow River,Bow River,119458
-Alberta,48021,Edmonton--Wetaskiwin,Edmonton--Wetaskiwin,209431
-Alberta,48022,Foothills,Foothills,115118
-Alberta,48023,Fort McMurray--Cold Lake,Fort McMurray--Cold Lake,110163
-Alberta,48024,Grande Prairie--Mackenzie,Grande Prairie--Mackenzie,119586
-Alberta,48025,Lakeland,Lakeland,105993
-Alberta,48027,Medicine Hat--Cardston--Warner,Medicine Hat--Cardston--Warner,108391
-Alberta,48028,Peace River--Westlock,Peace River--Westlock,107223
-Alberta,48030,Red Deer--Lacombe,Red Deer--Lacombe,131575
-Alberta,48033,Sturgeon River--Parkland,Sturgeon River--Parkland,124849
-Alberta,48034,Yellowhead,Yellowhead,99218
-Colombie-Britannique,59001,Abbotsford,Abbotsford,110331
-Colombie-Britannique,59002,Burnaby North--Seymour,Burnaby-Nord--Seymour,108794
-Colombie-Britannique,59004,Cariboo--Prince George,Cariboo--Prince George,111226
-Colombie-Britannique,59005,Central Okanagan--Similkameen--Nicola,Central Okanagan--Similkameen--Nicola,122340
-Colombie-Britannique,59006,Chilliwack--Hope,Chilliwack--Hope,112037
-Colombie-Britannique,59008,Coquitlam--Port Coquitlam,Coquitlam--Port Coquitlam,132004
-Colombie-Britannique,59009,Courtenay--Alberni,Courtenay--Alberni,125116
-Colombie-Britannique,59010,Cowichan--Malahat--Langford,Cowichan--Malahat--Langford,124247
-Colombie-Britannique,59011,Delta,Delta,110721
-Colombie-Britannique,59012,Fleetwood--Port Kells,Fleetwood--Port Kells,124987
-Colombie-Britannique,59013,Kamloops--Thompson--Cariboo,Kamloops--Thompson--Cariboo,135492
-Colombie-Britannique,59014,Kelowna--Lake Country,Kelowna--Lake Country,136290
-Colombie-Britannique,59015,Kootenay--Columbia,Kootenay--Columbia,120759
-Colombie-Britannique,59016,Langley--Aldergrove,Langley--Aldergrove,133168
-Colombie-Britannique,59017,Mission--Matsqui--Fraser Canyon,Mission--Matsqui--Fraser Canyon,101216
-Colombie-Britannique,59018,Nanaimo--Ladysmith,Nanaimo--Ladysmith,134509
-Colombie-Britannique,59020,North Okanagan--Shuswap,North Okanagan--Shuswap,136520
-Colombie-Britannique,59021,North Vancouver,North Vancouver,123025
-Colombie-Britannique,59022,Pitt Meadows--Maple Ridge,Pitt Meadows--Maple Ridge,110416
-Colombie-Britannique,59023,Port Moody--Coquitlam,Port Moody--Coquitlam,114853
-Colombie-Britannique,59026,Esquimalt--Saanich--Sooke,Esquimalt--Saanich--Sooke,128644
-Colombie-Britannique,59027,Saanich--Gulf Islands,Saanich--Gulf Islands,113541
-Colombie-Britannique,59028,Skeena--Bulkley Valley,Skeena--Bulkley Valley,89689
-Colombie-Britannique,59029,South Okanagan--West Kootenay,Okanagan-Sud--Kootenay-Ouest,123487
-Colombie-Britannique,59030,South Surrey--White Rock,Surrey-Sud--White Rock,119672
-Colombie-Britannique,59037,North Island--Powell River,North Island--Powell River,111825
-Colombie-Britannique,59039,Vancouver Quadra,Vancouver Quadra,109328
-Colombie-Britannique,59042,West Vancouver--Sunshine Coast--Sea to Sky Country,West Vancouver--Sunshine Coast--Sea to Sky Country,131206
-Territoires du Nord-Ouest,61001,Northwest Territories,Territoires du Nord-Ouest,41070
+PROV,ED_CODE,ED_NAMEE,ED_NAMEF,POPULATION,ELECTEURS_AUTOCHTONES,TAUX_PARTICIPATION
+Terre-Neuve-et-Labrador,10003,Coast of Bays--Central--Notre Dame,Coast of Bays--Central--Notre Dame,74201,689,26.9
+Terre-Neuve-et-Labrador,10004,Labrador,Labrador,26655,1453,11.5
+Ile-du-Prince-Edouard,11001,Cardigan,Cardigan,39866,162,55.0
+Ile-du-Prince-Edouard,11003,Egmont,Egmont,35925,255,40.5
+Ile-du-Prince-Edouard,11004,Malpeque,Malpeque,39731,313,76.7
+Nouvelle-Ecosse,12001,Cape Breton--Canso,Cape Breton--Canso,71380,1455,45.2
+Nouvelle-Ecosse,12002,Central Nova,Nova-Centre,73188,1196,62.6
+Nouvelle-Ecosse,12003,Cumberland--Colchester,Cumberland--Colchester,82014,713,43.9
+Nouvelle-Ecosse,12004,Dartmouth--Cole Harbour,Dartmouth--Cole Harbour,96165,394,59.4
+Nouvelle-Ecosse,12006,Halifax West,Halifax-Ouest,111944,446,67.9
+Nouvelle-Ecosse,12007,Kings--Hants,Kings--Hants,87744,2469,54.3
+Nouvelle-Ecosse,12008,Sackville--Preston--Chezzetcook,Sackville--Preston--Chezzetcook,89524,0.0,0.0
+Nouvelle-Ecosse,12009,South Shore--St. Margarets,South Shore--St. Margarets,94482,1387,56.0
+Nouvelle-Ecosse,12010,Sydney--Victoria,Sydney--Victoria,72361,4144,48.4
+Nouvelle-Ecosse,12011,West Nova,Nova-Ouest,83571,924,49.1
+Nouveau-Brunswick,13001,Acadie--Bathurst,Acadie--Bathurst,77594,263,54.4
+Nouveau-Brunswick,13002,Beauséjour,Beauséjour,88797,1247,60.7
+Nouveau-Brunswick,13003,Fredericton,Fredericton,87436,3857,52.9
+Nouveau-Brunswick,13005,Madawaska--Restigouche,Madawaska--Restigouche,60184,735,45.8
+Nouveau-Brunswick,13006,Miramichi--Grand Lake,Miramichi--Grand Lake,57520,5509,45.7
+Nouveau-Brunswick,13008,New Brunswick Southwest,Nouveau-Brunswick-Sud-Ouest,67781,385,30.4
+Nouveau-Brunswick,13010,Tobique--Mactaquac,Tobique--Mactaquac,69344,1124,24.6
+Quebec,24001,Abitibi--Baie-James--Nunavik--Eeyou,Abitibi--Baie-James--Nunavik--Eeyou,89087,11793,18.8
+Quebec,24002,Abitibi--Témiscamingue,Abitibi--Témiscamingue,103735,1578,37.9
+Quebec,24006,Avignon--La Mitis--Matane--Matapédia,Avignon--La Mitis--Matane--Matapédia,70253,1960,21.4
+Quebec,24009,Bécancour--Nicolet--Saurel,Bécancour--Nicolet--Saurel,96439,1131,53.3
+Quebec,24031,Joliette,Joliette,112418,1396,23.0
+Quebec,24034,La Prairie,La Prairie,114968,2434,1.9
+Quebec,24035,Lac-Saint-Jean,Lac-Saint-Jean,103886,1730,29.3
+Quebec,24038,Laurentides--Labelle,Laurentides--Labelle,123796.720,66.6
+Quebec,24045,Louis-Saint-Laurent,Louis-Saint-Laurent,123123,2252,55.6
+Quebec,24046,Manicouagan,Manicouagan,88525,7999,22.0
+Quebec,24048,Mirabel,Mirabel,132930,580,30.0
+Quebec,24057,Pontiac,Pontiac,129781,1103,11.5
+Quebec,24070,Saint-Maurice--Champlain,Saint-Maurice--Champlain,111997,2117,11.2
+Quebec,24071,Salaberry--Suroît,Salaberry--Suroît,119351,1582,13.3
+Ontario,35002,Algoma--Manitoulin--Kapuskasing,Algoma--Manitoulin--Kapuskasing,80310,8588,49.3
+Ontario,35013,Brantford--Brant,Brantford--Brant,140139,6000,20.5
+Ontario,35014,Bruce--Grey--Owen Sound,Bruce--Grey--Owen Sound,113348,1147,41.8
+Ontario,35017,Chatham-Kent--Leamington,Chatham-Kent--Leamington,113654,269,37.7
+Ontario,35023,Durham,Durham,150235739,62.4
+Ontario,35039,Hastings--Lennox and Addington,Hastings--Lennox and Addington,100636,2701,38.3
+Ontario,35042,Kenora,Kenora,64261,12814,38.8
+Ontario,35048,Lambton--Kent--Middlesex,Lambton--Kent--Middlesex,111242,5998,43.5
+Ontario,35069,Nickel Belt,Nickel Belt,94947,565,44.0
+Ontario,35070,Nipissing--Timiskaming,Nipissing--Timiskaming,89781,1655,50.4
+Ontario,35071,Northumberland--Peterborough South,Northumberland--Peterborough-Sud,118756,1253,64.3
+Ontario,35082,Parry Sound--Muskoka,Parry Sound--Muskoka,104494,986,54.1
+Ontario,35084,Peterborough--Kawartha,Peterborough--Kawartha,125478,1005,58.2
+Ontario,35086,Renfrew--Nipissing--Pembroke,Renfrew--Nipissing--Pembroke,107420,363,50.6
+Ontario,35091,Sarnia--Lambton,Sarnia--Lambton,107077,633,40.4
+Ontario,35092,Sault Ste. Marie,Sault Ste. Marie,79331,2683,46.0
+Ontario,35100,Simcoe North,Simcoe-Nord,120656,1470,54.5
+Ontario,35102,Stormont--Dundas--South Glengarry,Stormont--Dundas--South Glengarry,104493,2488,47.9
+Ontario,35105,Thunder Bay--Rainy River,Thunder Bay--Rainy River,82357,3676,47.6
+Ontario,35106,Thunder Bay--Superior North,Thunder Bay--Supérieur-Nord,83325,2525,38.4
+Ontario,35107,Timmins--James Bay,Timmins--Baie James,80785,3901,31.0
+Ontario,35119,York--Simcoe,York--Simcoe,124458,188,53.1
+Manitoba,46001,Brandon--Souris,Brandon--Souris,89812,542,55.0
+Manitoba,46003,Churchill--Keewatinook Aski,Churchill--Keewatinook Aski,81258,28104,26.8
+Manitoba,46004,Dauphin--Swan River--Neepawa,Dauphin--Swan River--Neepawa,89503,7881,36.2
+Manitoba,46007,Portage--Lisgar,Portage--Lisgar,100417,1047,37.8
+Manitoba,46008,Provencher,Provencher,109445,586,30.3
+Manitoba,46010,Selkirk--Interlake--Eastman,Selkirk--Interlake--Eastman,101373,1312,28.3
+Saskatchewan,47001,Battlefords--Lloydminster,Battlefords--Lloydminster,70918,5139,37.4
+Saskatchewan,47002,Cypress Hills--Grasslands,Cypress Hills--Grasslands,68314,1134,55.6
+Saskatchewan,47003,Desnethé--Missinippi--Churchill River,Desnethé--Missinippi--Rivière Churchill,71488,21271,31.5
+Saskatchewan,47004,Carlton Trail--Eagle Creek,Sentier Carlton--Eagle Creek,83395,2835,46.4
+Saskatchewan,47005,Moose Jaw--Lake Centre--Lanigan,Moose Jaw--Lake Centre--Lanigan,80547,364,47.5
+Saskatchewan,47006,Prince Albert,Prince Albert,80845,1608,46.4
+Saskatchewan,47008,Regina--Qu'Appelle,Regina--Qu'Appelle,78140,3792,43.0
+Saskatchewan,47013,Souris--Moose Mountain,Souris--Moose Mountain,70579,2343,48.3
+Saskatchewan,47014,Yorkton--Melville,Yorkton--Melville,71220,3672,63.0
+Alberta,48001,Banff--Airdrie,Banff--Airdrie,155580,3142,38.7
+Alberta,48003,Bow River,Bow River,119458,2076,17.1
+Alberta,48021,Edmonton--Wetaskiwin,Edmonton--Wetaskiwin,209431,540,56.8
+Alberta,48022,Foothills,Foothills,115118,3457,39.8
+Alberta,48023,Fort McMurray--Cold Lake,Fort McMurray--Cold Lake,110163,6036,39.9
+Alberta,48024,Grande Prairie--Mackenzie,Grande Prairie--Mackenzie,119586,2581,34.4
+Alberta,48025,Lakeland,Lakeland,105993,4834,31.4
+Alberta,48027,Medicine Hat--Cardston--Warner,Medicine Hat--Cardston--Warner,108391,3080,17.3
+Alberta,48028,Peace River--Westlock,Peace River--Westlock,107223,6867,48.7
+Alberta,48030,Red Deer--Lacombe,Red Deer--Lacombe,131575,4515,21.7
+Alberta,48033,Sturgeon River--Parkland,Sturgeon River--Parkland,124849,1611,28.3
+Alberta,48034,Yellowhead,Yellowhead,99218,3402,50.0
+Colombie-Britannique,59001,Abbotsford,Abbotsford,110331,1001,65.1
+Colombie-Britannique,59002,Burnaby North--Seymour,Burnaby-Nord--Seymour,108794,4866,68.1
+Colombie-Britannique,59004,Cariboo--Prince George,Cariboo--Prince George,111226,6169,53.6
+Colombie-Britannique,59005,Central Okanagan--Similkameen--Nicola,Central Okanagan--Similkameen--Nicola,122340,19463,61.9
+Colombie-Britannique,59006,Chilliwack--Hope,Chilliwack--Hope,112037,12558,60.7
+Colombie-Britannique,59008,Coquitlam--Port Coquitlam,Coquitlam--Port Coquitlam,132004,0,0.0
+Colombie-Britannique,59009,Courtenay--Alberni,Courtenay--Alberni,125116,5441,55.8
+Colombie-Britannique,59010,Cowichan--Malahat--Langford,Cowichan--Malahat--Langford,124247,8818,58.9
+Colombie-Britannique,59011,Delta,Delta,110721,378,70.2
+Colombie-Britannique,59012,Fleetwood--Port Kells,Fleetwood--Port Kells,124987,600,60.3
+Colombie-Britannique,59013,Kamloops--Thompson--Cariboo,Kamloops--Thompson--Cariboo,135492,7180,65.1
+Colombie-Britannique,59014,Kelowna--Lake Country,Kelowna--Lake Country,136290,2453,56.1
+Colombie-Britannique,59015,Kootenay--Columbia,Kootenay--Columbia,120759,2972,65.1
+Colombie-Britannique,59016,Langley--Aldergrove,Langley--Aldergrove,133168,1421,67.6
+Colombie-Britannique,59017,Mission--Matsqui--Fraser Canyon,Mission--Matsqui--Fraser Canyon,101216,12688,53.0
+Colombie-Britannique,59018,Nanaimo--Ladysmith,Nanaimo--Ladysmith,134509,3519,51.3
+Colombie-Britannique,59020,North Okanagan--Shuswap,North Okanagan--Shuswap,136520,11466,59.9
+Colombie-Britannique,59021,North Vancouver,North Vancouver,123025,1542,49.9
+Colombie-Britannique,59022,Pitt Meadows--Maple Ridge,Pitt Meadows--Maple Ridge,110416,1085,68.1
+Colombie-Britannique,59023,Port Moody--Coquitlam,Port Moody--Coquitlam,114853,411,56.1
+Colombie-Britannique,59024,Prince George--Peace River--Northern Rockies,Prince George--Peace River--Northern Rockies,108998,3126,51.8
+Colombie-Britannique,59026,Esquimalt--Saanich--Sooke,Esquimalt--Saanich--Sooke,128644,3863,55.1
+Colombie-Britannique,59027,Saanich--Gulf Islands,Saanich--Gulf Islands,113541,4408,54.5
+Colombie-Britannique,59028,Skeena--Bulkley Valley,Skeena--Bulkley Valley,89689,17636,46.7
+Colombie-Britannique,59029,South Okanagan--West Kootenay,Okanagan-Sud--Kootenay-Ouest,123487,7439,64.5
+Colombie-Britannique,59030,South Surrey--White Rock,Surrey-Sud--White Rock,119672,79,49.3
+Colombie-Britannique,59037,North Island--Powell River,North Island--Powell River,111825,6244,54.3
+Colombie-Britannique,59039,Vancouver Quadra,Vancouver Quadra,109328,1251,48.0
+Colombie-Britannique,59042,West Vancouver--Sunshine Coast--Sea to Sky Country,West Vancouver--Sunshine Coast--Sea to Sky Country,131206,11345,58.2
+Territoires du Nord-Ouest,61001,Northwest Territories,Territoires du Nord-Ouest,41070,179,22.8
