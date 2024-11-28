@@ -16,12 +16,14 @@ Une autre dimension de la taille des circonscriptions, cette fois-ci faisant ré
 
 Une dernière dimension de la taille de la circonscription est sa composition démographique. Les circonscriptions électorales plus grandes en termes d'électeurs sont également plus diversifiées sur les aspects ethno-culturels. La diversité linguistiques surtout serait un facteur qui déprécient la participation électorale [@armstrong2024]. Ici, vu la plus faible proportion d'électeurs autochtones dans les circonscriptions électorales, il serait probable que l'homogénéité de la circonscription soit un facteur discriminant les Premières nations. Si le facteur linguistique semble important, Harell et al. 2010 observent une corrélation entre la langue et la participation qui va à l'encontre des attentes: des communautés qui parlent le Cri participent davantage aux élections fédérales que celles parlant l'anglais courrament [@harell2010]. Les Premières nations du Québec sont celles dont les langues traditionnelles sont les plus vivantes du pays et il en est de même pour les Nunavimmiut et l'usage de l'Inuktitut au sein de l'Inuit Nunangat. Cependant, cette relation peut être le produit de l'histoire et des contextes coloniaux propres aux différentes communautés [@harell2010]. Comme la langue seconde de nombre de communautés autochtones au Québec est l'anglais, la vie dans un espace francophone pourrait intervenir comme facteur qui déprécie la participation électorale dans la province, ce qui ne serait pas le cas dans les autres provinces.
 
+La question de recherche que nous nous posons alors est la suivante: *quelle est l'influence de la taille de la circonscription sur la participation aux élections fédérales de 2021 dans les communautés autochtones ?*
+
 ## Hypothèses
-À partir de ce très bref État du savoir, nous en venons à découler 2 hypothèses. D'abord, nous nous attendons que la proportion plus faible d'électeurs autochtones dans la province du Québec ait plusieurs effets qui décourage la participation électorale.
+À partir de ce très bref État du savoir, nous en venons à découler une hypothèse. D'abord, nous nous attendons que la proportion plus faible d'électeurs autochtones dans la province du Québec ait plusieurs effets qui décourage la participation électorale.
 
-*H1: l'absence de masse critique des électeurs autochtones dans les circonscriptions fédérales au Québec influence négativement la participation aux élections*
+*H1: la proportion d'électeurs autochtones dans une circonscription électorale est positivement associée à la participation électorale des électeurs autochtones*
 
-*H2: les caractéristiques linguistiques propres au Québec ont une influence négative et plus forte sur la participation électorale des communautés autochtones du Québec que dans le reste du Canada*
+*H2: la corrélation entre la proportion d'électeurs autochtones et le taux de participation de ces électeurs est plus faible au Québec que dans le reste du Canada*
 
 ## Sélection des sources bibliographiques
 Pour produire cet état du savoir, nous avons eu recours à trois outils numériques de recherche. D'abord, nous avons entré notre question de recherche dans *Perplexity.ai* afin qu'il retravaille la question dans des termes optimaux pour produire une question pour le logiciel *Elicit*. Notre question de recherche « Comment expliquer la faible participation aux élections fédérales dans les Premières Nations du Québec comparativement à celles des autres provinces entre 2004 et 2011 ? » a été traduite ainsi « What factors explain the lower voter turnout in First Nations communities in Quebec compared to other Canadian provinces in federal elections between 2004 and 2021 ? » pour faire une requête dans *Elicit*.
@@ -184,8 +186,12 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
     legend.position = "none" # Supprime la légende pour chaque facette
   )
 
-# Discussion
+Ces codes ont été utilisés pour trouver et illustrer le coefficient de corrélation entre la proportion d'électeurs autochtones dans les circonscriptions fédérales et le taux de participation de ces électeurs en 2021. Nous avons fait un coefficient pour l'ensemble des circonscriptions, puis elles ont été regroupées selon la province, puis divisé entre le Québec et les reste du Canada.
 
+# Discussion
+D'après les données que nous avons utilisées, nos hypothèses sont infirmées. Le coefficient de corrélation, bien que faible, montre que la relation entre la taille de la circonscription est au mieux associée à un faible effet négatif sur la participation électorale, sinon une corrélation nulle. Cette conclusion vient à l'encontre de la théorie du choix rationnel que nous testions avec l'hypothèse 1.
+
+Quant à l'hypothèse 2, elle est également infirmée par nos résultats. Nous nous attendions à observer une relation positive entre nos deux variables dans toutes les provinces, mais plus faibles au Québec. Or, au Québec, elle est négative comme dans plusieurs autres provinces, mais elle est plus faible que plusieurs autres provinces. Ainsi, la relation entre le taux de participation et la proportion d'électeurs autochtones est plus faible que dans plusieurs autres provinces, ce à quoi nous ne nous attendions pas.
 
 # Bibliographie
 article{harell2010explaining,
