@@ -3,6 +3,8 @@ title: "Ce qui distingue les communautés autochtones du Québec à celles des a
 author: "William Beaudry"
 output: html_document
 date: "2024-11-16"
+bibliography: reference.bib
+csl: C:\Users\willi\OneDrive\Documents\WilliamBeaudry.github.io\projet_session\apa.csl.github.io
 ---
 
 # État du savoir
