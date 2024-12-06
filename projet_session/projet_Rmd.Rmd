@@ -4,7 +4,7 @@ author: "William Beaudry"
 output: html_document
 date: "2024-11-16"
 bibliography: reference.bib
-csl: C:\Users\willi\OneDrive\Documents\WilliamBeaudry.github.io\projet_session\apa.csl.github.io
+csl: C:\Users\willi\OneDrive\Documents\WilliamBeaudry.github.io\projet_session\apa.csl
 ---
 
 # État du savoir
