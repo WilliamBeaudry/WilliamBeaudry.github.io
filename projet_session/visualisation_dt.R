@@ -103,7 +103,7 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
   )
 
 
-
+colnames(ED_Canada_2021_prov_tx_part)
 
 
 
