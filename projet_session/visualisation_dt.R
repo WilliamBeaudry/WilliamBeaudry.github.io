@@ -19,8 +19,7 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = `Province/territ
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.position = "right"
-  ) +
-  scale_color_manual(values = couleurs)
+  ) 
 
 # Créer un graphique boxplot
 ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territoire", color = "Province/territoire")) +
@@ -52,7 +51,7 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
   geom_smooth(method = "lm", color = "red", se = TRUE) + # Ligne de régression
   scale_x_log10() + # Échelle logarithmique pour l'axe X
   labs(
-    title = "Relation (log) entre la proportion d'électeurs autochtones et le taux de participation",
+    title = "Relation entre la proportion d'électeurs autochtones et le taux de participation aux élections fédérales de 2021",
     x = "Proportion d'électeurs autochtones (log10)",
     y = "Taux de participation (%)"
   ) +
@@ -91,7 +90,7 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
   geom_smooth(method = "lm", se = FALSE, linetype = "dashed", size = 1) + # Droites de régression
   scale_x_log10() + # Transformation logarithmique sur l'axe X
   labs(
-    title = "Proportion d'électeurs autochtones vs Taux de participation",
+    title = "Corrélation entre la proportion d'électeurs autochtones et le taux de participation aux élections fédérales de 2021",
     x = "Proportion d'électeurs autochtones (log10)",
     y = "Taux de participation (%)"
   ) +

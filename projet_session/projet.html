@@ -13,7 +13,7 @@
 
 <meta name="date" content="2024-11-16" />
 
-<title>Ce qui distingue les communautés autochtones du Québec à celles des autres provinces: la participation aux élections fédérales de 2004 à 2011</title>
+<title>Plus c’est mieux ? : la relation entre la proportion d’électeurs autochtone dans une circonscriptions et la participation électorale de ces derniers aux élections fédérales de 2021</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,9 +350,10 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Ce qui distingue les communautés
-autochtones du Québec à celles des autres provinces: la participation
-aux élections fédérales de 2004 à 2011</h1>
+<h1 class="title toc-ignore">Plus c’est mieux ? : la relation entre la
+proportion d’électeurs autochtone dans une circonscriptions et la
+participation électorale de ces derniers aux élections fédérales de
+2021</h1>
 <h4 class="author">William Beaudry</h4>
 <h4 class="date">2024-11-16</h4>
 
@@ -455,6 +456,10 @@ sélectionnés les 16 premiers articles proposés. Ceux-ci étaient filtré
 en fonction de leur pertinence à répondre à la question de recherche et
 en fonction de la date. La période pour laquelle était choisi des textes
 étaient de 2004 à aujourd’hui.</p>
+<p>En cours de route, la question de recherche a été changée en fonction
+de la disponibilité des données. Cela dit, les articles sélectionnées
+dans un premier temps permettaient de répondre à cette nouvelle question
+de recherche. Nous avons donc utilisé les mêmes articles.</p>
 </div>
 </div>
 <div id="méthodes-et-données" class="section level1">
@@ -524,9 +529,9 @@ que nous avons extraites. La première visualisation est un graphique à
 ligne brisée pour montrer les tendances propres aux communautés de
 chaque provinces. Le second graphique est un diagramme en points. Il
 permet d’observer la différence importante de participation entre les
-communautés autochtones du Québec et celle des autres provinces
-canadiennes. Le code que nous avons roulé pour produire ces graphiques
-sont les suivants:</p>
+communautés autochtones du Québec et les autres provinces canadiennes.
+Le code que nous avons roulé pour produire ces graphiques sont les
+suivants:</p>
 <p><strong>Préparer les données</strong> df_long &lt;- df_cln %&gt;%
 pivot_longer(cols = -“Province/territoire”, names_to = “Année”,
 values_to = “Taux_participation”)</p>
@@ -616,9 +621,12 @@ autochtones, pour expliquer le taux de participation des électeurs
 autochtones du Québec et du reste du Canada.</p>
 <p>Pour aller plus loin, une analyse qui souhaiterait mobiliser la
 taille des circonscriptions devrait inclure les variables
-sociodémographiques puisqu’une proportion plus élevée d’électeurs
-autochtones dans une circonscription sont souvent en région éloignée où
-les caractéristiques socioéconomiques sont différentes.</p>
+sociodémographiques puisque les circonscription qui ont proportion plus
+élevée d’électeurs autochtones se situent généralement en région
+éloignée. L’accès à l’information, la couverture médiatique des
+campagnes électorales ou encore le profil sociodémographiques des
+électeurs se distinguent généralement des circonscriptions
+métropolitaines.</p>
 </div>
 <div id="bibliographie" class="section level1">
 <h1>Bibliographie</h1>
