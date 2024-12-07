@@ -3,19 +3,18 @@ title: "Ce qui distingue les communautés autochtones du Québec à celles des a
 author: "William Beaudry"
 output: html_document
 date: "2024-11-16"
-csl: apa.csl
 ---
 
 # État du savoir
 Être autochtone est une expérience qui regroupe les membres des différentes nations et communautés des Premières Nations du Canada et d'ailleurs. L'édification de l'État colonial canadien s'est fait au dépends des premiers peuples. Marginalisés, confinés à des réserves dépourvus de la plupart des droits politiques des autres citoyens du Canada, ce n'est qu'en 1960 que le gouvernement fédéral de John Diefenbaker leur octroi le vote. Certaines législatures provinciales l'avaient déjà fait ou l'on fait par la suite, le Québec étant la dernière province à leur donner le droit de vote en 1969, sans débats ni revendications.
 
-Quels facteurs ont été mobilisés par les chercheurs pour expliquer la participation électorale des membres des Premières nations aux élections fédérales ? Plusieurs rapports postélectoraux ont mobilisé une approche centrée sur les ressources socio-économiques. Celles-ci sont univoques: les différences de statut socio-économique entre les membres des Premières nations et les Allochtones expliqueraient la moitié de l'écart de participation entre ces deux groupes [@harell2010]. L'autre moitié de l'explication résiderait donc dans une expérience qui est proprement autochtone, donc des facteurs structurels.
+Quels facteurs ont été mobilisés par les chercheurs pour expliquer la participation électorale des membres des Premières nations aux élections fédérales ? Plusieurs rapports postélectoraux ont mobilisé une approche centrée sur les ressources socio-économiques. Celles-ci sont univoques: les différences de statut socio-économique entre les membres des Premières nations et les Allochtones expliqueraient la moitié de l'écart de participation entre ces deux groupes (Harell et al., 2010). L'autre moitié de l'explication résiderait donc dans une expérience qui est proprement autochtone, donc des facteurs structurels.
 
-Parmi les facteurs institutionnels, plusieurs auteurs se sont penché sur la question de la taille des circonscriptions électorales ainsi que du rôle de l'information politique fournies par les institutions électorales. La taille de l'électorat est un facteur multidimensionnel. Il peut d'abord être abordé sous l'angle du choix rationel, où les électeurs autochtones, évaluant la taille de leur communauté, choisissent ou non de voter s'ils croient que les membres de leur communauté peuvent influencer le choix du représentant en leur faveur [@hill2010]. 
+Parmi les facteurs institutionnels, plusieurs auteurs se sont penché sur la question de la taille des circonscriptions électorales ainsi que du rôle de l'information politique fournies par les institutions électorales. La taille de l'électorat est un facteur multidimensionnel. Il peut d'abord être abordé sous l'angle du choix rationel, où les électeurs autochtones, évaluant la taille de leur communauté, choisissent ou non de voter s'ils croient que les membres de leur communauté peuvent influencer le choix du représentant en leur faveur (Hill et Alport, 2010). 
 
-Une autre dimension de la taille des circonscriptions, cette fois-ci faisant référence à son étendue géographique, est l'éloignement des communautés. Les électeurs éloignées de centres urbains ont une plus grande propension à être marginalisé par les partis politiques et la couverture médiatique lors de campagnes électorales étant donné des coûts de déplacement [@hill2010]. Les communautés autochtones au Québec, étant généralement loin des centres urbains, pourraient faire fasse à ce genre d'enjeux d'éloignement, tandis que dans d'autres provinces, nombre de communautés sont plus près des centres urbains.
+Une autre dimension de la taille des circonscriptions, cette fois-ci faisant référence à son étendue géographique, est l'éloignement des communautés. Les électeurs éloignées de centres urbains ont une plus grande propension à être marginalisé par les partis politiques et la couverture médiatique lors de campagnes électorales étant donné des coûts de déplacement (Hill et Alport, 2010). Les communautés autochtones au Québec, étant généralement loin des centres urbains, pourraient faire fasse à ce genre d'enjeux d'éloignement, tandis que dans d'autres provinces, nombre de communautés sont plus près des centres urbains.
 
-Une dernière dimension de la taille de la circonscription est sa composition démographique. Les circonscriptions électorales plus grandes en termes d'électeurs sont également plus diversifiées sur les aspects ethno-culturels. La diversité linguistiques surtout serait un facteur qui déprécient la participation électorale [@armstrong2024]. Ici, vu la plus faible proportion d'électeurs autochtones dans les circonscriptions électorales, il serait probable que l'homogénéité de la circonscription soit un facteur discriminant les Premières nations. Si le facteur linguistique semble important, Harell et al. 2010 observent une corrélation entre la langue et la participation qui va à l'encontre des attentes: des communautés qui parlent le Cri participent davantage aux élections fédérales que celles parlant l'anglais courrament [@harell2010]. Les Premières nations du Québec sont celles dont les langues traditionnelles sont les plus vivantes du pays et il en est de même pour les Nunavimmiut et l'usage de l'Inuktitut au sein de l'Inuit Nunangat. Cependant, cette relation peut être le produit de l'histoire et des contextes coloniaux propres aux différentes communautés [@harell2010]. Comme la langue seconde de nombre de communautés autochtones au Québec est l'anglais, la vie dans un espace francophone pourrait intervenir comme facteur qui déprécie la participation électorale dans la province, ce qui ne serait pas le cas dans les autres provinces.
+Une dernière dimension de la taille de la circonscription est sa composition démographique. Les circonscriptions électorales plus grandes en termes d'électeurs sont également plus diversifiées sur les aspects ethno-culturels. La diversité linguistiques surtout serait un facteur qui déprécient la participation électorale (Armstrong et al., 2024). Ici, vu la plus faible proportion d'électeurs autochtones dans les circonscriptions électorales, il serait probable que l'homogénéité de la circonscription soit un facteur discriminant les Premières nations. Si le facteur linguistique semble important, Harell et al. 2010 observent une corrélation entre la langue et la participation qui va à l'encontre des attentes: des communautés qui parlent le Cri participent davantage aux élections fédérales que celles parlant l'anglais courrament (Harell et al., 2010). Les Premières nations du Québec sont celles dont les langues traditionnelles sont les plus vivantes du pays et il en est de même pour les Nunavimmiut et l'usage de l'Inuktitut au sein de l'Inuit Nunangat. Cependant, cette relation peut être le produit de l'histoire et des contextes coloniaux propres aux différentes communautés (Harell et al. 2010). Comme la langue seconde de nombre de communautés autochtones au Québec est l'anglais, la vie dans un espace francophone pourrait intervenir comme facteur qui déprécie la participation électorale dans la province, ce qui ne serait pas le cas dans les autres provinces.
 
 La question de recherche que nous nous posons alors est la suivante: *quelle est l'influence de la taille de la circonscription sur la participation aux élections fédérales de 2021 dans les communautés autochtones ?*
 
@@ -199,30 +198,8 @@ En somme, une différence entre le taux de participation ne peut être attribué
 Pour aller plus loin, une analyse qui souhaiterait mobiliser la taille des circonscriptions devrait inclure les variables sociodémographiques puisqu'une proportion plus élevée d'électeurs autochtones dans une circonscription sont souvent en région éloignée où les caractéristiques socioéconomiques sont différentes.
 
 # Bibliographie
-article{harell2010explaining,
-  title={Explaining Aboriginal turnout in federal elections: Evidence from Alberta, Saskatchewan, and Manitoba},
-  author={Harell, Allison and Panagos, Dimitrios and Matthews, J Scott},
-  year={2010}
-}
+Armstrong, D. A., Alcantara, C., & Kennedy, J. (2023a). Exploring the effects of electorate size on indigenous voter turnout. Politics, Groups, and Identities, 11(1), 98‑107. https://doi.org/10.1080/21565503.2021.1926297
 
-@article{hill2010voting,
-  title={Voting attitudes and behaviour among Aboriginal peoples: Reports from Anangu women},
-  author={Hill, Lisa and Alport, Kate},
-  journal={Australian Journal of Politics \& History},
-  volume={56},
-  number={2},
-  pages={242--258},
-  year={2010},
-  publisher={Wiley Online Library}
-}
+Harellll, A., Panagos, D., & Matthews, J. (2010). Explaining Aboriginal Turnout in Federal Elections : Evidence from Albe rta, Saskatchewan, and Manitoba.
 
-@article{armstrong2023exploring,
-  title={Exploring the effects of electorate size on indigenous voter turnout},
-  author={Armstrong, David A and Alcantara, Christopher and Kennedy, John},
-  journal={Politics, Groups, and Identities},
-  volume={11},
-  number={1},
-  pages={98--107},
-  year={2023},
-  publisher={Taylor \& Francis}
-}
+Hill, L., & Alport, K. (2010). Voting Attitudes and Behaviour Among Aboriginal Peoples : Reports from Anangu Women. Australian Journal of Politics & History, 56(2), 242‑258. https://doi.org/10.1111/j.1467-8497.2010.01552.x
