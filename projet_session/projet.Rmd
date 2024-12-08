@@ -259,7 +259,7 @@ library(readr)
 ED_Canada_2021_prov_tx_part <- read_csv("C:\\Users\\willi\\OneDrive\\Documents\\WilliamBeaudry.github.io\\projet_session\\ED-Canada_2021_prov_tx_part.csv")
 
 df <- df %>%
-  mutate(prop_indigenous=ELECTEURS_AUTOCHTONES/POPULATION)
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
 
 ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
   geom_point(alpha = 0.6, color = "blue") + # Nuage de points
@@ -315,7 +315,7 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
 ``` {r graphique-ggplot-coefprov, ehco=FALSE, fig.width=7, fig.eight=5, fig.align="center"}
 ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
   geom_point(size = 1, alpha = 0.7) + 
-  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", size = 1) + # Droites de régression
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", size = 1) +
   scale_x_log10() +
   labs(
     title = "Proportion d'électeurs autochtones vs Taux de participation",
@@ -325,9 +325,9 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
   facet_wrap(~PROV) +
   theme_minimal() +
   theme(
-    plot.title = element_text(hjust = 0.5), # Centrage du titre
+    plot.title = element_text(hjust = 0.5),
     text = element_text(size = 12),
-    legend.position = "none" # Supprime la légende pour chaque facette
+    legend.position = "none"
   )
 ```
 
