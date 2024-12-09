@@ -9,8 +9,13 @@ library(dplyr)
 df_long <- df_cln %>%
   pivot_longer(cols = -"Province/territoire", names_to = "Année", values_to = "Taux_participation")
 
-# Graphique linéaire
-ggplot(df_long, aes(x = Année, y = Taux_participation, group = `Province/territoire`, color = `Province/territoire`)) +
+# Convertir la colonne Année en numérique et filtrer les données
+df_long_filtered <- df_long %>%
+  filter(`Province/territoire` != "Sections de vote dans les réserves") %>%
+  filter(Année != "Moyenne cumulative(%)") %>%
+  mutate(Année = as.numeric(gsub("[^0-9]", "", Année)))
+
+ggplot(df_long_filtered, aes(x = Année, y = Taux_participation, group = `Province/territoire`, color = `Province/territoire`)) +
   geom_line() +
   geom_point() +
   theme_minimal() +
@@ -22,7 +27,7 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = `Province/territ
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.position = "right"
-  ) 
+  )
 
 # Créer un graphique boxplot
 ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territoire", color = "Province/territoire")) +
@@ -109,6 +114,27 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
 
 
 colnames(ED_Canada_2021_prov_tx_part)
+
+
+# Convertir la colonne Année en numérique et filtrer les données
+df_long_filtered <- df_long %>%
+  filter(`Province/territoire` != "Sections de vote dans les réserves") %>%
+  filter(Année != "Moyenne cumulative(%)") %>%
+  mutate(Année = as.numeric(gsub("[^0-9]", "", Année)))
+
+ggplot(df_long_filtered, aes(x = Année, y = Taux_participation, group = `Province/territoire`, color = `Province/territoire`)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  labs(
+    title = str_wrap("Taux de participation aux élections fédérales dans les communautés autochtones par province (2004-2011)"),
+    x = "Année", y = "Taux de participation (%)",
+    color = "Province"
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "right"
+  )
 
 
 
