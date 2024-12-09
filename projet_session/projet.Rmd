@@ -86,67 +86,6 @@ df_cln <- df %>%
     }
   ))
 
-``` {r extraction-donnees-lineaires, ehco=FALSE, fig.width=7, fig.eight=5, fig.align="center"}
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-# Charger les bibliothèques nécessaires
-library(rvest)
-library(dplyr)
-
-# URL de la page
-url <- "https://www.elections.ca/content.aspx?dir=rec/part/fvt&document=p4&lang=f&section=res"
-
-# Lire le contenu HTML de la page
-page <- read_html(url)
-
-# Extraire les lignes du tableau avec les balises "tr"
-table_rows <- page %>%
-  html_elements("tr")
-
-# Récupérer le contenu des balises "th" (en-têtes de colonnes)
-headers <- table_rows %>%
-  .[1] %>%
-  html_elements("th") %>%
-  html_text()
-
-# Extraire les données des balises "td" pour les rangées restantes
-data <- table_rows %>%
-  .[-1] %>%
-  lapply(function(row) {
-    row %>% html_elements("td") %>% html_text()
-  })
-
-# Convertir les données en data frame
-df <- do.call(rbind, data) %>%
-  as.data.frame(stringsAsFactors = FALSE)
-
-# Attribuer les noms de colonnes extraits
-names(df) <- headers
-
-# Nettoyer et convertir les données numériques
-df_cln <- df %>%
-  mutate(across(
-    .cols = -1, 
-    .fns = ~ {
-      # Supprimer les espaces et remplacer la virgule par un point
-      cleaned <- gsub(" ", "", .)
-      cleaned <- gsub(",", ".", cleaned)
-      # Convertir en numérique
-      as.numeric(cleaned)
-    }
-  ))
-
-# Afficher le data frame nettoyé
-print(df_cln)
-
-# Inspecter la structure des données
-str(df_cln)
-
-# Afficher le résumé des données
-summary(df_cln)
-```
-
 Ce code nous a permit de créer une tableau des taux de participation des communautés autochtones aux élections fédérales de 2004 à 2011 ventilé selon la province.
 
 Nous avons utilisé une deuxième source de données, soit la taille de la population dans les circonscriptions où se trouvent des communautés autochtones au Canada ainsi que le nombre d'électeurs autochtones inscrits et le taux de participation de ces électeurs. Les données étaient présentées dans un document CSV et dans un rapport institutionnel d'Élection Canada. La compilation des données d'électeurs autochtones inscrits et de la participation électorale ont été ajoutées manuellement au document CSV des données populationnelles de chaque circonscription.
@@ -167,7 +106,7 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = `Province/territ
   geom_point() +
   theme_minimal() +
   labs(
-    title = "Taux de participation aux élections fédérales par province (2004-2011)",
+    title = "Taux de participation aux élections fédérales dans les communautés autochtones par province (2004-2011)",
     x = "Année", y = "Taux de participation (%)",
     color = "Province"
   ) +
@@ -176,29 +115,9 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = `Province/territ
     legend.position = "right"
   ) +
   scale_color_manual(values = couleurs)
-
-``` {r graphique-ggplot-lineaire, ehco=FALSE, fig.width=7, fig.eight=5, fig.align="center"}
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-df_long <- df_cln %>%
-  pivot_longer(cols = -"Province/territoire", names_to = "Année", values_to = "Taux_participation")
-
-ggplot(df_long, aes(x = Année, y = Taux_participation, group = `Province/territoire`, color = `Province/territoire`)) +
-  geom_line() +
-  geom_point() +
-  theme_minimal() +
-  labs(
-    title = "Taux de participation aux élections fédérales par province (2004-2011)",
-    x = "Année", y = "Taux de participation (%)",
-    color = "Province"
-  ) +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    legend.position = "right"
-  )
-```
-
+  
+![Graphique 1](C:\Users\willi\OneDrive\Images\tx_part_elec_fed_comm_aut_prov_lin.png)
+  
 **Créer un graphique boxplot**
 ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territoire", color = "Province/territoire")) +
   geom_line() +
@@ -211,19 +130,7 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
         legend.position = "right") +
   scale_color_manual(values = "red")
 
-``` {r graphique-ggplot-boxplot, ehco=FALSE, fig.width=7, fig.eight=5, fig.align="center"}
-library(ggplot2)
-ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territoire", color = "Province/territoire")) +
-  geom_line() +
-  geom_point() +
-  theme_minimal() +
-  labs(title = "Taux de participation aux élections fédérales par province (2004-2011)",
-       x = "Année", y = "Taux de participation (%)",
-       color = "Province") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position = "right") +
-  scale_color_manual(values = "red")
-```
+![Graphique 2](C:\Users\willi\OneDrive\Images\tx_part_elec_fed_comm_aut_prov_boxplot.png)
 
 Nous avons ensuite calculer la proportion d'électeurs autochtones dans 113 circonscriptions électorales fédérales en 2021 pour produire deux graphiques supplémentaires. Le premier illustre la corrélation entre la proportion d'électeurs autochtone et leur taux de participation tandis que le second distingue cette corrélation selon la province ou le territoire.
 
@@ -253,29 +160,8 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
     text = element_text(size = 12)
   )
 
-``` {r graphique-ggplot-coefcan, ehco=FALSE, fig.width=7, fig.eight=5, fig.align="center"}
-library(ggplot2)
-library(readr)
-ED_Canada_2021_prov_tx_part <- read_csv("C:\\Users\\willi\\OneDrive\\Documents\\WilliamBeaudry.github.io\\projet_session\\ED-Canada_2021_prov_tx_part.csv")
+![Graphique 3](C:\Users\willi\OneDrive\Images\relat_prop_aut_tx_part_elec_fed.png)
 
-df <- df %>%
-  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
-
-ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
-  geom_point(alpha = 0.6, color = "blue") + # Nuage de points
-  geom_smooth(method = "lm", color = "red", se = TRUE) + # Ligne de régression
-  scale_x_log10() + # Échelle logarithmique pour l'axe X
-  labs(
-    title = "Relation (log) entre la proportion d'électeurs autochtones et le taux de participation",
-    x = "Proportion d'électeurs autochtones (log10)",
-    y = "Taux de participation (%)"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(hjust = 0.5), # Centrage du titre
-    text = element_text(size = 12)
-  )
-```
 **Calculer la proportion d'électeurs autochtones**
 df <- df %>%
   mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
@@ -312,24 +198,7 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
     legend.position = "none" # Supprime la légende pour chaque facette
   )
 
-``` {r graphique-ggplot-coefprov, ehco=FALSE, fig.width=7, fig.eight=5, fig.align="center"}
-ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION, color = PROV)) +
-  geom_point(size = 1, alpha = 0.7) + 
-  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", size = 1) +
-  scale_x_log10() +
-  labs(
-    title = "Proportion d'électeurs autochtones vs Taux de participation",
-    x = "Proportion d'électeurs autochtones (log10)",
-    y = "Taux de participation (%)"
-  ) +
-  facet_wrap(~PROV) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(hjust = 0.5),
-    text = element_text(size = 12),
-    legend.position = "none"
-  )
-```
+![Graphique 4](C:\Users\willi\OneDrive\Images\relat_pro_aut_tx_part_elec_fed_prov.png)
 
 Ces codes ont été utilisés pour trouver et illustrer le coefficient de corrélation entre la proportion d'électeurs autochtones dans les circonscriptions fédérales et le taux de participation de ces électeurs en 2021. Nous avons fait un coefficient pour l'ensemble des circonscriptions, puis elles ont été regroupées selon la province, puis divisé entre le Québec et les reste du Canada.
 

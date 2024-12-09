@@ -1,6 +1,9 @@
 # Comparaison du taux de participation entre le Québec et les autres provinces
 library(ggplot2)
 library(tidyr)
+install.packages("stringr")
+library(stringr)
+library(dplyr)
 
 # Préparer les données
 df_long <- df_cln %>%
@@ -12,7 +15,7 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = `Province/territ
   geom_point() +
   theme_minimal() +
   labs(
-    title = "Taux de participation aux élections fédérales par province (2004-2011)",
+    title = str_wrap("Taux de participation aux élections fédérales dans les communautés autochtones par province (2004-2011)"),
     x = "Année", y = "Taux de participation (%)",
     color = "Province"
   ) +
@@ -26,7 +29,7 @@ ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territ
   geom_line() +
   geom_point() +
   theme_minimal() +
-  labs(title = "Taux de participation aux élections fédérales par province (2004-2011)",
+  labs(title = str_wrap("Taux de participation aux élections fédérales dans les communautés autochtones par province (2004-2011)"),
        x = "Année", y = "Taux de participation (%)",
        color = "Province") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
@@ -55,17 +58,19 @@ ggplot(df, aes(x = prop_indigenous, y = TAUX_PARTICIPATION)) +
     x = "Proportion d'électeurs autochtones (log10)",
     y = "Taux de participation (%)"
   ) +
-  theme_minimal() + # Thème épuré
+  theme_minimal() +
   theme(
-    plot.title = element_text(hjust = 0.5), # Centrage du titre
+    plot.title = element_text(hjust = 0.5),
     text = element_text(size = 12)
   )
+
+print(prop_elec_tx_part_coefcan)
 
 library(dplyr)
 
 # Calculer la proportion d'électeurs autochtones
 df <- df %>%
-  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES / POPULATION)
+  mutate(prop_indigenous = ELECTEURS_AUTOCHTONES/POPULATION)
 
 # Calcul des coefficients de corrélation par province
 correlation_by_province <- df %>%
