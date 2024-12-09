@@ -138,6 +138,4 @@ ggplot(df_long_filtered, aes(x = Année, y = Taux_participation, group = `Provin
 
 
 
-
-
   
