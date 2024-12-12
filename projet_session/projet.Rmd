@@ -94,7 +94,7 @@ Les données sont issues de 2021, ce qui pourrait potentiellement introduire un 
 
 # Résultats
 ## Visualisation
-Nous avons fait le choix de faire deux visualisation avec les données que nous avons extraites. La première visualisation est un graphique à ligne brisée pour montrer les tendances propres aux communautés de chaque provinces. Le second graphique est un diagramme en points. Il permet d'observer la différence importante de participation entre les communautés autochtones du Québec et les autres provinces canadiennes. Le code que nous avons roulé pour produire ces graphiques sont les suivants:
+Nous avons fait le choix de faire nos deux premières visualisations avec les données que nous avons extraites pour illustrer les faibles taux de participation aux élections fédérales dans les communautés autochotnes entre 2004 et 2011. La première visualisation est un graphique à ligne brisée pour montrer les tendances propres aux communautés de chaque provinces. Le second graphique est un diagramme en points. Il permet d'observer la différence importante de participation entre les communautés autochtones du Québec et les autres provinces canadiennes. Le code que nous avons roulé pour produire ces graphiques sont les suivants:
 
 **Préparer les données**
 df_long <- df_cln %>%

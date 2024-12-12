@@ -528,14 +528,16 @@ devrait être peu importante.</p>
 <h1>Résultats</h1>
 <div id="visualisation" class="section level2">
 <h2>Visualisation</h2>
-<p>Nous avons fait le choix de faire deux visualisation avec les données
-que nous avons extraites. La première visualisation est un graphique à
-ligne brisée pour montrer les tendances propres aux communautés de
-chaque provinces. Le second graphique est un diagramme en points. Il
-permet d’observer la différence importante de participation entre les
-communautés autochtones du Québec et les autres provinces canadiennes.
-Le code que nous avons roulé pour produire ces graphiques sont les
-suivants:</p>
+<p>Nous avons fait le choix de faire nos deux premières visualisations
+avec les données que nous avons extraites pour illustrer les faibles
+taux de participation aux élections fédérales dans les communautés
+autochotnes entre 2004 et 2011. La première visualisation est un
+graphique à ligne brisée pour montrer les tendances propres aux
+communautés de chaque provinces. Le second graphique est un diagramme en
+points. Il permet d’observer la différence importante de participation
+entre les communautés autochtones du Québec et les autres provinces
+canadiennes. Le code que nous avons roulé pour produire ces graphiques
+sont les suivants:</p>
 <p><strong>Préparer les données</strong> df_long &lt;- df_cln %&gt;%
 pivot_longer(cols = -“Province/territoire”, names_to = “Année”,
 values_to = “Taux_participation”)</p>
