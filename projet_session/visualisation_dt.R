@@ -30,16 +30,47 @@ ggplot(df_long_filtered, aes(x = Année, y = Taux_participation, group = `Provin
   )
 
 # Créer un graphique boxplot
-ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territoire", color = "Province/territoire")) +
+ggplot(df_long, aes(x = Année, y = Taux_participation, group = "Province/territoire", fill = "Province/territoire")) +
   geom_line() +
-  geom_point() +
+  geom_point(aes(color = `Province/territoire`)) +
   theme_minimal() +
   labs(title = str_wrap("Taux de participation aux élections fédérales dans les communautés autochtones par province (2004-2011)"),
        x = "Année", y = "Taux de participation (%)",
        color = "Province") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "right") +
-  scale_color_manual(values = "red")
+  scale_fill_manual(values = c(
+    "Québec" = "blue",
+    "Alberta" = "red",
+    "Manitoba" = "red",
+    "Colombie-Britannique" = "red",
+    "Terre-Neuve-et-Labrador" = "red",
+    "Yukon" = "red",
+    "Nunavut" = "red",
+    "Canada (national)" = "red",
+    "Île-du-Prince-Édouard" = "red",
+    "Nouvelle-Écosse" = "red",
+    "Nouveau-Brunswick" = "red",
+    "Ontario" = "red",
+    "Saskatchewan" = "red",
+    "Territoires du Nord-Ouest" = "red"
+  )) +
+  scale_color_manual(values = c(
+    "Québec" = "blue",
+    "Alberta" = "red",
+    "Manitoba" = "red",
+    "Colombie-Britannique" = "red",
+    "Terre-Neuve-et-Labrador" = "red",
+    "Yukon" = "red",
+    "Nunavut" = "red",
+    "Canada (national)" = "red",
+    "Île-du-Prince-Édouard" = "red",
+    "Nouvelle-Écosse" = "red",
+    "Nouveau-Brunswick" = "red",
+    "Ontario" = "red",
+    "Saskatchewan" = "red",
+    "Territoires du Nord-Ouest" = "red"
+  ))
 
 # Calcul de la proportion d'électeurs autochtones dans la population
 df <- ED_Canada_2021_prov_tx_part %>%
