@@ -3,16 +3,15 @@
 # Après toute modification : source("build.R") dans RStudio
 # ===========================================================================
 
-titre_onglet: "William Beaudry, candidat à la maîtrise"
+titre_onglet: "William Beaudry"
 nom: "William Beaudry"
 photo: "images/profil_pic_wb.jpg"
 courriel: "william.beaudry5@gmail.com"
-meta_description: "Site personnel de William Beaudry, politologue, chercheur et étudiant à la maîtrise en science politique."
+meta_description: "Site professionnel de William Beaudry"
 
 # Texte sous le nom dans la barre latérale. Un saut de ligne = une nouvelle ligne.
 accroche: |
-  Passionné de politique, de plein air et de vélo !
-  Fonctionnaire à temps partiel, étudiant à temps plein.
+  Politologue, passionné de l'analyse rigoureuse de la politique !
 
 # ---------------------------------------------------------------------------
 # Réseaux sociaux (barre latérale). Icônes : https://fontawesome.com/v5/search
@@ -60,17 +59,18 @@ sections:
     entete: "William Beaudry"
     sous_titre: "Politologue à mes heures, apprenti chercheur et bien plus"
     texte: |
-      1999, H, Québec, Baccalauréat, Francophone, Étudiant et salarié : voici une brève description de ma personne.
+      Voici comment un sondage me décrirait : 1999, H, Québec, Baccalauréat, Étudiant, Francophone, Sans emploi.
+      
+      Pour en apprendre plus sur mon parcours professionnel et académique ainsi que les projets et publications sur lesquels j'ai travaillés, vous trouverez le tout sur cette page !
 
-      Certains diront : *« une adresse qui finit par .github.io, ça sent le bricolage voyons »*, mais l'analyse coût-bénéfice derrière ce choix vous fera assurément changer d'avis. L'hébergement est gratuit, le certificat de sécurité aussi, et chaque modification de ce site est versionnée et consultable publiquement. Pour quelqu'un qui passe ses journées dans les données, la traçabilité vaut mieux qu'un nom de domaine payé à l'année ! Coût nul + transparence complète = une recette gagnante !
-
-  - id: "realisations"
-    titre: "Mes réalisations"
+  - id: "En bref"
+    titre: "En bref"
     type: "texte_icones"
     texte: |
-      Étudiant à la maîtrise en science politique à l'Université Laval, mes recherches portent sur la politique autochtone, la participation politique et la gouvernance.
-
-      Conseiller à la recherche chez Élections Québec, j'ai œuvré sur un rapport portant sur la participation électorale des communautés autochtones aux élections provinciales depuis 2007.
+      Je mène à terme une maîtrise en science politique avec mémoire à l'Université Laval cet automne. Mes thèmes de recherche recoupent la participation politique, les populations autochtones et l'analyse quantitative de données de sondages.
+      
+      Je participe moi-même à la vie politique québécoise au-delà de quelques contributions scientifiques: je me présente comme candidat du parti Nul dans la circonscription de Chauveau.
+      
     faits:
       - icone: "solid fa-dollar-sign"
         texte: "Secrétaire aux Finances de l'AEESPUL, puis de l'APEUL"
