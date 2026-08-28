@@ -5,6 +5,12 @@
 # Les entrées sont triées automatiquement de la plus récente à la plus ancienne.
 # ===========================================================================
 
+# Intitulés affichés sur le site (facultatif : retire une ligne
+# pour revenir à l'intitulé par défaut).
+titre_experiences: "Expérience professionnelle"
+titre_formation: "Formation académique"
+titre_formations_connexes: "Formations connexes"
+
 experiences:
 
   - poste: "Conseiller à la recherche"
@@ -62,7 +68,7 @@ experiences:
       électeurs.
       Vérifier l'identité des votants et assurer le bon déroulement du scrutin.
 
-formation académique:
+formation:
 
   - diplome: "Maîtrise en science politique"
     etablissement: "Université Laval"
@@ -86,11 +92,47 @@ formation académique:
       Intérêts principaux : comportement politique, institutions politiques et 
       gouvernance, évaluation des politiques publiques.
 
-  - diplome: "Dilôme d'études collégiales"
+  - diplome: "Diplôme d'études collégiales"
     etablissement: "Cégep Garneau"
     lieu: "Québec"
     debut: "2019-01"
     fin: "2021-06"
     description: |
       Sciences humaines, profil Civilisations et histoire.
+
+formations_connexes:
+
+  - formation: "Fondamentaux des principes de PCAP"
+    etablissement: "Le Centre de gouvernance de l'information des Premières Nations"
+    lieu: "Québec"
+    debut: "2025-06"
+    fin: "2025-08"
+    description: |
+      Comprendre les principes de Propriété, Contrôle, Accès et Possession des
+      données des Premières Nations.
+      Mettre en oeuvre la souveraineté des données des Premières Nations dans la
+      recherche institutionnelle et académique.
+
+  - formation: "École interdisciplinaire d'outils et méthodes"
+    etablissement: "Université Laval"
+    lieu: "Québec"
+    debut: "2024-08"
+    fin: "2024-10"
+    description: |
+      Parcours suivi : Distinguer la cause de l’effet : causalité et expérimentation.
+      Formation aux techniques d'analyse causale les plus répandues.
+  
+  - formation: "École d'été sur la démocratie"
+    etablissement: "Université Laval"
+    lieu: "Québec"
+    debut: "2024-06"
+    fin: "2024-07"
+    description: |
+      Thème de l'édition : Générations et démocratie.
+      Les attitudes générationnelles de participation y ont été scrutées.
+      
+
+
+
+
 

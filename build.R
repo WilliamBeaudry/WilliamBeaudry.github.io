@@ -152,23 +152,58 @@ gen_texte_icones <- function(s, ...) {
 
 gen_parcours <- function(s, donnees, ...) {
   p <- donnees$parcours
-  bloc <- function(titre, items, champ_titre, champ_org) {
+
+  # Garde-fou : une rubrique mal orthographi\u00e9e dans parcours.yml serait
+  # sinon ignor\u00e9e en silence, et son contenu dispara\u00eetrait du site.
+  RUBRIQUES <- c("experiences", "formation", "formations_connexes")
+  connus <- c(RUBRIQUES, paste0("titre_", RUBRIQUES))
+  inconnus <- setdiff(names(p), connus)
+  if (length(inconnus)) {
+    warning("parcours.yml : rubrique(s) ignor\u00e9e(s) car non reconnue(s) : ",
+            paste(inconnus, collapse = ", "),
+            ".\n  Les rubriques valides sont : ", paste(RUBRIQUES, collapse = ", "),
+            ".\n  Pour changer un intitul\u00e9 affich\u00e9, utilise titre_<rubrique>.",
+            call. = FALSE)
+  }
+
+  etiquette <- function(cle, defaut) {
+    v <- txt(p[[paste0("titre_", cle)]])
+    if (nzchar(v)) v else defaut
+  }
+
+  # Premier champ non vide parmi plusieurs noms possibles : tolère
+  # poste / diplome / formation / titre sans que le fichier plante.
+  premier <- function(e, noms) {
+    for (n in noms) if (nzchar(txt(e[[n]]))) return(e[[n]])
+    ""
+  }
+
+  bloc <- function(titre, items) {
     if (length(items) == 0) return("")
     items <- items[order(-vapply(items, function(e) cle_date(e$fin, TRUE), numeric(1)),
                          -vapply(items, function(e) cle_date(e$debut), numeric(1)))]
-    li <- vapply(items, function(e) sprintf(
-      '  <li class="pc-item">\n    <span class="pc-date">%s</span>\n    <h5 class="pc-titre">%s</h5>\n    <span class="pc-org">%s</span>\n    %s\n  </li>',
-      periode(e$debut, e$fin),
-      esc(e[[champ_titre]]),
-      paste0(esc(e[[champ_org]]),
-             if (nzchar(txt(e$lieu))) paste0(" &middot; ", esc(e$lieu)) else ""),
-      md(e$description)), character(1))
+    li <- vapply(items, function(e) {
+      intitule <- premier(e, c("poste", "diplome", "formation", "titre"))
+      if (!nzchar(txt(intitule))) {
+        warning("Une entrée de '", titre, "' n'a pas d'intitulé (poste, diplome ou formation).",
+                call. = FALSE)
+      }
+      sprintf(
+        '  <li class="pc-item">\n    <span class="pc-date">%s</span>\n    <h5 class="pc-titre">%s</h5>\n    <span class="pc-org">%s</span>\n    %s\n  </li>',
+        periode(e$debut, e$fin),
+        esc(intitule),
+        paste0(esc(premier(e, c("organisation", "etablissement"))),
+               if (nzchar(txt(e$lieu))) paste0(" &middot; ", esc(e$lieu)) else ""),
+        md(e$description))
+    }, character(1))
     paste0("<h4>", titre, "</h4>\n<ul class=\"pc-liste\">\n",
            paste(li, collapse = "\n"), "\n</ul>\n")
   }
+
   paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), "\n",
-         bloc("Expérience professionnelle", p$experiences %||% list(), "poste", "organisation"),
-         bloc("Formation", p$formation %||% list(), "diplome", "etablissement"),
+         bloc(etiquette("experiences", "Expérience professionnelle"), p$experiences %||% list()),
+         bloc(etiquette("formation", "Formation"), p$formation %||% list()),
+         bloc(etiquette("formations_connexes", "Formations connexes"), p$formations_connexes %||% list()),
          "</div>")
 }
 
