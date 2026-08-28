@@ -3,7 +3,7 @@
 # Après toute modification : source("build.R") dans RStudio
 # ===========================================================================
 
-titre_onglet: "William Beaudry, étudiant, fonctionnaire et bien plus"
+titre_onglet: "William Beaudry, candidat à la maîtrise"
 nom: "William Beaudry"
 photo: "images/profil_pic_wb.jpg"
 courriel: "william.beaudry5@gmail.com"
