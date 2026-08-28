@@ -10,6 +10,7 @@
 titre_experiences: "Expérience professionnelle"
 titre_formation: "Formation académique"
 titre_formations_connexes: "Formations connexes"
+titre_implication_sociale_et_etudiante: "Implication sociale et étudiante"
 
 experiences:
 
@@ -53,7 +54,7 @@ experiences:
     debut: "2022-05"
     fin: "2023-05"
     description: |
-      Expliquer lefonctionnement des institutions parlementaires et le processus
+      Expliquer le fonctionnement des institutions parlementaires et le processus
       législatif.
       Adapter le contenu des visites guidées en fonction des connaissances du 
       groupe de visiteur·euses.
@@ -131,8 +132,40 @@ formations_connexes:
       Thème de l'édition : Générations et démocratie.
       Les attitudes générationnelles de participation y ont été scrutées.
       
+implication_sociale_et_etudiante:
 
-
+  - nom: "Secrétaire aux Finances"
+    etablissement: "Association des politologues étudiants de l'Université Laval"
+    lieu: "Québec"
+    debut: "2024-05"
+    fin: "2025-05"
+    
+  - nom: "Vice-président aux Finances"
+    etablissement: "Association des étudiants et des étudiantes en science politique de l'Université Laval"
+    lieu: "Québec"
+    debut: "2023-05"
+    fin: "2024-05"
+    
+  - nom: "Marche-don"
+    etablissement: "Société canadienne du cancer"
+    lieu: "Québec"
+    debut: "2026-06"
+    fin: "2026-06"
+    description: |
+      Marcher 100~km au profit de la recherche sur le cancer.
+      Amasser 1~520$.
+      
+  - nom: "Bénévole"
+    etablissement: "Club Rotary"
+    lieu: "Québec et Bharuch"
+    debut: "2016-10"
+    fin: "2020-02"
+    description: |
+      Dans le cadre d'un échange étudiant de 11 mois à Bharuch (Gujarat, Inde), 
+      j'ai participé à plusieurs activités de sensibilisation,
+      de prévention et de collecte de fonds pour soutenir les activités du Club.
+      J'ai également participé aux activité du Club Québec-Cité dans les années
+      suivantes.
 
 
 

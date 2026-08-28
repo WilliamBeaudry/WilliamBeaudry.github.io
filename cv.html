@@ -1,0 +1,301 @@
+<!doctype html>
+<!--
+  FICHIER GÉNÉRÉ AUTOMATIQUEMENT — NE PAS MODIFIER À LA MAIN.
+  Produit par build.R le 2026-08-28 17:21
+  Contenu : contenu/parcours.yml et contenu/site.yml (bloc cv:)
+  Structure et styles : modeles/gabarit_cv.html
+-->
+<html lang="fr">
+  <head>
+    <title>CV — William Beaudry</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* ==================================================================
+         RÉGLAGES — les cinq valeurs à modifier si tu veux changer l'allure
+         ================================================================== */
+      :root {
+        --cv-accent:  #5F1609;   /* bordeaux des titres, repris de ton CV LaTeX */
+        --cv-gris:    #808080;   /* employeurs et établissements */
+        --cv-encre:   #1a1a1a;   /* texte courant */
+        --cv-filet:   #000000;   /* filet sous les titres de section */
+
+        /* Police du site (monospace). Pour un rendu de CV plus classique et
+           plus dense, remplace la ligne par :
+           --cv-police: 'Inter', 'Segoe UI', system-ui, sans-serif;          */
+        --cv-police: 'DejaVu Sans Mono', 'Source Code Pro', ui-monospace, monospace;
+      }
+
+      /* ================================ Page ============================ */
+      @page { size: letter; margin: 1.5cm 1.9cm; }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: #e9e9e9;
+        color: var(--cv-encre);
+        font-family: var(--cv-police);
+        font-size: 10.5pt;
+        line-height: 1.5;
+      }
+
+      .feuille {
+        background: #ffffff;
+        max-width: 8.5in;
+        margin: 2rem auto;
+        padding: 2.6cm 2.4cm 2.2cm;
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+      }
+
+      /* ============================== En-tête =========================== */
+      .cv-nom {
+        text-align: center;
+        font-size: 25pt;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        margin: 0 0 0.55em;
+      }
+
+      .cv-contact {
+        text-align: center;
+        font-size: 9.5pt;
+        color: var(--cv-gris);
+        margin: 0 0 0.4em;
+      }
+
+      .cv-contact a { color: var(--cv-accent); text-decoration: none; }
+      .cv-contact a:hover { text-decoration: underline; }
+      .cv-contact .sep { display: inline-block; width: 1.6em; }
+
+      .cv-profil { margin: 1.8em 0 0; text-align: justify; }
+
+      /* ========================= Titre de section ======================= */
+      .cv-section {
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        margin: 2em 0 0.7em;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .cv-section h2 {
+        font-size: 11.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--cv-accent);
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      .cv-section .filet {
+        flex: 1 1 auto;
+        height: 3px;
+        background: var(--cv-filet);
+      }
+
+      /* ============================== Entrées =========================== */
+      .cv-entree {
+        margin: 0 0 1.1em;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .cv-ligne {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1.5em;
+      }
+
+      .cv-intitule { font-weight: 700; }
+      .cv-dates { font-weight: 700; white-space: nowrap; }
+      .cv-org { font-weight: 700; color: var(--cv-gris); }
+
+      .cv-desc { margin: 0.35em 0 0; }
+      .cv-desc p { margin: 0 0 0.3em; }
+
+      /* =========================== Publications ========================= */
+      .cv-pub { margin: 0 0 1em; break-inside: avoid; page-break-inside: avoid; }
+      .cv-pub-groupe { font-weight: 700; }
+      .cv-pub-titre { font-style: italic; }
+      .cv-pub-titre a { color: var(--cv-accent); text-decoration: none; }
+
+      .cv-note { color: var(--cv-accent); margin-top: 1.4em; }
+
+      /* ======================== Barre d'impression ====================== */
+      .barre {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--cv-accent);
+        color: #fff;
+        padding: 0.7rem 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 10pt;
+      }
+
+      .barre button {
+        font-family: inherit;
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--cv-accent);
+        background: #fff;
+        border: 0;
+        border-radius: 4px;
+        padding: 0.45em 1.1em;
+        cursor: pointer;
+      }
+
+      .barre button:hover { background: #f0e6e4; }
+      .barre a { color: #fff; text-decoration: underline; }
+
+      /* ============================= Impression ========================= */
+      @media print {
+        body { background: #fff; font-size: 10pt; }
+        .feuille { margin: 0; padding: 0; max-width: none; box-shadow: none; }
+        .barre { display: none !important; }
+        a { color: var(--cv-accent) !important; }
+      }
+
+      @media screen and (max-width: 700px) {
+        .feuille { margin: 0; padding: 1.4rem 1.1rem; }
+        .cv-ligne { flex-direction: column; gap: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="barre">
+      <span>Version imprimable &mdash; utilise « Enregistrer au format PDF » dans la boîte d'impression.</span>
+      <button type="button" onclick="window.print()">Imprimer ou enregistrer en PDF</button>
+      <a href="index.html">Retour au site</a>
+    </div>
+
+    <main class="feuille">
+      <h1 class="cv-nom">William Beaudry</h1>
+      <p class="cv-contact">Québec, Canada<span class="sep"></span><a href="mailto:william.beaudry5@gmail.com">william.beaudry5@gmail.com</a></p>
+      <div class="cv-profil"><p>Présentement candidat à la maîtrise en science politique, je déposerai sous
+peu mon mémoire sur la participation politique des Autochtones au Canada.
+Qu'il s'agisse de visites guidées, de rapports institutionnels ou d'un
+mémoire de recherche, je me suis attaché à approfondir notre connaissance de
+phénomènes politiques complexes et sensibles, sans jamais sacrifier la
+vulgarisation du contenu ni le tact qu'exigent de tels sujets.</p></div>
+      <div class="cv-section"><h2>Expérience professionnelle</h2><span class="filet"></span></div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Auxiliaire de recherche</span><span class="cv-dates">janvier 2025 &ndash; avril 2026</span></div>
+        <div class="cv-org">Chaire de recherche sur la démocratie et les institutions parlementaires, Université Laval, Québec</div>
+        <div class="cv-desc"><p>Recenser la littérature sur la participation politique des Autochtones.
+Rédiger une revue de littérature exhaustive sur la participation politique
+des Autochtones au Québec, au Canada et dans le monde.
+Offrir des pistes de recherches originales pour approfondir notre
+compréhension des barrières à la participation des Autochtones.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Conseiller à la recherche</span><span class="cv-dates">mai 2023 &ndash; avril 2026</span></div>
+        <div class="cv-org">Élections Québec, Québec</div>
+        <div class="cv-desc"><p>Analyser la participation électorale des communautés autochtones aux
+élections provinciales depuis 2007.
+Produire des recommandations institutionnelles pour améliorer l'accès 
+au processus électoral dans les communautés autochtones.
+Vulgariser les résultats dans un rapport institutionnel publié en 2026.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Auxiliaire d'enseignement</span><span class="cv-dates">septembre 2025 &ndash; janvier 2026</span></div>
+        <div class="cv-org">Université Laval, Québec</div>
+        <div class="cv-desc"><p>Évaluer les apprentissages des étudiants et des étudiantes à partir des
+grilles de correction de la professeure.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Préposé à l'accueil et aux visites guidées</span><span class="cv-dates">mai 2022 &ndash; mai 2023</span></div>
+        <div class="cv-org">Assemblée nationale du Québec, Québec</div>
+        <div class="cv-desc"><p>Expliquer le fonctionnement des institutions parlementaires et le processus
+législatif.
+Adapter le contenu des visites guidées en fonction des connaissances du 
+groupe de visiteur·euses.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Préposée ou préposé à l’information et au maintien de l’ordre</span><span class="cv-dates">octobre 2021 &ndash; octobre 2021</span></div>
+        <div class="cv-org">Assemblée nationale du Québec, Québec</div>
+        <div class="cv-desc"><p>Superviser les opérations électorales et accueillir les électrices et 
+électeurs.
+Vérifier l'identité des votants et assurer le bon déroulement du scrutin.</p></div>
+      </div>
+      <div class="cv-section"><h2>Formation académique</h2><span class="filet"></span></div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Maîtrise en science politique</span><span class="cv-dates">mai 2024 &ndash; à ce jour</span></div>
+        <div class="cv-org">Université Laval, Québec</div>
+        <div class="cv-desc"><p>Moyenne cumulative : 4,14/4,33
+Titre : La participation politique des Autochtones au Canada : dépasser le
+vote pour comprendre la diversité des moyens de participation et d'actions
+politiques.
+sous la direction de la professeure Valérie-Anne Mahéo, Ph.D.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Baccalauréat en science politique</span><span class="cv-dates">septembre 2021 &ndash; mai 2024</span></div>
+        <div class="cv-org">Université Laval, Québec</div>
+        <div class="cv-desc"><p>Moyenne cumulative : 3,92/4,33
+Intérêts principaux : comportement politique, institutions politiques et 
+gouvernance, évaluation des politiques publiques.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Diplôme d'études collégiales</span><span class="cv-dates">janvier 2019 &ndash; juin 2021</span></div>
+        <div class="cv-org">Cégep Garneau, Québec</div>
+        <div class="cv-desc"><p>Sciences humaines, profil Civilisations et histoire.</p></div>
+      </div>
+      <div class="cv-section"><h2>Formations connexes</h2><span class="filet"></span></div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Fondamentaux des principes de PCAP</span><span class="cv-dates">juin 2025 &ndash; août 2025</span></div>
+        <div class="cv-org">Le Centre de gouvernance de l'information des Premières Nations, Québec</div>
+        <div class="cv-desc"><p>Comprendre les principes de Propriété, Contrôle, Accès et Possession des
+données des Premières Nations.
+Mettre en oeuvre la souveraineté des données des Premières Nations dans la
+recherche institutionnelle et académique.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">École interdisciplinaire d'outils et méthodes</span><span class="cv-dates">août 2024 &ndash; octobre 2024</span></div>
+        <div class="cv-org">Université Laval, Québec</div>
+        <div class="cv-desc"><p>Parcours suivi : Distinguer la cause de l’effet : causalité et expérimentation.
+Formation aux techniques d'analyse causale les plus répandues.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">École d'été sur la démocratie</span><span class="cv-dates">juin 2024 &ndash; juillet 2024</span></div>
+        <div class="cv-org">Université Laval, Québec</div>
+        <div class="cv-desc"><p>Thème de l'édition : Générations et démocratie.
+Les attitudes générationnelles de participation y ont été scrutées.</p></div>
+      </div>
+      <div class="cv-section"><h2>Implication sociale et étudiante</h2><span class="filet"></span></div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Marche-don</span><span class="cv-dates">juin 2026 &ndash; juin 2026</span></div>
+        <div class="cv-org">Société canadienne du cancer, Québec</div>
+        <div class="cv-desc"><p>Marcher 100~km au profit de la recherche sur le cancer.
+Amasser 1~520$.</p></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Secrétaire aux Finances</span><span class="cv-dates">mai 2024 &ndash; mai 2025</span></div>
+        <div class="cv-org">Association des politologues étudiants de l'Université Laval, Québec</div>
+        <div class="cv-desc"></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Vice-président aux Finances</span><span class="cv-dates">mai 2023 &ndash; mai 2024</span></div>
+        <div class="cv-org">Association des étudiants et des étudiantes en science politique de l'Université Laval, Québec</div>
+        <div class="cv-desc"></div>
+      </div>
+      <div class="cv-entree">
+        <div class="cv-ligne"><span class="cv-intitule">Bénévole</span><span class="cv-dates">octobre 2016 &ndash; février 2020</span></div>
+        <div class="cv-org">Club Rotary, Québec et Bharuch</div>
+        <div class="cv-desc"><p>Dans le cadre d'un échange étudiant de 11 mois à Bharuch (Gujarat, Inde), 
+j'ai participé à plusieurs activités de sensibilisation,
+de prévention et de collecte de fonds pour soutenir les activités du Club.
+J'ai également participé aux activité du Club Québec-Cité dans les années
+suivantes.</p></div>
+      </div>
+      <p class="cv-note">Les références seront fournies sur demande.</p>
+    </main>
+  </body>
+</html>

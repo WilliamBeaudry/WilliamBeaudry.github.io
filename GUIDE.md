@@ -75,22 +75,65 @@ Puis `source("build.R")`.
 
 ---
 
-## Ajouter une expérience ou un diplôme
+## Le parcours : entrées et rubriques
 
-Dans `contenu/parcours.yml`, sous `experiences:` ou `formation:` :
+`contenu/parcours.yml` est découpé en **rubriques**. Chaque rubrique de premier
+niveau devient un bloc de la ligne du temps, **dans l'ordre du fichier**.
+
+### Ajouter une entrée à une rubrique existante
 
 ```yaml
   - poste: "Chargé de cours"
     organisation: "Cégep de Lanaudière"
     lieu: "Joliette"
     debut: "2026-08"
-    fin: ""                # vide = « à ce jour »
+    fin: ""                # vide = « à ce jour », et l'entrée passe en tête
     description: |
       Enseignement de deux cours d'introduction à la science politique.
 ```
 
-Le tri du plus récent au plus ancien est automatique — pas besoin de placer
-l'entrée au bon endroit.
+L'intitulé de l'entrée peut s'appeler `poste`, `diplome`, `formation`, `titre`
+ou `nom` — le premier trouvé est utilisé. L'organisation peut s'appeler
+`organisation` ou `etablissement`. Le tri du plus récent au plus ancien est
+automatique : ajoute ton entrée où tu veux dans la rubrique.
+
+### Créer une rubrique
+
+Ajoute une clé de premier niveau, colle des entrées dessous, et c'est tout —
+`build.R` n'a pas besoin d'être modifié :
+
+```yaml
+implication_etudiante:
+
+  - titre: "Secrétaire aux finances"
+    organisation: "AEESPUL, puis APEUL"
+    lieu: "Québec"
+    debut: "2022-09"
+    fin: "2024-05"
+    description: |
+      Gestion budgétaire et reddition de comptes.
+```
+
+### Nommer une rubrique
+
+Sans rien de plus, le titre affiché est dérivé de la clé
+(`implication_etudiante` → « Implication etudiante », sans accent). Pour
+maîtriser le texte, ajoute en haut du fichier une ligne `titre_<clé>` :
+
+```yaml
+titre_experiences: "Expérience professionnelle"
+titre_formation: "Formation académique"
+titre_formations_connexes: "Formations connexes"
+titre_implication_etudiante: "Implication étudiante"
+```
+
+Une faute de frappe dans un `titre_` déclenche un avertissement qui liste les
+rubriques réellement présentes — rien ne disparaît en silence.
+
+### Réordonner ou retirer une rubrique
+
+L'ordre des rubriques à l'écran est l'ordre des clés dans le fichier : déplace
+le bloc complet. Une rubrique vide ne s'affiche pas.
 
 ---
 

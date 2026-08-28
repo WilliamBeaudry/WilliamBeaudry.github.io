@@ -153,29 +153,19 @@ gen_texte_icones <- function(s, ...) {
 gen_parcours <- function(s, donnees, ...) {
   p <- donnees$parcours
 
-  # Garde-fou : une rubrique mal orthographi\u00e9e dans parcours.yml serait
-  # sinon ignor\u00e9e en silence, et son contenu dispara\u00eetrait du site.
-  RUBRIQUES <- c("experiences", "formation", "formations_connexes")
-  connus <- c(RUBRIQUES, paste0("titre_", RUBRIQUES))
-  inconnus <- setdiff(names(p), connus)
-  if (length(inconnus)) {
-    warning("parcours.yml : rubrique(s) ignor\u00e9e(s) car non reconnue(s) : ",
-            paste(inconnus, collapse = ", "),
-            ".\n  Les rubriques valides sont : ", paste(RUBRIQUES, collapse = ", "),
-            ".\n  Pour changer un intitul\u00e9 affich\u00e9, utilise titre_<rubrique>.",
-            call. = FALSE)
-  }
+  # Chaque liste de premier niveau de parcours.yml devient un bloc de la ligne
+  # du temps, dans l'ordre du fichier. Pour ajouter une rubrique, il suffit
+  # d'ajouter une cl\u00e9 : aucune modification de ce script n'est n\u00e9cessaire.
+  # L'intitul\u00e9 affich\u00e9 vient de titre_<cl\u00e9>, sinon de la cl\u00e9 elle-m\u00eame.
 
-  etiquette <- function(cle, defaut) {
-    v <- txt(p[[paste0("titre_", cle)]])
-    if (nzchar(v)) v else defaut
-  }
-
-  # Premier champ non vide parmi plusieurs noms possibles : tolère
-  # poste / diplome / formation / titre sans que le fichier plante.
   premier <- function(e, noms) {
     for (n in noms) if (nzchar(txt(e[[n]]))) return(e[[n]])
     ""
+  }
+
+  joli <- function(cle) {
+    t <- gsub("_", " ", cle)
+    paste0(toupper(substring(t, 1, 1)), substring(t, 2))
   }
 
   bloc <- function(titre, items) {
@@ -183,27 +173,43 @@ gen_parcours <- function(s, donnees, ...) {
     items <- items[order(-vapply(items, function(e) cle_date(e$fin, TRUE), numeric(1)),
                          -vapply(items, function(e) cle_date(e$debut), numeric(1)))]
     li <- vapply(items, function(e) {
-      intitule <- premier(e, c("poste", "diplome", "formation", "titre"))
+      intitule <- premier(e, c("poste", "diplome", "formation", "titre", "nom"))
       if (!nzchar(txt(intitule))) {
-        warning("Une entrée de '", titre, "' n'a pas d'intitulé (poste, diplome ou formation).",
+        warning("Une entr\u00e9e de '", titre,
+                "' n'a pas d'intitul\u00e9 (poste, diplome, formation, titre ou nom).",
                 call. = FALSE)
       }
       sprintf(
         '  <li class="pc-item">\n    <span class="pc-date">%s</span>\n    <h5 class="pc-titre">%s</h5>\n    <span class="pc-org">%s</span>\n    %s\n  </li>',
         periode(e$debut, e$fin),
         esc(intitule),
-        paste0(esc(premier(e, c("organisation", "etablissement"))),
+        paste0(esc(premier(e, c("organisation", "etablissement", "lieu_org"))),
                if (nzchar(txt(e$lieu))) paste0(" &middot; ", esc(e$lieu)) else ""),
         md(e$description))
     }, character(1))
-    paste0("<h4>", titre, "</h4>\n<ul class=\"pc-liste\">\n",
+    paste0("<h4>", esc(titre), "</h4>\n<ul class=\"pc-liste\">\n",
            paste(li, collapse = "\n"), "\n</ul>\n")
   }
 
+  cles <- names(p)
+  rubriques <- cles[!grepl("^titre_", cles)]
+
+  # Un titre_x sans rubrique x correspondante = faute de frappe
+  orphelins <- setdiff(sub("^titre_", "", cles[grepl("^titre_", cles)]), rubriques)
+  if (length(orphelins)) {
+    warning("parcours.yml : titre_", paste(orphelins, collapse = ", titre_"),
+            " ne correspond \u00e0 aucune rubrique.\n  Rubriques pr\u00e9sentes : ",
+            paste(rubriques, collapse = ", "), ".", call. = FALSE)
+  }
+
+  blocs <- vapply(rubriques, function(cle) {
+    items <- p[[cle]]
+    if (!is.list(items) || length(items) == 0) return("")
+    bloc(txt(p[[paste0("titre_", cle)]]) %||% joli(cle), items)
+  }, character(1))
+
   paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), "\n",
-         bloc(etiquette("experiences", "Expérience professionnelle"), p$experiences %||% list()),
-         bloc(etiquette("formation", "Formation"), p$formation %||% list()),
-         bloc(etiquette("formations_connexes", "Formations connexes"), p$formations_connexes %||% list()),
+         paste(blocs, collapse = ""),
          "</div>")
 }
 
@@ -220,12 +226,14 @@ paste0('  <li class="doc-item">\n%s',
        '    <div class="doc-corps">\n',
        '      <h4><a href="%s" target="_blank"><span class="icon solid fa-file-pdf"></span> %s</a></h4>\n',
        '      <span class="doc-meta">%s</span>\n%s',
-       '      <p><a href="%s" target="_blank" class="button small">Consulter le PDF</a></p>\n',
+       '      <p><a href="%s" target="_blank" class="button small">%s</a></p>\n',
        '    </div>\n  </li>'),
       if (nzchar(apercu)) paste0("    ", apercu, "\n") else "",
       esc(d$fichier), esc(d$titre), meta,
       if (nzchar(txt(d$description))) paste0("      ", md(d$description), "\n") else "",
-      esc(d$fichier))
+      esc(d$fichier),
+      esc(d$libelle %||% if (grepl("\\.pdf$", tolower(txt(d$fichier)))) "Consulter le PDF"
+                        else "Consulter et imprimer"))
   }, character(1))
   paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte),
          '\n<ul class="doc-liste">\n', paste(li, collapse = "\n"), "\n</ul>\n</div>")
@@ -269,6 +277,110 @@ gen_contact <- function(s, donnees, ...) {
          sprintf('    <a href="mailto:%s?subject=Prise%%20de%%20contact" class="button primary">Envoyer un courriel</a>\n',
                  esc(courriel)),
          "  </div>\n</div>\n</div>")
+}
+
+# --- Version imprimable du CV (cv.html) ------------------------------------
+# Reprend les rubriques de parcours.yml, mises en page aux couleurs du CV.
+# Se règle dans contenu/site.yml, bloc "cv:".
+
+gen_cv <- function(donnees, racine = ".") {
+  site <- donnees$site
+  cfg  <- site$cv %||% list()
+  if (identical(cfg$produire, FALSE)) return(invisible(NULL))
+
+  p <- donnees$parcours
+  cles <- names(p)
+  rubriques <- cles[!grepl("^titre_", cles)]
+
+  joli <- function(cle) {
+    t <- gsub("_", " ", cle)
+    paste0(toupper(substring(t, 1, 1)), substring(t, 2))
+  }
+  premier <- function(e, noms) {
+    for (n in noms) if (nzchar(txt(e[[n]]))) return(e[[n]])
+    ""
+  }
+  titre_section <- function(t) sprintf(
+    '      <div class="cv-section"><h2>%s</h2><span class="filet"></span></div>', esc(t))
+
+  corps <- character(0)
+
+  for (cle in rubriques) {
+    items <- p[[cle]]
+    if (!is.list(items) || length(items) == 0) next
+    items <- items[order(-vapply(items, function(e) cle_date(e$fin, TRUE), numeric(1)),
+                         -vapply(items, function(e) cle_date(e$debut), numeric(1)))]
+    intitule_rub <- txt(p[[paste0("titre_", cle)]]) %||% joli(cle)
+    entrees <- vapply(items, function(e) {
+      org <- premier(e, c("organisation", "etablissement"))
+      sprintf(
+        paste0('      <div class="cv-entree">\n',
+               '        <div class="cv-ligne"><span class="cv-intitule">%s</span><span class="cv-dates">%s</span></div>\n',
+               '%s',
+               '        <div class="cv-desc">%s</div>\n',
+               '      </div>'),
+        esc(premier(e, c("poste", "diplome", "formation", "titre", "nom"))),
+        periode(e$debut, e$fin),
+        if (nzchar(txt(org)))
+          sprintf('        <div class="cv-org">%s</div>\n',
+                  paste0(esc(org), if (nzchar(txt(e$lieu))) paste0(", ", esc(e$lieu)) else ""))
+        else "",
+        md(e$description))
+    }, character(1))
+    corps <- c(corps, titre_section(intitule_rub), entrees)
+  }
+
+  if (isTRUE(cfg$publications)) {
+    pubs <- trier_par_date(donnees$publications)
+    if (length(pubs)) {
+      bloc <- vapply(pubs, function(pb) {
+        lien <- txt(pb$url %||% pb$fichier)
+        titre <- if (nzchar(lien))
+          sprintf('<a href="%s">%s</a>', esc(lien), esc(pb$titre)) else esc(pb$titre)
+        sprintf(
+          paste0('      <div class="cv-pub">\n',
+                 '        <div class="cv-pub-groupe">%s</div>\n',
+                 '        <div class="cv-pub-titre">%s</div>\n',
+                 '      </div>'),
+          paste(Filter(nzchar, c(esc(pb$type), esc(pb$editeur))), collapse = " &mdash; "),
+          paste0(titre, if (nzchar(fmt_date(pb$date))) paste0(" (", fmt_date(pb$date), ")") else ""))
+      }, character(1))
+      corps <- c(corps, titre_section(txt(cfg$titre_publications) %||% "Publications"), bloc)
+    }
+  }
+
+  if (nzchar(txt(cfg$note))) {
+    corps <- c(corps, sprintf('      <p class="cv-note">%s</p>', md_ligne(cfg$note)))
+  }
+
+  bouts <- character(0)
+  if (nzchar(txt(cfg$lieu))) bouts <- c(bouts, esc(cfg$lieu))
+  if (nzchar(txt(site$courriel)))
+    bouts <- c(bouts, sprintf('<a href="mailto:%s">%s</a>', esc(site$courriel), esc(site$courriel)))
+  if (nzchar(txt(cfg$telephone))) bouts <- c(bouts, esc(cfg$telephone))
+  if (nzchar(txt(cfg$site))) bouts <- c(bouts, sprintf('<a href="%s">%s</a>', esc(cfg$site), esc(cfg$site)))
+  contact <- paste(bouts, collapse = '<span class="sep"></span>')
+
+  profil <- if (nzchar(txt(cfg$profil)))
+    paste0('      <div class="cv-profil">', md(cfg$profil), "</div>") else ""
+
+  gabarit <- lire_fichier(file.path(racine, "modeles", "gabarit_cv.html"))
+  page <- sub("<!--GABARIT-DEBUT.*?GABARIT-FIN-->\n", "", gabarit)
+  rempl <- function(page, cle, valeur) gsub(paste0("{{", cle, "}}"), valeur, page, fixed = TRUE)
+  page <- rempl(page, "AVIS", paste0(
+    "<!--\n  FICHIER GÉNÉRÉ AUTOMATIQUEMENT — NE PAS MODIFIER À LA MAIN.\n",
+    "  Produit par build.R le ", format(Sys.time(), "%Y-%m-%d %H:%M"), "\n",
+    "  Contenu : contenu/parcours.yml et contenu/site.yml (bloc cv:)\n",
+    "  Structure et styles : modeles/gabarit_cv.html\n-->"))
+  page <- rempl(page, "TITRE_ONGLET", esc(txt(cfg$titre_onglet) %||% paste("CV —", txt(site$nom))))
+  page <- rempl(page, "NOM", esc(site$nom))
+  page <- rempl(page, "CONTACT", contact)
+  page <- rempl(page, "PROFIL", profil)
+  page <- rempl(page, "CORPS", paste(corps, collapse = "\n"))
+
+  ecrire_fichier(page, file.path(racine, "cv.html"))
+  message("cv.html regénéré (version imprimable du parcours).")
+  invisible(page)
 }
 
 GENERATEURS <- list(
@@ -356,6 +468,7 @@ construire_site <- function(racine = ".") {
   if (length(restants)) warning("Marqueurs non remplacés : ", paste(unique(restants), collapse = ", "))
 
   ecrire_fichier(page, file.path(racine, "index.html"))
+  gen_cv(donnees, racine)
   message("\nindex.html regénéré (", format(nchar(page), big.mark = " "), " caractères).")
   message("Ouvre-le dans ton navigateur pour vérifier, puis : source(\"publier.R\")")
   invisible(page)

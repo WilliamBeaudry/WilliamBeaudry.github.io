@@ -11,13 +11,15 @@
 # ===========================================================================
 
 - titre: "Curriculum vitæ"
-  fichier: "cv/mon_cv.pdf"
+  fichier: "cv.html"
+  libelle: "Consulter et imprimer"
   date: "2024-11"
   categorie: "Candidature"
   epingle: true
   apercu: "cv/cv.png.png"
   description: |
-    Mon parcours professionnel et académique complet, en une page.
+    Mon parcours professionnel et académique complet, consultable en ligne
+    et imprimable en un clic.
 
 - titre: "La participation électorale des Premières Nations, 2004-2011"
   fichier: "projet_session/doc_tx_part_pn_2004-11.pdf"

@@ -14,6 +14,28 @@ accroche: |
   Politologue, passionné de l'analyse rigoureuse de la politique !
 
 # ---------------------------------------------------------------------------
+# VERSION IMPRIMABLE DU CV (cv.html)
+# Reprend les rubriques de parcours.yml, aux couleurs de ton CV LaTeX.
+# Styles et couleurs : modeles/gabarit_cv.html
+# ---------------------------------------------------------------------------
+cv:
+  produire: true            # false = ne pas générer cv.html
+  lieu: "Québec, Canada"
+  telephone: ""             # laisse vide : un numéro sur une page publique se fait moissonner
+  site: ""                  # ex. "williambeaudry.github.io"
+  publications: false       # true = ajouter la rubrique Publications au CV
+  titre_publications: "Publications"
+  profil: |
+    Présentement candidat à la maîtrise en science politique, je déposerai sous
+    peu mon mémoire sur la participation politique des Autochtones au Canada.
+    Qu'il s'agisse de visites guidées, de rapports institutionnels ou d'un
+    mémoire de recherche, je me suis attaché à approfondir notre connaissance de
+    phénomènes politiques complexes et sensibles, sans jamais sacrifier la
+    vulgarisation du contenu ni le tact qu'exigent de tels sujets.
+  note: "Les références seront fournies sur demande."
+
+
+# ---------------------------------------------------------------------------
 # Réseaux sociaux (barre latérale). Icônes : https://fontawesome.com/v5/search
 # ---------------------------------------------------------------------------
 reseaux:

@@ -1,0 +1,187 @@
+<!doctype html>
+<!--GABARIT-DEBUT
+  Gabarit de la version imprimable du CV (cv.html).
+  build.R le remplit avec le contenu de contenu/parcours.yml et site.yml.
+  Les couleurs et la police se règlent dans le bloc :root ci-dessous.
+GABARIT-FIN-->
+{{AVIS}}
+<html lang="fr">
+  <head>
+    <title>{{TITRE_ONGLET}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* ==================================================================
+         RÉGLAGES — les cinq valeurs à modifier si tu veux changer l'allure
+         ================================================================== */
+      :root {
+        --cv-accent:  #5F1609;   /* bordeaux des titres, repris de ton CV LaTeX */
+        --cv-gris:    #808080;   /* employeurs et établissements */
+        --cv-encre:   #1a1a1a;   /* texte courant */
+        --cv-filet:   #000000;   /* filet sous les titres de section */
+
+        /* Police du site (monospace). Pour un rendu de CV plus classique et
+           plus dense, remplace la ligne par :
+           --cv-police: 'Inter', 'Segoe UI', system-ui, sans-serif;          */
+        --cv-police: 'DejaVu Sans Mono', 'Source Code Pro', ui-monospace, monospace;
+      }
+
+      /* ================================ Page ============================ */
+      @page { size: letter; margin: 1.5cm 1.9cm; }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: #e9e9e9;
+        color: var(--cv-encre);
+        font-family: var(--cv-police);
+        font-size: 10.5pt;
+        line-height: 1.5;
+      }
+
+      .feuille {
+        background: #ffffff;
+        max-width: 8.5in;
+        margin: 2rem auto;
+        padding: 2.6cm 2.4cm 2.2cm;
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+      }
+
+      /* ============================== En-tête =========================== */
+      .cv-nom {
+        text-align: center;
+        font-size: 25pt;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        margin: 0 0 0.55em;
+      }
+
+      .cv-contact {
+        text-align: center;
+        font-size: 9.5pt;
+        color: var(--cv-gris);
+        margin: 0 0 0.4em;
+      }
+
+      .cv-contact a { color: var(--cv-accent); text-decoration: none; }
+      .cv-contact a:hover { text-decoration: underline; }
+      .cv-contact .sep { display: inline-block; width: 1.6em; }
+
+      .cv-profil { margin: 1.8em 0 0; text-align: justify; }
+
+      /* ========================= Titre de section ======================= */
+      .cv-section {
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        margin: 2em 0 0.7em;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .cv-section h2 {
+        font-size: 11.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--cv-accent);
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      .cv-section .filet {
+        flex: 1 1 auto;
+        height: 3px;
+        background: var(--cv-filet);
+      }
+
+      /* ============================== Entrées =========================== */
+      .cv-entree {
+        margin: 0 0 1.1em;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .cv-ligne {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1.5em;
+      }
+
+      .cv-intitule { font-weight: 700; }
+      .cv-dates { font-weight: 700; white-space: nowrap; }
+      .cv-org { font-weight: 700; color: var(--cv-gris); }
+
+      .cv-desc { margin: 0.35em 0 0; }
+      .cv-desc p { margin: 0 0 0.3em; }
+
+      /* =========================== Publications ========================= */
+      .cv-pub { margin: 0 0 1em; break-inside: avoid; page-break-inside: avoid; }
+      .cv-pub-groupe { font-weight: 700; }
+      .cv-pub-titre { font-style: italic; }
+      .cv-pub-titre a { color: var(--cv-accent); text-decoration: none; }
+
+      .cv-note { color: var(--cv-accent); margin-top: 1.4em; }
+
+      /* ======================== Barre d'impression ====================== */
+      .barre {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--cv-accent);
+        color: #fff;
+        padding: 0.7rem 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 10pt;
+      }
+
+      .barre button {
+        font-family: inherit;
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--cv-accent);
+        background: #fff;
+        border: 0;
+        border-radius: 4px;
+        padding: 0.45em 1.1em;
+        cursor: pointer;
+      }
+
+      .barre button:hover { background: #f0e6e4; }
+      .barre a { color: #fff; text-decoration: underline; }
+
+      /* ============================= Impression ========================= */
+      @media print {
+        body { background: #fff; font-size: 10pt; }
+        .feuille { margin: 0; padding: 0; max-width: none; box-shadow: none; }
+        .barre { display: none !important; }
+        a { color: var(--cv-accent) !important; }
+      }
+
+      @media screen and (max-width: 700px) {
+        .feuille { margin: 0; padding: 1.4rem 1.1rem; }
+        .cv-ligne { flex-direction: column; gap: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="barre">
+      <span>Version imprimable &mdash; utilise « Enregistrer au format PDF » dans la boîte d'impression.</span>
+      <button type="button" onclick="window.print()">Imprimer ou enregistrer en PDF</button>
+      <a href="index.html">Retour au site</a>
+    </div>
+
+    <main class="feuille">
+      <h1 class="cv-nom">{{NOM}}</h1>
+      <p class="cv-contact">{{CONTACT}}</p>
+{{PROFIL}}
+{{CORPS}}
+    </main>
+  </body>
+</html>
