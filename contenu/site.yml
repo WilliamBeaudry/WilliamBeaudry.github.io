@@ -94,7 +94,7 @@ sections:
     titre: "Mes documents"
     type: "documents"
     texte: |
-      Mon curriculum vitæ et mes autres documents, consultables directement en ligne.
+      Mon curriculum vitæ consultables directement en ligne.
 
   - id: "publications"
     titre: "Publications et communications"
@@ -102,10 +102,10 @@ sections:
     texte: |
 
   - id: "projets"
-    titre: "Mes projets"
+    titre: "Mes projets en cours"
     type: "projets"
     texte: |
-      Une sélection de mes projets. Cliquez sur l'image pour découvrir le projet complet.
+      Jetez un coup d'oeil aux projets en cours que je mène !
 
   - id: "contact"
     titre: "Me joindre"
