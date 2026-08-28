@@ -1,0 +1,27 @@
+# ===========================================================================
+# publications.yml — Publications, rapports et communications
+#
+# Champs : titre (obligatoire), type, auteurs, editeur, date (AAAA ou AAAA-MM),
+#          url (lien externe) OU fichier (PDF local), resume
+# ===========================================================================
+
+- titre: "La participation politique des Autochtones au Québec"
+  type: "Cahier de recherche"
+  auteurs: "Beaudry, W."
+  editeur: "Chaire de recherche sur la démocratie et les institutions parlementaires, Université Laval, en collaboration avec Élections Québec"
+  date: "2025"
+  numero: "no 25"
+  url: ""
+  resume: |
+    Cahier de recherche portant sur la participation électorale des communautés
+    autochtones, réalisé sous la supervision de Juliette Samson et de la
+    professeure Valérie-Anne Mahéo.
+
+- titre: "S'inscrire à la liste électorale en vue des élections générales québécoises de 2026"
+  type: "Communication"
+  auteurs: "Beaudry, W."
+  editeur: "Webinaire du Réseau Jeunesse de l'Assemblée des Premières Nations Québec-Labrador (APNQL)"
+  date: "2026"
+  url: ""
+  resume: |
+    Présentation sur les modalités d'inscription à la liste électorale.

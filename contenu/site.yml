@@ -1,0 +1,115 @@
+# ===========================================================================
+# site.yml — Identité du site et contenu des sections
+# Après toute modification : source("build.R") dans RStudio
+# ===========================================================================
+
+titre_onglet: "William Beaudry, étudiant, fonctionnaire et bien plus"
+nom: "William Beaudry"
+photo: "images/profil_pic_wb.jpg"
+courriel: "william.beaudry5@gmail.com"
+meta_description: "Site personnel de William Beaudry, politologue, chercheur et étudiant à la maîtrise en science politique."
+
+# Texte sous le nom dans la barre latérale. Un saut de ligne = une nouvelle ligne.
+accroche: |
+  Passionné de politique, de plein air et de vélo !
+  Fonctionnaire à temps partiel, étudiant à temps plein.
+
+# ---------------------------------------------------------------------------
+# Réseaux sociaux (barre latérale). Icônes : https://fontawesome.com/v5/search
+# ---------------------------------------------------------------------------
+reseaux:
+  - nom: "Twitter"
+    url: "https://x.com/Beaudry5William"
+    icone: "brands fa-twitter"
+  - nom: "Facebook"
+    url: "https://www.facebook.com/william.beaudry.92/"
+    icone: "brands fa-facebook-f"
+  - nom: "LinkedIn"
+    url: "https://www.linkedin.com/in/william-beaudry-36a23815a/"
+    icone: "brands fa-linkedin"
+  - nom: "Github"
+    url: "https://github.com/WilliamBeaudry"
+    icone: "brands fa-github"
+  - nom: "Courriel"
+    url: "mailto:william.beaudry5@gmail.com"
+    icone: "solid fa-envelope"
+
+# ---------------------------------------------------------------------------
+# SECTIONS DE LA PAGE
+# L'ordre ci-dessous = l'ordre à l'écran ET dans le menu de navigation.
+# Pour masquer une section sans la supprimer : afficher: false
+#
+# Types disponibles :
+#   texte         -> texte libre (+ image de bannière optionnelle)
+#   texte_icones  -> texte libre + liste à pictogrammes
+#   parcours      -> ligne du temps, lit contenu/parcours.yml
+#   documents     -> liste de PDF, lit contenu/documents.yml
+#   publications  -> liste de publications, lit contenu/publications.yml
+#   projets       -> vignettes de projets, lit contenu/projets.yml
+#   contact       -> bouton d'envoi de courriel
+#
+# Mise en forme du texte : **gras**, *italique*, [libellé](adresse),
+# une ligne vide = un nouveau paragraphe.
+# ---------------------------------------------------------------------------
+sections:
+
+  - id: "presentation"
+    titre: "D'où je viens"
+    type: "texte"
+    banniere: "images/bg.jpg"
+    entete: "William Beaudry"
+    sous_titre: "Politologue à mes heures, apprenti chercheur et bien plus"
+    texte: |
+      1999, H, Québec, Baccalauréat, Francophone, Étudiant et salarié : voici une brève description de ma personne.
+
+      Certains diront : *« une adresse qui finit par .github.io, ça sent le bricolage voyons »*, mais l'analyse coût-bénéfice derrière ce choix vous fera assurément changer d'avis. L'hébergement est gratuit, le certificat de sécurité aussi, et chaque modification de ce site est versionnée et consultable publiquement. Pour quelqu'un qui passe ses journées dans les données, la traçabilité vaut mieux qu'un nom de domaine payé à l'année ! Coût nul + transparence complète = une recette gagnante !
+
+  - id: "realisations"
+    titre: "Mes réalisations"
+    type: "texte_icones"
+    texte: |
+      Étudiant à la maîtrise en science politique à l'Université Laval, mes recherches portent sur la politique autochtone, la participation politique et la gouvernance.
+
+      Conseiller à la recherche chez Élections Québec, j'ai œuvré sur un rapport portant sur la participation électorale des communautés autochtones aux élections provinciales depuis 2007.
+    faits:
+      - icone: "solid fa-dollar-sign"
+        texte: "Secrétaire aux Finances de l'AEESPUL, puis de l'APEUL"
+      - icone: "solid fa-chess-board"
+        texte: "Professionnel de Catan, Carcassonne, Risk et Scrabble entre autres"
+      - icone: "solid fa-file-alt"
+        texte: "Publication institutionnelle à venir"
+      - icone: "solid fa-bicycle"
+        texte: "Tour du Lac-Saint-Jean à vélo en 3 jours"
+      - icone: "solid fa-tractor"
+        texte: "Amateur du lait au chocolat québécois"
+      - icone: "solid fa-comment"
+        texte: "Locuteur fluent en français, anglais et The Office"
+
+  - id: "parcours"
+    titre: "Mon parcours"
+    type: "parcours"
+    texte: |
+      Sept ans dans le domaine des loisirs, un été en camp de jour, une année sur une ligne de production de matériel médical, une autre à l'Assemblée nationale et, depuis, la recherche.
+
+  - id: "documents"
+    titre: "Mes documents"
+    type: "documents"
+    texte: |
+      Mon curriculum vitæ et mes autres documents, consultables directement en ligne.
+
+  - id: "publications"
+    titre: "Publications et communications"
+    type: "publications"
+    texte: |
+
+  - id: "projets"
+    titre: "Mes projets"
+    type: "projets"
+    texte: |
+      Une sélection de mes projets. Cliquez sur l'image pour découvrir le projet complet.
+
+  - id: "contact"
+    titre: "Me joindre"
+    type: "contact"
+    texte: |
+      Pour entrer en contact, n'hésitez pas à m'envoyer un courriel ou à visiter mes médias sociaux. Il me fera plaisir de répondre dans les plus brefs délais.

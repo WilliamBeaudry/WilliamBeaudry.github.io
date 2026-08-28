@@ -1,0 +1,52 @@
+# ===========================================================================
+# parcours.yml — Ligne du temps : expériences et formation
+#
+# Dates au format AAAA-MM. Laisse fin vide ("") pour « à ce jour ».
+# Les entrées sont triées automatiquement de la plus récente à la plus ancienne.
+# ===========================================================================
+
+experiences:
+
+  - poste: "Conseiller à la recherche"
+    organisation: "Élections Québec"
+    lieu: "Québec"
+    debut: "2024-01"
+    fin: ""
+    description: |
+      Analyse de la participation électorale des communautés autochtones aux
+      élections provinciales depuis 2007 ; production d'un rapport institutionnel.
+
+  - poste: "Auxiliaire de recherche"
+    organisation: "Chaire de recherche, Université Laval"
+    lieu: "Québec"
+    debut: "2023-09"
+    fin: "2023-12"
+    description: |
+      Collecte et traitement de données sur la participation politique.
+
+  - poste: "Emploi à l'Assemblée nationale du Québec"
+    organisation: "Assemblée nationale du Québec"
+    lieu: "Québec"
+    debut: "2022-05"
+    fin: "2023-05"
+    description: |
+      À compléter.
+
+formation:
+
+  - diplome: "Maîtrise en science politique"
+    etablissement: "Université Laval"
+    lieu: "Québec"
+    debut: "2023-09"
+    fin: ""
+    description: |
+      Mémoire sur la participation politique des Autochtones au Canada,
+      sous la direction de la professeure Valérie-Anne Mahéo.
+
+  - diplome: "Baccalauréat en science politique"
+    etablissement: "Université Laval"
+    lieu: "Québec"
+    debut: "2019-09"
+    fin: "2023-05"
+    description: |
+      À compléter.

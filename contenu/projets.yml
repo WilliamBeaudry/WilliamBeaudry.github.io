@@ -1,0 +1,14 @@
+# ===========================================================================
+# projets.yml — Vignettes de projets
+#
+# Champs : titre, resume, image, lien, libelle_bouton, date (AAAA-MM)
+# ===========================================================================
+
+- titre: "Plus c'est mieux ?"
+  date: "2024-12"
+  image: "projet_session/projet.png"
+  lien: "projet_session/projet.html"
+  libelle_bouton: "Voir le projet complet"
+  resume: |
+    La proportion d'électeurs autochtones dans une circonscription a-t-elle une
+    influence positive sur la participation électorale ?

@@ -1,0 +1,162 @@
+/* ==========================================================================
+   custom.css — Ajouts au thème du site
+   Styles des sections générées par build.R : parcours, documents, publications.
+
+   POUR CHANGER LES COULEURS DE CES SECTIONS : modifie les cinq valeurs
+   ci-dessous. Elles reprennent la palette de assets/css/main.css.
+   ========================================================================== */
+
+:root {
+  --wb-fond:    #002b36;  /* fond de la page */
+  --wb-texte:   #93a189;  /* texte courant */
+  --wb-titre:   #b58900;  /* titres et mots en gras */
+  --wb-accent:  #d33682;  /* pastilles, pictogrammes, points de la ligne du temps */
+  --wb-bordure: #4e5c68;  /* filets de séparation */
+}
+
+/* --- Ligne du temps (parcours) ------------------------------------------ */
+
+.pc-liste {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.25em 0;
+  border-left: 2px solid var(--wb-bordure);
+}
+
+.pc-item {
+  position: relative;
+  padding: 0 0 1.75em 1.75em;
+}
+
+.pc-item:last-child { padding-bottom: 0.5em; }
+
+.pc-item:before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0.5em;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--wb-accent);
+  border: 3px solid var(--wb-fond);
+}
+
+.pc-date {
+  display: block;
+  font-size: 0.7em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.pc-titre {
+  margin: 0.4em 0 0.15em 0;
+  font-size: 1.1em;
+  color: var(--wb-titre);
+}
+
+.pc-org {
+  display: block;
+  color: var(--wb-accent);
+  font-size: 0.85em;
+  margin-bottom: 0.6em;
+}
+
+.pc-item p { margin-bottom: 0.5em; }
+
+/* --- Liste de documents PDF --------------------------------------------- */
+
+.doc-liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.doc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+  padding: 1.75em 0;
+  border-top: 1px solid var(--wb-bordure);
+}
+
+.doc-item:first-child { border-top: 0; padding-top: 0.5em; }
+
+.doc-vignette {
+  flex: 0 0 130px;
+  border-bottom: 0;
+}
+
+.doc-vignette img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--wb-bordure);
+  border-radius: 5px;
+}
+
+.doc-corps { flex: 1 1 auto; }
+
+.doc-corps h4 { margin-bottom: 0.25em; }
+
+.doc-corps h4 a { border-bottom: 0; }
+
+.doc-corps h4 .icon { color: var(--wb-accent); margin-right: 0.4em; }
+
+.doc-meta {
+  display: block;
+  font-size: 0.7em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.75em;
+}
+
+.doc-corps p { margin-bottom: 0.75em; }
+
+/* --- Publications -------------------------------------------------------- */
+
+.pub-liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-item {
+  padding: 1.75em 0;
+  border-top: 1px solid var(--wb-bordure);
+}
+
+.pub-item:first-child { border-top: 0; padding-top: 0.5em; }
+
+.pub-type {
+  display: inline-block;
+  font-size: 0.6em;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--wb-fond);
+  background: var(--wb-accent);
+  border-radius: 3px;
+  padding: 0.4em 1em;
+  margin-bottom: 0.75em;
+}
+
+.pub-titre {
+  margin: 0 0 0.3em 0;
+  font-size: 1.1em;
+  color: var(--wb-titre);
+}
+
+.pub-ref {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.75;
+  margin-bottom: 0.75em;
+}
+
+/* --- Petits écrans ------------------------------------------------------- */
+
+@media screen and (max-width: 736px) {
+  .doc-item { flex-direction: column; gap: 1em; }
+  .doc-vignette { flex: 0 0 auto; max-width: 170px; }
+}

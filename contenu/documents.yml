@@ -1,0 +1,28 @@
+# ===========================================================================
+# documents.yml — Les PDF consultables depuis le site
+#
+# POUR AJOUTER UN DOCUMENT :
+#   1. Dépose le PDF dans le dossier documents/ (ou cv/)
+#   2. Copie-colle un bloc ci-dessous et remplis-le
+#   3. source("build.R")
+#
+# Champs : titre (obligatoire), fichier (obligatoire), date (AAAA-MM),
+#          categorie, description, apercu (image), epingle (true = en tête)
+# ===========================================================================
+
+- titre: "Curriculum vitæ"
+  fichier: "cv/mon_cv.pdf"
+  date: "2024-11"
+  categorie: "Candidature"
+  epingle: true
+  apercu: "cv/cv.png.png"
+  description: |
+    Mon parcours professionnel et académique complet, en une page.
+
+- titre: "La participation électorale des Premières Nations, 2004-2011"
+  fichier: "projet_session/doc_tx_part_pn_2004-11.pdf"
+  date: "2024-11"
+  categorie: "Document de référence"
+  description: |
+    Document de référence utilisé pour mon projet d'analyse de la participation
+    électorale dans les communautés autochtones.

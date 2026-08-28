@@ -1,0 +1,64 @@
+<!doctype html>
+<!--GABARIT-DEBUT
+  Ce fichier est le GABARIT de la page. build.R le remplit avec le contenu
+  des fichiers contenu/*.yml pour produire index.html.
+  Modifie ce fichier pour changer la STRUCTURE de la page,
+  et contenu/*.yml pour changer le CONTENU.
+GABARIT-FIN-->
+{{AVIS}}
+<html lang="fr">
+  <head>
+    <title>{{TITRE_ONGLET}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="{{META_DESCRIPTION}}" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <section id="header">
+      <header>
+        <span class="image avatar"><img src="{{PHOTO}}" alt="Photo de {{NOM}}" /></span>
+        <h1 id="logo"><a href="#">{{NOM}}</a></h1>
+        <p>{{ACCROCHE}}</p>
+      </header>
+      <nav id="nav">
+        <ul>
+{{NAV}}
+        </ul>
+      </nav>
+      <footer>
+        <ul class="icons">
+{{RESEAUX}}
+        </ul>
+      </footer>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <div id="main">
+{{SECTIONS}}
+      </div>
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="container">
+          <ul class="copyright">
+            <li>&copy; {{ANNEE}} {{NOM}}</li>
+            <li>Design : <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
