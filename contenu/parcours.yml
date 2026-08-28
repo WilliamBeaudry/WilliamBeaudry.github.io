@@ -62,12 +62,12 @@ experiences:
       électeurs.
       Vérifier l'identité des votants et assurer le bon déroulement du scrutin.
 
-formation:
+formation académique:
 
   - diplome: "Maîtrise en science politique"
     etablissement: "Université Laval"
     lieu: "Québec"
-    debut: "2023-09"
+    debut: "2024-05"
     fin: ""
     description: |
       Moyenne cumulative : 4,14/4,33
@@ -79,9 +79,18 @@ formation:
   - diplome: "Baccalauréat en science politique"
     etablissement: "Université Laval"
     lieu: "Québec"
-    debut: "2019-09"
-    fin: "2023-05"
+    debut: "2021-09"
+    fin: "2024-05"
     description: |
       Moyenne cumulative : 3,92/4,33
       Intérêts principaux : comportement politique, institutions politiques et 
-      gouvernance, évaluation des politiques publiques
+      gouvernance, évaluation des politiques publiques.
+
+  - diplome: "Dilôme d'études collégiales"
+    etablissement: "Cégep Garneau"
+    lieu: "Québec"
+    debut: "2019-01"
+    fin: "2021-06"
+    description: |
+      Sciences humaines, profil Civilisation et histoire
+
