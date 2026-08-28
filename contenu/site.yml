@@ -53,7 +53,7 @@ reseaux:
 sections:
 
   - id: "presentation"
-    titre: "D'où je viens"
+    titre: "Qui je suis"
     type: "texte"
     banniere: "images/bg.jpg"
     entete: "William Beaudry"
@@ -72,24 +72,23 @@ sections:
       Je participe moi-même à la vie politique québécoise au-delà de quelques contributions scientifiques: je me présente comme candidat du parti Nul dans la circonscription de Chauveau.
       
     faits:
-      - icone: "solid fa-dollar-sign"
-        texte: "Secrétaire aux Finances de l'AEESPUL, puis de l'APEUL"
-      - icone: "solid fa-chess-board"
-        texte: "Professionnel de Catan, Carcassonne, Risk et Scrabble entre autres"
+      - icone: "solid fa-graduation-cap"
+        texte: "Candidat à la maîtrise en science politique"
+      - icone: "solid fa-university"
+        texte: "Candidat du parti Nul"
       - icone: "solid fa-file-alt"
-        texte: "Publication institutionnelle à venir"
-      - icone: "solid fa-bicycle"
-        texte: "Tour du Lac-Saint-Jean à vélo en 3 jours"
-      - icone: "solid fa-tractor"
-        texte: "Amateur du lait au chocolat québécois"
-      - icone: "solid fa-comment"
-        texte: "Locuteur fluent en français, anglais et The Office"
+        texte: "2 publications institutionnelles"
+      - icone: "solid fa-arrow-right"
+        texte: "100 km de marche pour le cancer"
+      - icone: "solid fa-search"
+        texte: "À la recherche d'un emploi"
+      
 
   - id: "parcours"
     titre: "Mon parcours"
     type: "parcours"
     texte: |
-      Sept ans dans le domaine des loisirs, un été en camp de jour, une année sur une ligne de production de matériel médical, une autre à l'Assemblée nationale et, depuis, la recherche.
+      Un parcour marqué par la recherche, la vulgarisation de phénomènes complexes et le travail d'équipe.
 
   - id: "documents"
     titre: "Mes documents"
