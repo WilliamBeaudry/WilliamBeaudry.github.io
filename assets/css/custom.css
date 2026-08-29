@@ -172,3 +172,14 @@
 .sec-action {
   margin: 0 0 2.25em;
 }
+
+/* --- Rangée de boutons de documents (publications, travaux) ------------- */
+
+.liens-docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin: 0.6em 0 0;
+}
+
+.liens-docs .button { margin: 0; }

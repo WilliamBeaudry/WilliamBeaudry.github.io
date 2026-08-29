@@ -124,10 +124,10 @@ sections:
     texte: |
 
   - id: "documents"
-    titre: "Travaux universitaires"
+    titre: "Portfolio"
     type: "documents"
     texte: |
-      Une sélection de travaux produits pendant mes études, consultables en ligne.
+      Je vous présente quelques travaux que j'ai menés durant mes études de 1er et 2e cycle.
 
   - id: "contact"
     titre: "Me joindre"

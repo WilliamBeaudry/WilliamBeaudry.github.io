@@ -173,6 +173,25 @@ format_fichier <- function(chemin) {
   FORMATS[[ext]] %||% list(icone = "fa-file-alt", libelle = "Télécharger le document")
 }
 
+# Rangée de boutons à partir d'une liste YAML "documents:".
+# Chaque élément accepte : fichier (ou lien), libelle, style.
+# Sans libelle, le texte est déduit de l'extension (voir FORMATS).
+boutons_documents <- function(items) {
+  if (!is.list(items) || length(items) == 0) return("")
+  b <- vapply(items, function(d) {
+    if (is.character(d)) d <- list(fichier = d)   # forme courte : juste le chemin
+    lien <- txt(d$lien %||% d$fichier)
+    if (!nzchar(lien)) return("")
+    sprintf('<a href="%s" target="_blank" class="button %s">%s</a>',
+            esc(lien),
+            esc(d$style %||% "small"),
+            esc(d$libelle %||% format_fichier(lien)$libelle))
+  }, character(1))
+  b <- b[nzchar(b)]
+  if (!length(b)) return("")
+  paste0('\n    <p class="liens-docs">', paste(b, collapse = "\n      "), "</p>")
+}
+
 gen_texte <- function(s, ...) {
   bloc <- ""
   if (nzchar(txt(s$banniere))) {
@@ -278,14 +297,16 @@ paste0('  <li class="doc-item">\n%s',
        '    <div class="doc-corps">\n',
        '      <h4><a href="%s" target="_blank"><span class="icon solid %s"></span> %s</a></h4>\n',
        '      <span class="doc-meta">%s</span>\n%s',
-       '      <p><a href="%s" target="_blank" class="button %s">%s</a></p>\n',
+       '      <p><a href="%s" target="_blank" class="button %s">%s</a></p>\n%s',
        '    </div>\n  </li>'),
       if (nzchar(apercu)) paste0("    ", apercu, "\n") else "",
       esc(d$fichier), esc(fmt$icone), esc(d$titre), meta,
       if (nzchar(txt(d$description))) paste0("      ", md(d$description), "\n") else "",
       esc(d$fichier),
       esc(d$bouton %||% "small"),
-      esc(d$libelle %||% fmt$libelle))
+      esc(d$libelle %||% fmt$libelle),
+      if (nzchar(boutons_documents(d$documents)))
+        paste0("     ", boutons_documents(d$documents), "\n") else "")
   }, character(1))
   paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          '\n<ul class="doc-liste">\n', paste(li, collapse = "\n"), "\n</ul>\n</div>")
@@ -301,8 +322,12 @@ gen_publications <- function(s, donnees, ...) {
     # md_ligne : protège le HTML puis applique *italique*, **gras** et les liens
     ref <- paste(Filter(nzchar, c(md_ligne(p$auteurs), md_ligne(p$editeur), md_ligne(p$numero),
                                   md_ligne(joindre(p$lieu)), fmt_date(p$date))), collapse = ", ")
-    sprintf('  <li class="pub-item">\n    <span class="pub-type">%s</span>\n    <h4 class="pub-titre">%s</h4>\n    <span class="pub-ref">%s</span>\n    %s\n  </li>',
-            esc(p$type %||% "Publication"), titre, ref, md(p$resume))
+    # type absent ou vide : pas d'étiquette du tout
+    etiquette <- if (nzchar(txt(p$type)))
+      sprintf('    <span class="pub-type">%s</span>\n', esc(p$type)) else ""
+    sprintf('  <li class="pub-item">\n%s    <h4 class="pub-titre">%s</h4>\n    <span class="pub-ref">%s</span>\n    %s%s\n  </li>',
+            etiquette, titre, ref, md(p$resume),
+            boutons_documents(p$documents))
   }, character(1))
   paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          '\n<ul class="pub-liste">\n', paste(li, collapse = "\n"), "\n</ul>\n</div>")
