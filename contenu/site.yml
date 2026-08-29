@@ -85,7 +85,7 @@ sections:
       
       Pour en apprendre plus sur mon parcours professionnel et académique ainsi que les projets et publications sur lesquels j'ai travaillés, vous trouverez le tout sur cette page !
 
-  - id: "En bref"
+  - id: "en-bref"
     titre: "En bref"
     type: "texte_icones"
     texte: |
@@ -110,24 +110,24 @@ sections:
     titre: "Mon parcours"
     type: "parcours"
     texte: |
-      Un parcour marqué par la recherche, la vulgarisation de phénomènes complexes et le travail d'équipe.
-
-  - id: "documents"
-    titre: "Mes documents"
-    type: "documents"
-    texte: |
-      Mon curriculum vitæ consultables directement en ligne.
+      Un parcours marqué par la recherche, la vulgarisation de phénomènes complexes et le travail d'équipe.
+    bouton:
+      lien: "cv.html"
+      libelle: "Consulter et imprimer mon CV"
+      note: |
+        Pour consulter le curriculum vitæ complet dans une autre page de votre
+        navigateur — et l'imprimer ou l'enregistrer en PDF — cliquez ci-dessous.
 
   - id: "publications"
     titre: "Publications et communications"
     type: "publications"
     texte: |
 
-  - id: "projets"
-    titre: "Mes projets en cours"
-    type: "projets"
+  - id: "documents"
+    titre: "Travaux universitaires"
+    type: "documents"
     texte: |
-      Jetez un coup d'oeil aux projets en cours que je mène !
+      Une sélection de travaux produits pendant mes études, consultables en ligne.
 
   - id: "contact"
     titre: "Me joindre"

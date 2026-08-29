@@ -160,3 +160,15 @@
   .doc-item { flex-direction: column; gap: 1em; }
   .doc-vignette { flex: 0 0 auto; max-width: 170px; }
 }
+
+/* --- Note et bouton d'appel à l'action sous un titre de section ---------- */
+
+.sec-note {
+  font-size: 0.9em;
+  opacity: 0.85;
+  margin-bottom: 0.9em;
+}
+
+.sec-action {
+  margin: 0 0 2.25em;
+}

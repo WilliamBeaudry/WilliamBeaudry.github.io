@@ -21,6 +21,14 @@ if (!requireNamespace("yaml", quietly = TRUE)) {
 
 txt <- function(x) if (is.null(x)) "" else trimws(paste(as.character(x), collapse = " "))
 
+# Accepte une chaîne OU une liste YAML — lieu: ["Université Laval", "Québec"]
+# devient « Université Laval, Québec ». Les éléments vides sont ignorés.
+joindre <- function(x, sep = ", ") {
+  if (is.null(x)) return("")
+  v <- trimws(as.character(unlist(x)))
+  paste(v[nzchar(v)], collapse = sep)
+}
+
 lire_fichier <- function(chemin) {
   brut <- readBin(chemin, "raw", file.size(chemin))
   x <- rawToChar(brut)
@@ -122,6 +130,24 @@ periode <- function(debut, fin) {
 
 # --- Générateurs de sections ----------------------------------------------
 
+# Bouton d'appel a l'action, optionnel, sur n'importe quelle section.
+# Se declare dans site.yml sous la section, cle "bouton:".
+bouton_section <- function(s) {
+  b <- s$bouton %||% list()
+  lien <- txt(b$lien)
+  if (!nzchar(lien)) return("")
+  paste0(
+    "\n",
+    if (nzchar(txt(b$note))) paste0('<p class="sec-note">', md_ligne(b$note), "</p>\n") else "",
+    sprintf('<p class="sec-action"><a href="%s"%s class="button %s">%s</a></p>',
+            esc(lien),
+            if (identical(b$nouvel_onglet, FALSE)) "" else ' target="_blank"',
+            esc(b$style %||% "primary"),
+            esc(b$libelle %||% "En savoir plus")))
+}
+
+
+
 gen_texte <- function(s, ...) {
   bloc <- ""
   if (nzchar(txt(s$banniere))) {
@@ -136,7 +162,7 @@ gen_texte <- function(s, ...) {
   } else if (nzchar(txt(s$titre))) {
     entete <- sprintf("<h3>%s</h3>\n", esc(s$titre))
   }
-  paste0(bloc, '<div class="container">\n', entete, md(s$texte), "\n</div>")
+  paste0(bloc, '<div class="container">\n', entete, md(s$texte), bouton_section(s), "\n</div>")
 }
 
 gen_texte_icones <- function(s, ...) {
@@ -144,7 +170,7 @@ gen_texte_icones <- function(s, ...) {
   li <- vapply(faits, function(f) sprintf('  <li class="icon %s">%s</li>',
                                           esc(f$icone %||% "solid fa-check"),
                                           md_ligne(f$texte)), character(1))
-  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte),
+  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          if (length(li)) paste0('\n<ul class="feature-icons">\n', paste(li, collapse = "\n"),
                                 "\n</ul>") else "",
          "\n</div>")
@@ -208,7 +234,7 @@ gen_parcours <- function(s, donnees, ...) {
     bloc(txt(p[[paste0("titre_", cle)]]) %||% joli(cle), items)
   }, character(1))
 
-  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), "\n",
+  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s), "\n",
          paste(blocs, collapse = ""),
          "</div>")
 }
@@ -226,16 +252,17 @@ paste0('  <li class="doc-item">\n%s',
        '    <div class="doc-corps">\n',
        '      <h4><a href="%s" target="_blank"><span class="icon solid fa-file-pdf"></span> %s</a></h4>\n',
        '      <span class="doc-meta">%s</span>\n%s',
-       '      <p><a href="%s" target="_blank" class="button small">%s</a></p>\n',
+       '      <p><a href="%s" target="_blank" class="button %s">%s</a></p>\n',
        '    </div>\n  </li>'),
       if (nzchar(apercu)) paste0("    ", apercu, "\n") else "",
       esc(d$fichier), esc(d$titre), meta,
       if (nzchar(txt(d$description))) paste0("      ", md(d$description), "\n") else "",
       esc(d$fichier),
+      esc(d$bouton %||% "small"),
       esc(d$libelle %||% if (grepl("\\.pdf$", tolower(txt(d$fichier)))) "Consulter le PDF"
                         else "Consulter et imprimer"))
   }, character(1))
-  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte),
+  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          '\n<ul class="doc-liste">\n', paste(li, collapse = "\n"), "\n</ul>\n</div>")
 }
 
@@ -246,12 +273,13 @@ gen_publications <- function(s, donnees, ...) {
     lien <- txt(p$url %||% p$fichier)
     titre <- if (nzchar(lien))
       sprintf('<a href="%s" target="_blank">%s</a>', esc(lien), esc(p$titre)) else esc(p$titre)
-    ref <- paste(Filter(nzchar, c(esc(p$auteurs), esc(p$editeur), esc(p$numero),
-                                  fmt_date(p$date))), collapse = ", ")
+    # md_ligne : protège le HTML puis applique *italique*, **gras** et les liens
+    ref <- paste(Filter(nzchar, c(md_ligne(p$auteurs), md_ligne(p$editeur), md_ligne(p$numero),
+                                  md_ligne(joindre(p$lieu)), fmt_date(p$date))), collapse = ", ")
     sprintf('  <li class="pub-item">\n    <span class="pub-type">%s</span>\n    <h4 class="pub-titre">%s</h4>\n    <span class="pub-ref">%s</span>\n    %s\n  </li>',
             esc(p$type %||% "Publication"), titre, ref, md(p$resume))
   }, character(1))
-  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte),
+  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          '\n<ul class="pub-liste">\n', paste(li, collapse = "\n"), "\n</ul>\n</div>")
 }
 
@@ -266,13 +294,13 @@ paste0('  <article>\n',
        '    </div>\n  </article>'),
     esc(p$lien), esc(p$image), esc(p$titre), esc(p$titre), md(p$resume),
     esc(p$lien), esc(p$libelle_bouton %||% "Voir le projet")), character(1))
-  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte),
+  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          '\n<div class="features">\n', paste(art, collapse = "\n"), "\n</div>\n</div>")
 }
 
 gen_contact <- function(s, donnees, ...) {
   courriel <- txt(donnees$site$courriel)
-  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte),
+  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          '\n<div class="row gtr-uniform">\n  <div class="col-12">\n',
          sprintf('    <a href="mailto:%s?subject=Prise%%20de%%20contact" class="button primary">Envoyer un courriel</a>\n',
                  esc(courriel)),
@@ -342,7 +370,9 @@ gen_cv <- function(donnees, racine = ".") {
                  '        <div class="cv-pub-groupe">%s</div>\n',
                  '        <div class="cv-pub-titre">%s</div>\n',
                  '      </div>'),
-          paste(Filter(nzchar, c(esc(pb$type), esc(pb$editeur))), collapse = " &mdash; "),
+          paste(Filter(nzchar, c(md_ligne(pb$type), md_ligne(pb$editeur),
+                                 md_ligne(joindre(pb$lieu)))),
+                collapse = " &mdash; "),
           paste0(titre, if (nzchar(fmt_date(pb$date))) paste0(" (", fmt_date(pb$date), ")") else ""))
       }, character(1))
       corps <- c(corps, titre_section(txt(cfg$titre_publications) %||% "Publications"), bloc)

@@ -1,27 +1,88 @@
 # ===========================================================================
 # publications.yml — Publications, rapports et communications
 #
-# Champs : titre (obligatoire), type, auteurs, editeur, date (AAAA ou AAAA-MM),
+# Champs : titre (obligatoire), type, auteurs, editeur, numero,
+#          lieu, date (AAAA ou AAAA-MM),
 #          url (lien externe) OU fichier (PDF local), resume
+#
+# lieu accepte une chaîne ou une liste sur une seule ligne :
+#     lieu: "Université Laval, Québec"
+#     lieu: ["Université Laval", "Québec"]
+# Les éléments d'une liste sont assemblés avec des virgules.
 # ===========================================================================
 
-- titre: "La participation politique des Autochtones au Québec"
-  type: "Cahier de recherche"
+- titre: "La participation politique des personnes autochtones au Québec, au Canada et dans le monde: une revue de la littérature scientifique"
+  type: "Cahier de recherche électorale et parlementaire"
   auteurs: "Beaudry, W."
-  editeur: "Chaire de recherche sur la démocratie et les institutions parlementaires, Université Laval, en collaboration avec Élections Québec"
-  date: "2025"
+  editeur: "Chaire de recherche sur la démocratie et les institutions parlementaires, en collaboration avec Élections Québec"
+  lieu: ["Université Laval", "Québec"]
+  date: "2026-03"
   numero: "no 25"
-  url: ""
+  url: "https://www.democratie.chaire.ulaval.ca/sites/democratie.chaire.ulaval.ca/files/cahiers-de-recherche/cahier-de-recherche-chaire-democratie-no25-146312-20-mars.pdf"
   resume: |
-    Cahier de recherche portant sur la participation électorale des communautés
-    autochtones, réalisé sous la supervision de Juliette Samson et de la
-    professeure Valérie-Anne Mahéo.
+    La recension fait état du niveau de participation dans plusieurs modes de participation politique des Autochtones dans quelques contextes nationaux, notamment le Canada, les États-Unis, la Nouvelle-Zélande et l'Australie.
 
-- titre: "S'inscrire à la liste électorale en vue des élections générales québécoises de 2026"
+- titre: "Participation électorale dans les communautés autochtones lors d'élections générales provinciales de 2007 à 2022"
+  type: "Note de recherche"
+  auteurs: "Beaudry, W."
+  editeur: "Élections Québec"
+  date: "2026-05"
+  url: "https://docs.electionsquebec.qc.ca/PRO/6a01f9c8725f0/DGE-6414.pdf"
+  resume: |
+    La note brosse un portrait de la participation électorale dans les communautés autochtones au Québec. Plusieurs constats relatifs à la distance des communautés, la présence de candidates et candidats autochtones, ainsi que de données sociodémographiques mettent en contexte le vote dans ces communautés.
+
+- titre: "Beyond voting: understanding the many forms of Indigenous political participation in Canada"
   type: "Communication"
   auteurs: "Beaudry, W."
-  editeur: "Webinaire du Réseau Jeunesse de l'Assemblée des Premières Nations Québec-Labrador (APNQL)"
-  date: "2026"
+  editeur: "Congrès annuel de l'Association canadienne de science politique (ACSP-CPSA)"
+  date: "2026-06"
+  lieu: "Université d'Ottawa, Ottawa"
   url: ""
   resume: |
-    Présentation sur les modalités d'inscription à la liste électorale.
+   
+- titre: "Indigenous political participation in Canada : moving beyond voting to understand a variety of political means and actions"
+  type: "Communication"
+  auteurs: "Beaudry, W."
+  editeur: "Colloque annuel du Consortium de la démocratie électorale (C-DEM)"
+  date: "2026-05"
+  lieu: "Université Western, Toronto"
+  url: ""
+  resume: |
+
+- titre: "La participation politique des Autochtones au Canada : dépasser le vote pour comprendre l’engagement civique à travers une diversité de moyens d’action politiques"
+  type: "Communication"
+  auteurs: "Beaudry, W."
+  editeur: "63e Congrès annuel de la Société québécoise de science politique"
+  date: "2026-05"
+  lieu: "Université de Montréal, Montréal"
+  url: ""
+  resume: |
+
+- titre: "Voter moins, agir plus ? Décomposer les écarts de participation politique entre Autochtones et Allochtones au Canada"
+  type: "Présentation par affiche"
+  auteurs: "Beaudry, W."
+  editeur: "Journée de la recherche des Sciences sociales"
+  date: "2026-03"
+  lieu: "Université Laval, Québec"
+  url: ""
+  resume: |
+
+- titre: "La participation politique des Autochtones au Canada : dépasser le vote pour comprendre l’engagement civique à travers une diversité de moyens d’action politiques"
+  type: "Communication"
+  auteurs: "Beaudry, W."
+  editeur: "Les Midis du CIÉRA (Centre interuniversitaire d'études et de recherches autochtones)"
+  date: "2026-02"
+  url: ""
+  resume: |
+
+- titre: "La participation électorale dans les communautés autochtones aux élections générales québécoises de 2007 à 2022"
+  type: "Conférence"
+  auteurs: "Beaudry, W."
+  editeur: "Cours: Participation politique et démocratie (POL-2402)"
+  date: "2025-03"
+  lieu: "Université Laval, Québec"
+  url: ""
+  resume: |
+
+
+
