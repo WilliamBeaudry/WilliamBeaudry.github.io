@@ -18,9 +18,16 @@
 # sur le site. Retire le # devant les lignes ci-dessous pour commencer.
 # ===========================================================================
 
-# - titre: "Titre du travail"
-#   fichier: "documents/mon_travail.pdf"
-#   date: "2025-04"
-#   categorie: "Travail de session"
-#   description: |
-#     Cours, question de recherche, méthode employée — deux ou trois lignes.
+- titre: "Titre du travail"
+  fichier: "documents/mon_travail.pdf"
+  date: "2025-04"
+  categorie: "Travail de session"
+  description: |
+     Cours, question de recherche, méthode employée — deux ou trois lignes.
+     
+- titre: "Titre du travail"
+  fichier: "documents/mon_travail.pdf"
+  date: "2025-04"
+  categorie: "Travail de session"
+  description: |
+     Cours, question de recherche, méthode employée — deux ou trois lignes.

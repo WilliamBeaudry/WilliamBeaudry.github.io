@@ -53,9 +53,13 @@ lire_yaml <- function(chemin, defaut = list()) {
 }
 
 ecrire_fichier <- function(x, chemin) {
+  # IMPORTANT : convertir x AVANT d'ouvrir la connexion. open = "wb" vide le
+  # fichier immédiatement ; si x devait encore être lu depuis ce même fichier,
+  # il serait déjà effacé au moment de l'évaluation.
+  brut <- charToRaw(enc2utf8(x))
   con <- file(chemin, open = "wb")
   on.exit(close(con))
-  writeBin(charToRaw(enc2utf8(x)), con)
+  writeBin(brut, con)
 }
 
 # Échappe les caractères réservés du HTML
@@ -147,6 +151,27 @@ bouton_section <- function(s) {
 }
 
 
+
+# Pictogramme et libellé de bouton déduits de l'extension du fichier.
+# Ajoute une ligne à ces listes pour prendre en charge un nouveau format.
+FORMATS <- list(
+  pdf   = list(icone = "fa-file-pdf",        libelle = "Consulter le PDF"),
+  ppt   = list(icone = "fa-file-powerpoint", libelle = "Télécharger la présentation"),
+  pptx  = list(icone = "fa-file-powerpoint", libelle = "Télécharger la présentation"),
+  doc   = list(icone = "fa-file-word",       libelle = "Télécharger le document"),
+  docx  = list(icone = "fa-file-word",       libelle = "Télécharger le document"),
+  xls   = list(icone = "fa-file-excel",      libelle = "Télécharger le tableur"),
+  xlsx  = list(icone = "fa-file-excel",      libelle = "Télécharger le tableur"),
+  csv   = list(icone = "fa-file-csv",        libelle = "Télécharger les données"),
+  zip   = list(icone = "fa-file-archive",    libelle = "Télécharger l'archive"),
+  html  = list(icone = "fa-file-alt",        libelle = "Consulter et imprimer"),
+  htm   = list(icone = "fa-file-alt",        libelle = "Consulter et imprimer")
+)
+
+format_fichier <- function(chemin) {
+  ext <- tolower(sub(".*\\.", "", txt(chemin)))
+  FORMATS[[ext]] %||% list(icone = "fa-file-alt", libelle = "Télécharger le document")
+}
 
 gen_texte <- function(s, ...) {
   bloc <- ""
@@ -243,6 +268,7 @@ gen_documents <- function(s, donnees, ...) {
   docs <- trier_par_date(donnees$documents)
   if (length(docs) == 0) return(NULL)
   li <- vapply(docs, function(d) {
+    fmt  <- format_fichier(d$fichier)
     meta <- paste(Filter(nzchar, c(esc(d$categorie), fmt_date(d$date))), collapse = " &middot; ")
     apercu <- if (nzchar(txt(d$apercu)))
       sprintf('<a href="%s" target="_blank" class="doc-vignette"><img src="%s" alt="Aperçu : %s" /></a>',
@@ -250,17 +276,16 @@ gen_documents <- function(s, donnees, ...) {
     sprintf(
 paste0('  <li class="doc-item">\n%s',
        '    <div class="doc-corps">\n',
-       '      <h4><a href="%s" target="_blank"><span class="icon solid fa-file-pdf"></span> %s</a></h4>\n',
+       '      <h4><a href="%s" target="_blank"><span class="icon solid %s"></span> %s</a></h4>\n',
        '      <span class="doc-meta">%s</span>\n%s',
        '      <p><a href="%s" target="_blank" class="button %s">%s</a></p>\n',
        '    </div>\n  </li>'),
       if (nzchar(apercu)) paste0("    ", apercu, "\n") else "",
-      esc(d$fichier), esc(d$titre), meta,
+      esc(d$fichier), esc(fmt$icone), esc(d$titre), meta,
       if (nzchar(txt(d$description))) paste0("      ", md(d$description), "\n") else "",
       esc(d$fichier),
       esc(d$bouton %||% "small"),
-      esc(d$libelle %||% if (grepl("\\.pdf$", tolower(txt(d$fichier)))) "Consulter le PDF"
-                        else "Consulter et imprimer"))
+      esc(d$libelle %||% fmt$libelle))
   }, character(1))
   paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n", md(s$texte), bouton_section(s),
          '\n<ul class="doc-liste">\n', paste(li, collapse = "\n"), "\n</ul>\n</div>")
@@ -506,22 +531,31 @@ construire_site <- function(racine = ".") {
 
 # --- Aide : ajouter un PDF sans écrire de YAML à la main --------------------
 
-ajouter_document <- function(chemin_pdf, titre, description = "",
+# Ajoute un document (PDF, PPTX, DOCX, XLSX...) a la section Travaux
+# universitaires : copie le fichier dans documents/, ajoute la fiche dans
+# contenu/documents.yml, puis regenere le site.
+#   ajouter_document("C:/travaux/mon_essai.pdf", "Titre", categorie = "Essai")
+ajouter_document <- function(chemin, titre, description = "",
                              categorie = "", date = format(Sys.Date(), "%Y-%m"),
-                             racine = ".") {
-  if (!file.exists(chemin_pdf)) stop("Fichier introuvable : ", chemin_pdf)
+                             racine = ".", chemin_pdf = NULL) {
+  if (!is.null(chemin_pdf)) chemin <- chemin_pdf   # ancien nom d'argument
+  if (!file.exists(chemin)) stop("Fichier introuvable : ", chemin)
   dir.create(file.path(racine, "documents"), showWarnings = FALSE)
-  destination <- file.path("documents", basename(chemin_pdf))
-  if (normalizePath(chemin_pdf, mustWork = FALSE) !=
+  destination <- file.path("documents", basename(chemin))
+  destination <- gsub("\\\\", "/", destination)
+  if (normalizePath(chemin, mustWork = FALSE) !=
       normalizePath(file.path(racine, destination), mustWork = FALSE)) {
-    file.copy(chemin_pdf, file.path(racine, destination), overwrite = TRUE)
+    file.copy(chemin, file.path(racine, destination), overwrite = TRUE)
   }
   entree <- sprintf(
     '\n- titre: "%s"\n  fichier: "%s"\n  date: "%s"\n  categorie: "%s"\n  description: |\n    %s\n',
     gsub('"', "'", titre), destination, date, gsub('"', "'", categorie),
     gsub("\n", "\n    ", description))
   chemin_yml <- file.path(racine, "contenu", "documents.yml")
-  ecrire_fichier(paste0(lire_fichier(chemin_yml), entree), chemin_yml)
+  ancien <- lire_fichier(chemin_yml)          # lu et conservé avant l'écriture
+  if (!nzchar(ancien)) stop("contenu/documents.yml est vide ou illisible : ",
+                            "rien n'a été écrit.", call. = FALSE)
+  ecrire_fichier(paste0(ancien, entree), chemin_yml)
   message("Document ajouté : ", destination)
   construire_site(racine)
 }
