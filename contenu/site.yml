@@ -79,7 +79,7 @@ sections:
     texte: |
       Voici comment un sondage me décrirait : 1999, H, Québec, Baccalauréat, Étudiant, Francophone, Sans emploi.
       
-      Pour en apprendre plus sur mon parcours professionnel et académique ainsi que les projets et publications sur lesquels j'ai travaillés, vous trouverez le tout sur cette page !
+      Pour en apprendre plus sur mon parcours professionnel et académique ainsi que les projets et publications sur lesquels j'ai travaillé, vous trouverez le tout sur cette page !
 
   - id: "en-bref"
     titre: "En bref"
@@ -87,13 +87,13 @@ sections:
     texte: |
       Je mène à terme une maîtrise en science politique avec mémoire à l'Université Laval cet automne. Mes thèmes de recherche recoupent la participation politique, les populations autochtones et l'analyse quantitative de données de sondages.
       
-      Je participe moi-même à la vie politique québécoise au-delà de quelques contributions scientifiques: je me présente comme candidat du parti Nul dans la circonscription de Chauveau.
+      Je participe moi-même à la vie politique québécoise au-delà de quelques contributions scientifiques : je me présente comme candidat du parti NUL dans la circonscription de Chauveau.
       
     faits:
       - icone: "solid fa-graduation-cap"
         texte: "Candidat à la maîtrise en science politique"
       - icone: "solid fa-university"
-        texte: "Candidat du parti Nul"
+        texte: "Candidat du parti NUL"
       - icone: "solid fa-file-alt"
         texte: "2 publications institutionnelles"
       - icone: "solid fa-arrow-right"
