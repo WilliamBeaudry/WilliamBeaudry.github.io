@@ -19,12 +19,16 @@ GABARIT-FIN-->
         --cv-gris:    #808080;   /* employeurs et établissements */
         --cv-encre:   #1a1a1a;   /* texte courant */
         --cv-filet:   #000000;   /* filet sous les titres de section */
+        --cv-rouge:   #b3120f;   /* \rouge{...} : plus foncé qu'à l'écran,
+                                    pour rester lisible sur papier blanc */
 
         /* Police du site (monospace). Pour un rendu de CV plus classique et
            plus dense, remplace la ligne par :
            --cv-police: 'Inter', 'Segoe UI', system-ui, sans-serif;          */
         --cv-police: 'DejaVu Sans Mono', 'Source Code Pro', ui-monospace, monospace;
       }
+
+      .rouge { color: var(--cv-rouge); font-weight: 700; }
 
       /* ================================ Page ============================ */
       @page { size: letter; margin: 1.5cm 1.9cm; }
@@ -116,6 +120,25 @@ GABARIT-FIN-->
 
       .cv-desc { margin: 0.35em 0 0; }
       .cv-desc p { margin: 0 0 0.3em; }
+
+      /* ===================== Listes à puces du contenu =================== */
+      .md-liste { list-style: none; padding-left: 0; margin: 0.3em 0 0.6em; }
+
+      .md-liste li {
+        position: relative;
+        padding-left: 1.1em;
+        margin-bottom: 0.15em;
+      }
+
+      .md-liste li:before {
+        content: '';
+        position: absolute;
+        left: 0.15em;
+        top: 0.62em;
+        width: 4px;
+        height: 4px;
+        background: var(--cv-accent);
+      }
 
       /* =========================== Publications ========================= */
       .cv-pub { margin: 0 0 1em; break-inside: avoid; page-break-inside: avoid; }

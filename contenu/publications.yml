@@ -34,7 +34,7 @@
   documents:
     - fichier: "presentations/beaudry_w_crdip_r_lit.pdf"
       libelle: "Consulter le cahier"
-      style: "Primary"
+      style: "small"
   resume: |
     La recension fait état du niveau de participation dans plusieurs modes de participation politique des Autochtones dans quelques contextes nationaux, notamment le Canada, les États-Unis, la Nouvelle-Zélande et l'Australie.
 
@@ -47,7 +47,7 @@
   documents:
     - fichier: "presentations/beaudry_w_eq_note.pdf"
       libelle: "Consulter la note"
-      style: "Primary"
+      style: "small"
   resume: |
     La note brosse un portrait de la participation électorale dans les communautés autochtones au Québec. Plusieurs constats relatifs à la distance des communautés, la présence de candidates et candidats autochtones, ainsi que de données sociodémographiques mettent en contexte le vote dans ces communautés.
 
@@ -61,10 +61,10 @@
   documents:
     - fichier: "presentations/beaudry_w_art_colloque_cpsa_an.pdf"
       libelle: "Lire l'article de colloque"
-      style: "Primary"
+      style: "small"
     - fichier: "presentations/beaudry_w_pres_cpsa_annual.pdf"
       libelle: "Voir la présentation"
-      style: "Primary"
+      style: "small"
   resume: |
    
 - titre: "Indigenous political participation in Canada : moving beyond voting to understand a variety of political means and actions"
@@ -77,10 +77,10 @@
   documents:
     - fichier: "presentations/beaudry_w_art_colloque_c-dem_fr.pdf"
       libelle: "Lire l'article de colloque"
-      style: "Primary"
+      style: "small"
     - fichier: "presentations/beaudry_w_pres_c-dem_annual.pdf"
       libelle: "Voir la présentation"
-      style: "Primary"
+      style: "small"
   resume: |
 
 - titre: "La participation politique des Autochtones au Canada : dépasser le vote pour comprendre l’engagement civique à travers une diversité de moyens d’action politiques"
@@ -93,10 +93,10 @@
   documents:
     - fichier: "presentations/beaudry_w_art_colloque_sqsp.pdf"
       libelle: "Lire l'article de colloque"
-      style: "Primary"
+      style: "small"
     - fichier: "presentations/beaudry_w_pres_sqsp_annuel.pdf"
       libelle: "Voir la présentation"
-      style: "Primary"
+      style: "small"
   resume: |
 
 - titre: "Voter moins, agir plus ? Décomposer les écarts de participation politique entre Autochtones et Allochtones au Canada"
@@ -109,10 +109,10 @@
   documents:
     - fichier: "presentations/beaudry_w_art_colloque_cecd.pdf"
       libelle: "Lire l'article de colloque"
-      style: "Primary"
+      style: "small"
     - fichier: "presentations/beaudry_w_cecd_pres_etudiant.pdf"
       libelle: "Voir la présentation"
-      style: "Primary"
+      style: "small"
   resume: |
 
 - titre: "Voter moins, agir plus ? Décomposer les écarts de participation politique entre Autochtones et Allochtones au Canada"
@@ -125,7 +125,7 @@
   documents:
     - fichier: "presentations/beaudry_w_poster_jr_rech.pdf"
       libelle: "Voir l'affiche"
-      style: "Primary"
+      style: "small"
   resume: |
 
 - titre: "La participation politique des Autochtones au Canada : dépasser le vote pour comprendre l’engagement civique à travers une diversité de moyens d’action politiques"
@@ -137,7 +137,7 @@
   documents:
     - fichier: "presentations/beaudry_w_pres_midis_ciera.pdf"
       libelle: "Voir la présentation"
-      style: "Primary"
+      style: "small"
   resume: |
 
 - titre: "La participation électorale dans les communautés autochtones aux élections générales québécoises de 2007 à 2022"

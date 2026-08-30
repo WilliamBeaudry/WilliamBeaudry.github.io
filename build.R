@@ -73,6 +73,12 @@ esc <- function(x) {
 }
 
 # Mini-markdown : **gras**, *italique*, [libellé](url), paragraphes
+# Mini-Markdown maison. Règles de mise en forme d'un bloc de texte :
+#   ligne vide            -> nouveau paragraphe
+#   ligne commençant par « - » ou « * » -> puce d'une liste
+#   « \\ » en fin de ligne  -> saut de ligne forcé (comme en LaTeX)
+#   sinon, les lignes consécutives sont recollées en un seul paragraphe
+# Inline : **gras**, *italique*, [libellé](url), \rouge{}, \gras{}, \italique{}
 md <- function(x, balise = "p") {
   if (is.null(x)) return("")
   s <- paste(as.character(x), collapse = "\n")
@@ -81,12 +87,55 @@ md <- function(x, balise = "p") {
   s <- gsub("<", "&lt;",  s, fixed = TRUE)
   s <- gsub(">", "&gt;",  s, fixed = TRUE)
   s <- gsub("\\[([^]]+)\\]\\(([^)]+)\\)", '<a href="\\2">\\1</a>', s)
+  # Commandes à la TeX : \rouge{...}, \gras{...}, \italique{...}
+  s <- gsub("\\\\rouge\\{([^{}]*)\\}",    "<span class=\"rouge\">\\1</span>", s)
+  s <- gsub("\\\\gras\\{([^{}]*)\\}",     "<strong>\\1</strong>", s)
+  s <- gsub("\\\\italique\\{([^{}]*)\\}", "<em>\\1</em>", s)
   s <- gsub("\\*\\*([^*]+)\\*\\*", "<strong>\\1</strong>", s)
   s <- gsub("\\*([^*]+)\\*", "<em>\\1</em>", s)
-  paras <- trimws(strsplit(s, "\n[ \t]*\n")[[1]])
-  paras <- paras[nzchar(paras)]
-  if (length(paras) == 0) return("")
-  paste0("<", balise, ">", paras, "</", balise, ">", collapse = "\n")
+
+  blocs <- trimws(strsplit(s, "\n[ \t]*\n")[[1]])
+  blocs <- blocs[nzchar(blocs)]
+  if (length(blocs) == 0) return("")
+
+  rendre <- function(bloc) {
+    lignes <- trimws(strsplit(bloc, "\n")[[1]])
+    lignes <- lignes[nzchar(lignes)]
+    sortie <- character(0)
+    tampon <- character(0)          # lignes de texte en attente
+    puces  <- character(0)          # puces en attente
+
+    vider_texte <- function() {
+      if (!length(tampon)) return(invisible(NULL))
+      t <- paste(tampon, collapse = "\n")
+      # « \\ » en fin de ligne : saut forcé ; sinon les lignes se recollent
+      t <- gsub("\\\\\\\\[ \t]*\n", "<br />\n", t)
+      t <- gsub("\n", " ", t)
+      sortie <<- c(sortie, paste0("<", balise, ">", t, "</", balise, ">"))
+      tampon <<- character(0)
+    }
+    vider_puces <- function() {
+      if (!length(puces)) return(invisible(NULL))
+      sortie <<- c(sortie, paste0('<ul class="md-liste">\n',
+                                  paste0("  <li>", puces, "</li>", collapse = "\n"),
+                                  "\n</ul>"))
+      puces <<- character(0)
+    }
+
+    for (l in lignes) {
+      if (grepl("^[-*+][[:space:]]+", l)) {
+        vider_texte()
+        puces <- c(puces, sub("^[-*+][[:space:]]+", "", l))
+      } else {
+        vider_puces()
+        tampon <- c(tampon, l)
+      }
+    }
+    vider_texte(); vider_puces()
+    paste(sortie, collapse = "\n")
+  }
+
+  paste(vapply(blocs, rendre, character(1)), collapse = "\n")
 }
 
 # Version « une seule ligne », sans balise <p>
@@ -146,7 +195,7 @@ bouton_section <- function(s) {
     sprintf('<p class="sec-action"><a href="%s"%s class="button %s">%s</a></p>',
             esc(lien),
             if (identical(b$nouvel_onglet, FALSE)) "" else ' target="_blank"',
-            esc(b$style %||% "primary"),
+            esc(verifier_style(b$style %||% "primary")),
             esc(b$libelle %||% "En savoir plus")))
 }
 
@@ -176,6 +225,22 @@ format_fichier <- function(chemin) {
 # Rangée de boutons à partir d'une liste YAML "documents:".
 # Chaque élément accepte : fichier (ou lien), libelle, style.
 # Sans libelle, le texte est déduit de l'extension (voir FORMATS).
+STYLES_BOUTON <- c("small", "primary", "large", "fit", "icon")
+
+verifier_style <- function(style) {
+  style <- txt(style)
+  if (!nzchar(style)) return("")
+  jetons <- strsplit(style, "[[:space:]]+")[[1]]
+  inconnus <- jetons[!jetons %in% STYLES_BOUTON]
+  if (length(inconnus)) {
+    warning("Style de bouton inconnu : \"", paste(inconnus, collapse = "\", \""),
+            "\".\n  Les styles valides sont : ", paste(STYLES_BOUTON, collapse = ", "),
+            ".\n  Attention aux majuscules : \"Primary\" n'est pas \"primary\".",
+            call. = FALSE)
+  }
+  style
+}
+
 boutons_documents <- function(items) {
   if (!is.list(items) || length(items) == 0) return("")
   b <- vapply(items, function(d) {
@@ -184,7 +249,7 @@ boutons_documents <- function(items) {
     if (!nzchar(lien)) return("")
     sprintf('<a href="%s" target="_blank" class="button %s">%s</a>',
             esc(lien),
-            esc(d$style %||% "small"),
+            esc(verifier_style(d$style %||% "small")),
             esc(d$libelle %||% format_fichier(lien)$libelle))
   }, character(1))
   b <- b[nzchar(b)]
@@ -307,7 +372,7 @@ paste0('  <li class="doc-item">\n%s',
       esc(d$fichier), esc(fmt$icone), esc(d$titre), meta,
       if (nzchar(txt(d$description))) paste0("      ", md(d$description), "\n") else "",
       esc(d$fichier),
-      esc(d$bouton %||% "small"),
+      esc(verifier_style(d$bouton %||% "small")),
       esc(d$libelle %||% fmt$libelle),
       if (nzchar(boutons_documents(d$documents)))
         paste0("     ", boutons_documents(d$documents), "\n") else "")

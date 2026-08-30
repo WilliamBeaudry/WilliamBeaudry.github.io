@@ -184,16 +184,53 @@ s'affiche.
 
 ## Mise en forme des textes
 
-Dans tous les champs `texte`, `description` et `resume` :
+Dans tous les champs `texte`, `description`, `resume` et `accroche`.
 
-- `**gras**` → **gras**
-- `*italique*` → *italique*
-- `[libellé](https://adresse)` → lien
-- une **ligne vide** = un nouveau paragraphe
+### À l'intérieur d'une ligne
 
-Les pictogrammes (`icone:`) proviennent de Font Awesome 5 :
-`solid fa-bicycle`, `brands fa-linkedin`, etc. Catalogue :
-<https://fontawesome.com/v5/search>.
+| Tu écris | Tu obtiens |
+|---|---|
+| `**gras**` ou `\gras{...}` | **gras** |
+| `*italique*` ou `\italique{...}` | *italique* |
+| `\rouge{...}` | le mot en rouge, mis en évidence |
+| `[libellé](https://adresse)` | un lien cliquable |
+
+Les deux syntaxes cohabitent : utilise celle qui te vient naturellement.
+
+### D'une ligne à l'autre
+
+C'est ici que les surprises arrivent. **Deux lignes qui se suivent sont
+recollées en un seul paragraphe** — c'est la règle du Markdown, et elle évite
+qu'un texte se disloque quand tu passes à la ligne pour rester lisible dans
+l'éditeur. Pour séparer réellement deux idées, trois outils :
+
+```yaml
+    description: |
+      Un premier paragraphe. Cette ligne
+      et celle-ci n'en formeront qu'un seul.
+
+      Une ligne vide au-dessus : voici un deuxième paragraphe.
+
+      - Une puce
+      - Une deuxième puce
+      - Une troisième
+
+      Une adresse \\
+      sur deux lignes, grâce aux deux barres obliques.
+```
+
+| Ce que tu veux | Ce que tu écris |
+|---|---|
+| Un nouveau paragraphe | Une **ligne vide** entre les deux |
+| Un point de forme | La ligne commence par `- ` (tiret + espace) |
+| Un simple retour à la ligne | `\\` à la **fin** de la ligne, comme en LaTeX |
+
+Les puces se reconnaissent aussi avec `*` ou `+` en début de ligne. Une suite
+de lignes à puces forme une seule liste ; dès qu'une ligne sans tiret apparaît,
+la liste se referme et le texte reprend.
+
+Les caractères `<`, `>` et `&` sont protégés automatiquement : tu peux écrire
+« R&D » ou « < 5 % » sans rien casser.
 
 ---
 
