@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 20 24">
+  <!-- Pointeur standard, en rouge.
+       Silhouette du pointeur standard, aux proportions d'origine
+       (environ 12 x 19 px), simplement remplie en #d30102.
+       Contour blanc, comme sur tous les systèmes : c'est lui qui rend le
+       curseur lisible sur un fond foncé.
+       Point actif : la pointe, en (2, 2). -->
+  <path d="M2 2 L2 19.2 L6.2 15.3 L8.95 21.3 L11.7 20.0 L8.95 14.2 L14.15 13.9 Z" fill="#d30102" stroke="#ffffff" stroke-width="1.4"
+        stroke-linejoin="round" paint-order="stroke"/>
+</svg>

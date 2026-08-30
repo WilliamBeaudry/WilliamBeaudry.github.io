@@ -183,3 +183,52 @@
 }
 
 .liens-docs .button { margin: 0; }
+
+/* ==========================================================================
+   CURSEUR — le pointeur standard, en rouge
+   Fichiers : assets/curseurs/fleche-rouge.svg et fleche-rouge-actif.svg
+   Couleur : #d30102, le rouge Solarized.
+   Le « 2 2 » place le point actif sur la pointe, comme un curseur natif.
+   Pour désactiver, il suffit de supprimer ce bloc.
+   Repli « default » / « pointer » : Safari ne gère pas les curseurs SVG.
+   ========================================================================== */
+
+html,
+body {
+  cursor: url('../curseurs/fleche-rouge.svg') 2 2, default;
+}
+
+/* Sur ce qui est cliquable : même pointeur, contour renforcé.
+   Sans cette règle, le navigateur afficherait la main NOIRE du système
+   par-dessus un curseur rouge — le contraste serait disgracieux. */
+a,
+button,
+.button,
+input[type="submit"],
+input[type="button"],
+label,
+summary,
+[role="button"] {
+  cursor: url('../curseurs/fleche-rouge-actif.svg') 2 2, pointer;
+}
+
+/* Les champs de saisie gardent leur curseur natif : on ne casse pas
+   les repères d'un formulaire. */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea,
+select {
+  cursor: auto;
+}
+
+/* Écrans tactiles : aucun curseur à remplacer. */
+@media (hover: none) {
+  html,
+  body,
+  a,
+  button,
+  .button {
+    cursor: auto;
+  }
+}

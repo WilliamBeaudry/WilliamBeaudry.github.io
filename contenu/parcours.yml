@@ -134,6 +134,12 @@ formations_connexes:
       
 implication_sociale_et_etudiante:
 
+  - nom: "Candidat aux élections provinciales de 2026"
+    etablissement: "parti NUL"
+    lieu: "Québec"
+    debut: "2026-08"
+    fin: "2026-09"
+  
   - nom: "Secrétaire aux Finances"
     etablissement: "Association des politologues étudiants de l'Université Laval"
     lieu: "Québec"
