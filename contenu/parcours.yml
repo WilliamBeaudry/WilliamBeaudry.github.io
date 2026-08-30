@@ -2,6 +2,11 @@
 # parcours.yml — Ligne du temps : expériences et formation
 #
 # Dates au format AAAA-MM. Laisse fin vide ("") pour « à ce jour ».
+#
+# lien : rend l'intitulé de l'entrée cliquable.
+#     lien: "https://www.electionsquebec.qc.ca"
+# Pour un lien à l'intérieur du texte, écris-le dans description :
+#     [texte du lien](https://adresse)
 # Les entrées sont triées automatiquement de la plus récente à la plus ancienne.
 # ===========================================================================
 
@@ -20,10 +25,8 @@ experiences:
     debut: "2023-05"
     fin: "2026-04"
     description: |
-      Analyser la participation électorale des communautés autochtones aux
-      élections provinciales depuis 2007.
-      Produire des recommandations institutionnelles pour améliorer l'accès 
-      au processus électoral dans les communautés autochtones.
+      Analyser la participation électorale des communautés autochtones aux élections provinciales depuis 2007.
+      Produire des recommandations institutionnelles pour améliorer l'accès au processus électoral dans les communautés autochtones.
       Vulgariser les résultats dans un rapport institutionnel publié en 2026.
 
   - poste: "Auxiliaire de recherche"
@@ -33,10 +36,8 @@ experiences:
     fin: "2026-04"
     description: |
       Recenser la littérature sur la participation politique des Autochtones.
-      Rédiger une revue de littérature exhaustive sur la participation politique
-      des Autochtones au Québec, au Canada et dans le monde.
-      Offrir des pistes de recherches originales pour approfondir notre
-      compréhension des barrières à la participation des Autochtones.
+      Rédiger une revue de littérature exhaustive sur la participation politique des Autochtones au Québec, au Canada et dans le monde.
+      Offrir des pistes de recherches originales pour approfondir notre compréhension des barrières à la participation des Autochtones.
       
   - poste: "Auxiliaire d'enseignement"
     organisation: "Université Laval"
@@ -44,8 +45,7 @@ experiences:
     debut: "2025-09"
     fin: "2026-01"
     description: |
-      Évaluer les apprentissages des étudiants et des étudiantes à partir des
-      grilles de correction de la professeure.
+      Évaluer les apprentissages des étudiants et des étudiantes à partir des grilles de correction de la professeure.
       
       
   - poste: "Préposé à l'accueil et aux visites guidées"
@@ -54,10 +54,8 @@ experiences:
     debut: "2022-05"
     fin: "2023-05"
     description: |
-      Expliquer le fonctionnement des institutions parlementaires et le processus
-      législatif.
-      Adapter le contenu des visites guidées en fonction des connaissances du 
-      groupe de visiteur·euses.
+      Expliquer le fonctionnement des institutions parlementaires et le processus législatif.
+      Adapter le contenu des visites guidées en fonction des connaissances du groupe de visiteur·euses.
       
   - poste: "Préposée ou préposé à l’information et au maintien de l’ordre"
     organisation: "Assemblée nationale du Québec"
@@ -65,8 +63,7 @@ experiences:
     debut: "2021-10"
     fin: "2021-10"
     description: |
-      Superviser les opérations électorales et accueillir les électrices et 
-      électeurs.
+      Superviser les opérations électorales et accueillir les électrices et électeurs.
       Vérifier l'identité des votants et assurer le bon déroulement du scrutin.
 
 formation:
@@ -78,9 +75,7 @@ formation:
     fin: ""
     description: |
       Moyenne cumulative : 4,14/4,33
-      Titre : La participation politique des Autochtones au Canada : dépasser le
-      vote pour comprendre la diversité des moyens de participation et d'actions
-      politiques.
+      Titre : La participation politique des Autochtones au Canada : dépasser le vote pour comprendre la diversité des moyens de participation et d'actions politiques.
       sous la direction de la professeure Valérie-Anne Mahéo, Ph.D.
 
   - diplome: "Baccalauréat en science politique"
@@ -90,8 +85,7 @@ formation:
     fin: "2024-05"
     description: |
       Moyenne cumulative : 3,92/4,33
-      Intérêts principaux : comportement politique, institutions politiques et 
-      gouvernance, évaluation des politiques publiques.
+      Intérêts principaux : comportement politique, institutions politiques et gouvernance, évaluation des politiques publiques.
 
   - diplome: "Diplôme d'études collégiales"
     etablissement: "Cégep Garneau"
@@ -109,10 +103,8 @@ formations_connexes:
     debut: "2025-06"
     fin: "2025-08"
     description: |
-      Comprendre les principes de Propriété, Contrôle, Accès et Possession des
-      données des Premières Nations.
-      Mettre en oeuvre la souveraineté des données des Premières Nations dans la
-      recherche institutionnelle et académique.
+      Comprendre les principes de Propriété, Contrôle, Accès et Possession des données des Premières Nations.
+      Mettre en oeuvre la souveraineté des données des Premières Nations dans la recherche institutionnelle et académique.
 
   - formation: "École interdisciplinaire d'outils et méthodes"
     etablissement: "Université Laval"
@@ -139,7 +131,11 @@ implication_sociale_et_etudiante:
     lieu: "Québec"
     debut: "2026-08"
     fin: "2026-09"
-  
+    descriptions: |
+      Je me présente dans la circonscription de Chauveau, dans la ville de Québec, pour le parti NUL.
+      La présence d'un candidat NUL sur le bulletin de vote donne une case « aucune de ces réponses » aux électeurs. Ça permet de comptabiliser véritablement l'insatisfaction.
+      Pour en apprendre plus sur le parti NUL et ses positions, je vous invite à cliquer [ici](https://partinul.net/).
+      
   - nom: "Secrétaire aux Finances"
     etablissement: "Association des politologues étudiants de l'Université Laval"
     lieu: "Québec"
@@ -158,8 +154,8 @@ implication_sociale_et_etudiante:
     debut: "2026-06"
     fin: "2026-06"
     description: |
-      Marcher 100~km au profit de la recherche sur le cancer.
-      Amasser 1~520$.
+      Marcher 100 kilomètres au profit de la recherche sur le cancer.
+      Amasser 1 520$.
       
   - nom: "Bénévole"
     etablissement: "Club Rotary"
@@ -167,11 +163,8 @@ implication_sociale_et_etudiante:
     debut: "2016-10"
     fin: "2020-02"
     description: |
-      Dans le cadre d'un échange étudiant de 11 mois à Bharuch (Gujarat, Inde), 
-      j'ai participé à plusieurs activités de sensibilisation,
-      de prévention et de collecte de fonds pour soutenir les activités du Club.
-      J'ai également participé aux activité du Club Québec-Cité dans les années
-      suivantes.
+      Dans le cadre d'un échange étudiant de 11 mois à Bharuch (Gujarat, Inde), j'ai participé à plusieurs activités de sensibilisation, de prévention et de collecte de fonds pour soutenir les activités du Club.
+      J'ai également participé aux activité du Club Québec-Cité dans les années suivantes.
 
 
 

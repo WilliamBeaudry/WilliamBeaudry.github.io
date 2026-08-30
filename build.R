@@ -249,10 +249,14 @@ gen_parcours <- function(s, donnees, ...) {
                 "' n'a pas d'intitul\u00e9 (poste, diplome, formation, titre ou nom).",
                 call. = FALSE)
       }
+      # lien: rend l'intitule cliquable
+      intitule <- if (nzchar(txt(e$lien)))
+        sprintf('<a href="%s" target="_blank">%s</a>', esc(e$lien), esc(intitule))
+      else esc(intitule)
       sprintf(
         '  <li class="pc-item">\n    <span class="pc-date">%s</span>\n    <h5 class="pc-titre">%s</h5>\n    <span class="pc-org">%s</span>\n    %s\n  </li>',
         periode(e$debut, e$fin),
-        esc(intitule),
+        intitule,
         paste0(esc(premier(e, c("organisation", "etablissement", "lieu_org"))),
                if (nzchar(txt(e$lieu))) paste0(" &middot; ", esc(e$lieu)) else ""),
         md(e$description))
@@ -397,7 +401,10 @@ gen_cv <- function(donnees, racine = ".") {
                '%s',
                '        <div class="cv-desc">%s</div>\n',
                '      </div>'),
-        esc(premier(e, c("poste", "diplome", "formation", "titre", "nom"))),
+        if (nzchar(txt(e$lien)))
+          sprintf('<a href="%s">%s</a>', esc(e$lien),
+                  esc(premier(e, c("poste", "diplome", "formation", "titre", "nom"))))
+        else esc(premier(e, c("poste", "diplome", "formation", "titre", "nom"))),
         periode(e$debut, e$fin),
         if (nzchar(txt(org)))
           sprintf('        <div class="cv-org">%s</div>\n',

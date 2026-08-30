@@ -26,12 +26,8 @@ cv:
   publications: false       # true = ajouter la rubrique Publications au CV
   titre_publications: "Publications"
   profil: |
-    Présentement candidat à la maîtrise en science politique, je déposerai sous
-    peu mon mémoire sur la participation politique des Autochtones au Canada.
-    Qu'il s'agisse de visites guidées, de rapports institutionnels ou d'un
-    mémoire de recherche, je me suis attaché à approfondir notre connaissance de
-    phénomènes politiques complexes et sensibles, sans jamais sacrifier la
-    vulgarisation du contenu ni le tact qu'exigent de tels sujets.
+     Présentement candidat à la maîtrise en science politique, je déposerai sous peu mon mémoire sur la participation politique des Autochtones au Canada.
+     Qu'il s'agisse de visites guidées, de rapports institutionnels ou d'un mémoire de recherche, je me suis attaché à approfondir notre connaissance de phénomènes politiques complexes et sensibles, sans jamais sacrifier la vulgarisation du contenu ni le tact qu'exigent de tels sujets.
   note: "Les références seront fournies sur demande."
 
 
@@ -115,8 +111,7 @@ sections:
       lien: "cv.html"
       libelle: "Consulter et imprimer mon CV"
       note: |
-        Pour consulter le curriculum vitæ complet dans une autre page de votre
-        navigateur — et l'imprimer ou l'enregistrer en PDF — cliquez ci-dessous.
+        Pour consulter le curriculum vitæ complet dans une autre page de votre navigateur — et l'imprimer ou l'enregistrer en PDF — cliquez ci-dessous.
 
   - id: "publications"
     titre: "Publications et communications"
