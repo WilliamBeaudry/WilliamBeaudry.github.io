@@ -22,6 +22,22 @@
 #     lieu: ["Université Laval", "Québec"]
 # Les éléments d'une liste sont assemblés avec des virgules.
 # ===========================================================================
+- titre: "Élections 2026: s'inscrire et voter"
+  type: ""
+  auteurs: "Beaudry, W."
+  editeur: ""
+  lieu: ["Réseau jeunesse de l'Assemblée des Premières nations Québec-Labrador", "Québec"]
+  date: "2026-09"
+  numero: ""
+  url: ""
+  documents:
+    - fichier: "presentations/beaudry_w_inscript_elec_rjapnql"
+      libelle: "Consulter la présentation"
+      style: "small"
+  resume: |
+    Dans un webinaire entourant la campagne électorale au Québec, j'ai fait une présentation du système électoral et de l'inscription à la liste électoral devant le Réseau jeunesse de l'APNQL.
+    Je remercie grandement l'invitation de Simon Dabin à cet événement.
+
 
 - titre: "La participation politique des personnes autochtones au Québec, au Canada et dans le monde : une revue de la littérature scientifique"
   type: ""
