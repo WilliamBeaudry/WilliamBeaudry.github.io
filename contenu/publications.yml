@@ -31,7 +31,7 @@
   numero: ""
   url: ""
   documents:
-    - fichier: "presentations/beaudry_w_inscript_elec_rjapnql"
+    - fichier: "presentations/beaudry_w_inscript_elec_rjapnql.pdf"
       libelle: "Consulter la présentation"
       style: "small"
   resume: |
