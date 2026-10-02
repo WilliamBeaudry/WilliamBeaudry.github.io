@@ -268,3 +268,54 @@ select {
     cursor: auto;
   }
 }
+
+/* --- Vitrine : fiches « en ce moment » ---------------------------------- */
+
+.vitrine {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  gap: 1.1em;
+}
+
+.vitrine-fiche {
+  border: 1px solid var(--wb-bordure);
+  border-top: 3px solid var(--wb-accent);
+  border-radius: 4px;
+  padding: 1.1em 1.2em 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.vitrine-rubrique {
+  font-size: 0.62em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.7em;
+}
+
+.vitrine-poste {
+  margin: 0 0 0.3em;
+  font-size: 1em;
+  line-height: 1.35;
+  color: var(--wb-titre);
+}
+
+.vitrine-poste a { border-bottom: 0; }
+
+.vitrine-org {
+  font-size: 0.85em;
+  color: var(--wb-accent);
+  margin-bottom: 0.6em;
+}
+
+.vitrine-depuis {
+  margin-top: auto;
+  font-size: 0.72em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}

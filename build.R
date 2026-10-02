@@ -535,9 +535,73 @@ gen_cv <- function(donnees, racine = ".") {
   invisible(page)
 }
 
+# --- Vitrine : ce qui est en cours ----------------------------------------
+# Rassemble, dans toutes les rubriques de parcours.yml, les entrées dont le
+# champ fin est vide — celles qui s'affichent « à ce jour » dans la ligne du
+# temps — et les présente en petites fiches côte à côte.
+# Options dans site.yml : rubriques (limiter la provenance), max (nombre de
+# fiches), afficher_rubrique (false pour masquer l'étiquette).
+
+gen_vitrine <- function(s, donnees, ...) {
+  p <- donnees$parcours
+  if (length(p) == 0) return(NULL)
+
+  joli <- function(cle) {
+    t <- gsub("_", " ", cle)
+    paste0(toupper(substring(t, 1, 1)), substring(t, 2))
+  }
+  premier <- function(e, noms) {
+    for (n in noms) if (nzchar(txt(e[[n]]))) return(e[[n]])
+    ""
+  }
+
+  cles <- names(p)
+  rubriques <- cles[!grepl("^titre_", cles)]
+  if (length(s$rubriques)) rubriques <- intersect(rubriques, unlist(s$rubriques))
+
+  fiches <- list()
+  for (cle in rubriques) {
+    items <- p[[cle]]
+    if (!is.list(items) || length(items) == 0) next
+    for (e in items) {
+      if (nzchar(txt(e$fin))) next          # une fin renseignée = terminé
+      e$.rubrique <- txt(p[[paste0("titre_", cle)]]) %||% joli(cle)
+      fiches <- c(fiches, list(e))
+    }
+  }
+  if (length(fiches) == 0) return(NULL)
+
+  # de la plus récemment commencée à la plus ancienne
+  fiches <- fiches[order(-vapply(fiches, function(e) cle_date(e$debut), numeric(1)))]
+  if (!is.null(s$max) && is.numeric(s$max) && s$max > 0)
+    fiches <- head(fiches, s$max)
+
+  html <- vapply(fiches, function(e) {
+    intitule <- esc(premier(e, c("poste", "diplome", "formation", "titre", "nom")))
+    if (nzchar(txt(e$lien)))
+      intitule <- sprintf('<a href="%s" target="_blank">%s</a>', esc(e$lien), intitule)
+    org <- paste0(esc(premier(e, c("organisation", "etablissement"))),
+                  if (nzchar(txt(e$lieu))) paste0(" &middot; ", esc(e$lieu)) else "")
+    depuis <- fmt_date(e$debut)
+    paste0(
+      '  <li class="vitrine-fiche">\n',
+      if (!identical(s$afficher_rubrique, FALSE))
+        sprintf('    <span class="vitrine-rubrique">%s</span>\n', esc(e$.rubrique)) else "",
+      sprintf('    <h4 class="vitrine-poste">%s</h4>\n', intitule),
+      if (nzchar(org)) sprintf('    <span class="vitrine-org">%s</span>\n', org) else "",
+      if (nzchar(depuis)) sprintf('    <span class="vitrine-depuis">Depuis %s</span>\n', depuis) else "",
+      "  </li>")
+  }, character(1))
+
+  paste0('<div class="container">\n<h3>', esc(s$titre), "</h3>\n",
+         md(s$texte), bouton_section(s),
+         '\n<ul class="vitrine">\n', paste(html, collapse = "\n"), "\n</ul>\n</div>")
+}
+
 GENERATEURS <- list(
   texte        = gen_texte,
   texte_icones = gen_texte_icones,
+  vitrine      = gen_vitrine,
   parcours     = gen_parcours,
   documents    = gen_documents,
   publications = gen_publications,

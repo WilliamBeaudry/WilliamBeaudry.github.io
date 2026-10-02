@@ -102,6 +102,15 @@ sections:
         texte: "À la recherche d'un emploi"
       
 
+  - id: "en-cours"
+    titre: "En ce moment"
+    type: "vitrine"
+    # Reprend automatiquement toutes les entrées de parcours.yml dont le champ
+    # fin est vide. Options : rubriques (limiter la provenance), max (nombre
+    # de fiches), afficher_rubrique: false (masquer la petite étiquette).
+    texte: |
+      Ce qui occupe mes semaines en ce moment.
+
   - id: "parcours"
     titre: "Mon parcours"
     type: "parcours"
