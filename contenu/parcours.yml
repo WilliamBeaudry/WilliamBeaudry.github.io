@@ -19,6 +19,15 @@ titre_implication_sociale_et_etudiante: "Implication sociale et étudiante"
 
 experiences:
 
+  - poste: "Auxiliaire d'enseignement"
+    organisation: "Université Laval"
+    lieu: "Québec"
+    debut: "2026-09"
+    fin: "2027-01"
+    description: |
+      - Pour le cours Structuration de la recherche (POL-1010).
+      - Évaluer les apprentissages des étudiants et des étudiantes à partir des grilles de correction du professeur.
+
   - poste: "Conseiller à la recherche"
     organisation: "Élections Québec"
     lieu: "Québec"
@@ -45,6 +54,7 @@ experiences:
     debut: "2025-09"
     fin: "2026-01"
     description: |
+      - Pour le cours Comportement électoral au Québec et au Canada (POL-2405).
       - Évaluer les apprentissages des étudiants et des étudiantes à partir des grilles de correction de la professeure.
       
       
@@ -125,6 +135,15 @@ formations_connexes:
       - Les attitudes générationnelles de participation y ont été scrutées.
       
 implication_sociale_et_etudiante:
+
+  - nom: "Ambassadeur de circonscription"
+    etablissement: "Société canadienne du cancer"
+    lieu: "Québec"
+    debut: "2026-10"
+    fin: "2027-10"
+    description: |
+      - Défense et représentation des intérêts des personnes qui ont le cancer.
+      - Assurer que les politiques publiques soutiennent les personnes qui ont le cancer, encouragent le dépistage et contribue à la prévention du cancer sous de multiples formes.
 
   - nom: "Candidat aux élections provinciales de 2026"
     etablissement: "parti NUL"
