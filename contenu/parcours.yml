@@ -23,7 +23,7 @@ experiences:
     organisation: "Université Laval"
     lieu: "Québec"
     debut: "2026-09"
-    fin: "2027-01"
+    fin: ""
     description: |
       - Pour le cours Structuration de la recherche (POL-1010).
       - Évaluer les apprentissages des étudiants et des étudiantes à partir des grilles de correction du professeur.
@@ -140,7 +140,7 @@ implication_sociale_et_etudiante:
     etablissement: "Société canadienne du cancer"
     lieu: "Québec"
     debut: "2026-10"
-    fin: "2027-10"
+    fin: ""
     description: |
       - Défense et représentation des intérêts des personnes qui ont le cancer.
       - Assurer que les politiques publiques soutiennent les personnes qui ont le cancer, encouragent le dépistage et contribue à la prévention du cancer sous de multiples formes.
@@ -149,7 +149,7 @@ implication_sociale_et_etudiante:
     etablissement: "parti NUL"
     lieu: "Québec"
     debut: "2026-08"
-    fin: "2026-09"
+    fin: ""
     description: |
       - Je me présente dans la circonscription de Chauveau, dans la ville de Québec, pour le parti NUL.
       - La présence d'un candidat NUL sur le bulletin de vote donne une case « aucune de ces réponses » aux électeurs. Ça permet de comptabiliser véritablement l'insatisfaction.
